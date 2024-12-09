@@ -1,0 +1,31 @@
+{
+  "visibilityFilters": {
+    "protected": false,
+    "private": false,
+    "inherited": true,
+    "external": false,
+    "@alpha": false,
+    "@beta": true
+  },
+  "excludePrivate": true,
+  "validation": {
+    "notExported": true,
+    "invalidLink": true,
+    "notDocumented": true
+  },
+  "readme": "none",
+  "entryFileName": "index.md",
+  "out": "./docs/",
+  "indexFormat": "table",
+  "parametersFormat": "table",
+  "interfacePropertiesFormat": "table",
+  "classPropertiesFormat": "table",
+  "typeDeclarationFormat": "table",
+  "propertyMembersFormat": "table",
+  "exclude": [
+    "*.test.ts"
+  ],
+  "plugin": [
+    "typedoc-plugin-markdown"
+  ],
+}

@@ -1,0 +1,63 @@
+{
+  "name": "@qbead/bloch-sphere",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "version": "1.1.4",
+  "type": "module",
+  "exports": {
+    ".": {
+      "browser": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "node": "./dist/index.js",
+      "bun": "./src/index.ts",
+      "types": "./src/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist/**/*",
+    "src/**/*"
+  ],
+  "author": "Jasper Palfree <well.caffeinated@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "quantum",
+    "bloch",
+    "sphere"
+  ],
+  "homepage": "https://qbead.org",
+  "bugs": {
+    "url": "https://github.com/qbead/bloch-sphere/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qbead/bloch-sphere.git"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "docs": "typedoc --out docs --exclude *.test.ts --plugin typedoc-plugin-markdown src",
+    "prepublishOnly": "bun run build && bun run docs"
+  },
+  "devDependencies": {
+    "@types/three": "^0.170.0",
+    "bun-types": "latest",
+    "tsup": "^8.3.0",
+    "typedoc": "^0.27",
+    "typedoc-plugin-markdown": "^4.2.9",
+    "typescript": "^5.4.2"
+  },
+  "peerDependencies": {},
+  "dependencies": {
+    "three": "^0.171.0"
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-svelte"
+    ],
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  }
+}

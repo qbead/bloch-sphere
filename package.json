@@ -6,11 +6,11 @@
   "type": "module",
   "exports": {
     ".": {
+      "types": "./src/index.d.ts",
       "bun": "./src/index.ts",
       "browser": "./dist/index.js",
       "require": "./dist/index.cjs",
       "import": "./dist/index.js",
-      "types": "./src/index.d.ts",
       "default": "./dist/index.js"
     }
   },

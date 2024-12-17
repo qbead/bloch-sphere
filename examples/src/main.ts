@@ -6,5 +6,5 @@ blochSphere.attach(document.body)
 
 // blochSphere.showGrid = false
 
-const state = Qubit.fromPolar(Math.PI / 4, Math.PI / 4)
+const state = Qubit.random()
 blochSphere.setState(state)

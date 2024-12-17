@@ -13,5 +13,5 @@ export default defineConfig({
   skipNodeModulesBundle: true,
   entryPoints: ['src/index.ts'],
   watch: env === 'development',
-  target: 'browser',
+  target: 'es2022',
 })

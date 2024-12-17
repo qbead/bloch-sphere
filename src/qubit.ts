@@ -15,6 +15,12 @@ export class Qubit {
   static I = new Qubit([0, 1, 0])
   static MINUS_I = new Qubit([0, -1, 0])
 
+  static random() {
+    const theta = Math.random() * Math.PI
+    const phi = Math.random() * 2 * Math.PI
+    return Qubit.fromPolar(theta, phi)
+  }
+
   static from(u: number, v: number, w: number): Qubit
   static from(v: Vector3): Qubit
   static from(array: [number, number, number]): Qubit
@@ -56,10 +62,13 @@ export class Qubit {
     return this.blochVector[2]
   }
 
+  // the angle between the qubit and the z-axis
   get theta() {
     return Math.acos(this.w)
   }
 
+  // the angle between the projection of the qubit on the xy-plane
+  // and the x-axis
   get phi() {
     return Math.atan2(this.v, this.u)
   }

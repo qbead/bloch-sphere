@@ -6,6 +6,10 @@ import {
 } from 'three/examples/jsm/renderers/CSS2DRenderer.js'
 import { OrbitControls } from 'three/examples/jsm/Addons.js'
 import { Qubit } from './qubit'
+import { QubitProjWedge } from './components/qubit-proj-wedge'
+import { QubitArrow } from './components/qubit-arrow'
+import { AngleIndicators } from './components/angle-indicators'
+import { Label } from './components/label'
 
 const GRID_DIVISIONS = 36
 
@@ -22,9 +26,13 @@ export class BlochSphere {
   camera!: THREE.OrthographicCamera
   sphere!: THREE.Object3D
   grids!: THREE.Object3D
-  arrow!: THREE.ArrowHelper
   controls!: OrbitControls
   el!: HTMLElement
+
+  arrow!: QubitArrow
+  wedge!: QubitProjWedge
+  angleIndicators!: AngleIndicators
+  labels: Record<string, Label> = {}
 
   constructor() {
     this.initRenderer()
@@ -36,6 +44,7 @@ export class BlochSphere {
     this.el = document.createElement('div')
     this.el.innerHTML = `
       <style>
+        .label,
         .axis-label {
           line-height: 1;
           display: inline-block;
@@ -43,6 +52,7 @@ export class BlochSphere {
           text-align: center;
           font-size: 24px;
           font-family: monospace;
+          text-shadow: 0 0 2px black;
         }
         .axis-label::before {
           content: '';
@@ -119,7 +129,7 @@ export class BlochSphere {
     this.grids.add(grid)
 
     // inner sphere
-    const innerSphere = new THREE.Mesh(
+    const sphereSkin = new THREE.Mesh(
       new THREE.SphereGeometry(0.995, 32, 32),
       new THREE.MeshBasicMaterial({
         color: 0x443322,
@@ -128,7 +138,9 @@ export class BlochSphere {
         side: THREE.BackSide,
       })
     )
-    innerSphere.rotation.x = Math.PI / 2
+    // sphereSkin.material.depthWrite = false
+    sphereSkin.rotation.x = Math.PI / 2
+    this.sphere.add(sphereSkin)
 
     const polarGrid = new THREE.PolarGridHelper(
       1,
@@ -170,77 +182,78 @@ export class BlochSphere {
     inverseAxes.material.depthFunc = THREE.AlwaysDepth
     this.sphere.add(inverseAxes)
 
-    // axes labels
-    // const xLabel = new Text()
-    // xLabel.text = 'X'
-    // xLabel.fontSize = 0.2
-    // xLabel.position.set(1.25, 0, 0)
-    // xLabel.anchorX = 'center'
-    // xLabel.anchorY = 'middle'
-    // xLabel.textAlign = 'center'
-    // xLabel.rotation.set(0, Math.PI / 2, 0)
-    // xLabel.sync()
-    // this.sphere.add(xLabel)
+    this.arrow = new QubitArrow()
+    this.sphere.add(this.arrow.object)
 
-    this.arrow = new THREE.ArrowHelper(
-      new THREE.Vector3(0, 0, 1),
-      new THREE.Vector3(0, 0, 0),
-      1,
-      0xffffff,
-      0.1,
-      0.05
-    )
+    this.wedge = new QubitProjWedge()
+    this.sphere.add(this.wedge.object)
 
-    this.sphere.add(this.arrow)
-    this.sphere.add(innerSphere)
+    this.angleIndicators = new AngleIndicators()
+    this.sphere.add(this.angleIndicators.object)
+
     this.scene.add(this.sphere)
   }
 
   private initLabels() {
     const labels = [
       {
+        id: 'zero',
         text: '0',
         position: new THREE.Vector3(0, 0, 1),
         color: new THREE.Color(0x0000ff),
+        type: 'axis-label',
       },
       {
+        id: 'one',
         text: '1',
         position: new THREE.Vector3(0, 0, -1),
         color: new THREE.Color(0xffff00),
+        type: 'axis-label',
       },
       {
+        id: 'plus',
         text: '+',
         position: new THREE.Vector3(1, 0, 0),
         color: new THREE.Color(0xff0000),
+        type: 'axis-label',
       },
       {
+        id: 'minus',
         text: '-',
         position: new THREE.Vector3(-1, 0, 0),
         color: new THREE.Color(0x00ffff),
+        type: 'axis-label',
       },
       {
+        id: 'i',
         text: '+i',
         position: new THREE.Vector3(0, 1, 0),
         color: new THREE.Color(0x00ff00),
+        type: 'axis-label',
       },
       {
+        id: 'minus-i',
         text: '-i',
         position: new THREE.Vector3(0, -1, 0),
         color: new THREE.Color(0xff00ff),
+        type: 'axis-label',
+      },
+      {
+        id: 'angles',
+        text: '',
+        position: new THREE.Vector3(0, 0, 0),
+        color: new THREE.Color(0xffffff),
+        type: 'label',
       },
     ]
 
     labels.forEach((label) => {
-      const el = document.createElement('label')
-      el.className = 'axis-label'
-      el.textContent = label.text
-      const color = label.color
-        .offsetHSL(0, -0.1, -0.3)
-        .getStyle(THREE.LinearSRGBColorSpace)
-      el.setAttribute('style', `--label-color: ${color}`)
-      const obj = new CSS2DObject(el)
-      obj.position.copy(label.position).multiplyScalar(1.35)
-      this.sphere.add(obj)
+      const l = new Label(label.text, label.type)
+      const color = label.color.offsetHSL(0, -0.1, -0.3)
+      l.object.position.copy(label.position).multiplyScalar(1.35)
+      l.color = color
+      this.labels[label.id] = l
+      this.sphere.add(l.object)
     })
   }
 
@@ -253,7 +266,14 @@ export class BlochSphere {
   }
 
   setState(q: Qubit) {
-    this.arrow.setDirection(q.vector3())
+    let { theta, phi }: any = q
+    theta = theta.toFixed(2)
+    phi = phi.toFixed(2)
+    this.labels.angles.text = `(${theta}, ${phi})`
+    this.labels.angles.position.copy(q.vector3()).multiplyScalar(1.1)
+    this.arrow.follow(q)
+    this.wedge.follow(q)
+    this.angleIndicators.update(q)
   }
 
   scale(size: number) {

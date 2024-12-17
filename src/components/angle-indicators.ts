@@ -67,6 +67,7 @@ export class AngleIndicators extends BaseComponent {
     this.phiColor = this._phiColor
     this.thetaColor = this._thetaColor
     this.labelRadius = 1.1
+    this.opacity = 0.2
   }
 
   update(qubit: Qubit) {
@@ -94,6 +95,18 @@ export class AngleIndicators extends BaseComponent {
       this.phiLabel.text = `${(phi * (180 / Math.PI)).toFixed(2)}°`
       this.thetaLabel.text = `${(theta * (180 / Math.PI)).toFixed(2)}°`
     }
+  }
+
+  get opacity() {
+    // @ts-ignore
+    return this.phiWedge.material.opacity
+  }
+
+  set opacity(opacity: number) {
+    // @ts-ignore
+    this.phiWedge.material.opacity = opacity
+    // @ts-ignore
+    this.thetaWedge.material.opacity = opacity
   }
 
   get labelRadius() {

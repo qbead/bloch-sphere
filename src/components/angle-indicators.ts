@@ -2,8 +2,13 @@ import { Qubit } from '../qubit'
 import { BaseComponent } from './component'
 import * as THREE from 'three'
 import { Label } from './label'
+import { AngleUnits, isRadiansUnits } from '../math'
+
+const yAxis = new THREE.Vector3(0, 1, 0)
 
 export class AngleIndicators extends BaseComponent {
+  public units: AngleUnits = 'deg'
+
   private phiWedge: THREE.Mesh
   private phiLabel: Label
   private thetaLabelContainer: THREE.Object3D
@@ -30,7 +35,7 @@ export class AngleIndicators extends BaseComponent {
     this.phiWedge.material.depthTest = false
     this.phiWedge.renderOrder = 2
 
-    this.phiLabel = new Label('0')
+    this.phiLabel = new Label('0', 'label angle-label')
     this.phiLabel.position.set(1, 0, 0)
     this.phiLabelContainer = new THREE.Object3D()
     this.phiLabelContainer.add(this.phiLabel.object)
@@ -50,7 +55,7 @@ export class AngleIndicators extends BaseComponent {
     this.thetaWedge.renderOrder = 3
     this.thetaWedge.rotation.set(Math.PI / 2, Math.PI / 2, 0)
 
-    this.thetaLabel = new Label('0')
+    this.thetaLabel = new Label('0', 'label angle-label')
     this.thetaLabel.position.set(0, 1, 0)
     this.thetaLabelContainer = new THREE.Object3D()
     this.thetaLabelContainer.add(this.thetaLabel.object)
@@ -61,6 +66,7 @@ export class AngleIndicators extends BaseComponent {
     this.scale = scale
     this.phiColor = this._phiColor
     this.thetaColor = this._thetaColor
+    this.labelRadius = 1.1
   }
 
   update(qubit: Qubit) {
@@ -78,9 +84,25 @@ export class AngleIndicators extends BaseComponent {
       theta
     )
     this.thetaWedge.rotation.set(Math.PI / 2, Math.PI / 2, 0)
-    this.thetaWedge.rotateOnAxis(new THREE.Vector3(0, 1, 0), Math.PI / 2 + phi)
-    this.thetaLabelContainer.rotation.set(0, 0, Math.min(theta, 0.2))
+    this.thetaWedge.rotateOnAxis(yAxis, Math.PI / 2 + phi)
+    this.thetaLabelContainer.rotation.set(0, 0, Math.min(theta, 0.5))
     this.phiLabelContainer.rotation.set(0, 0, phi / 2)
+    if (isRadiansUnits(this.units)) {
+      this.phiLabel.text = `${phi.toFixed(2)} rad`
+      this.thetaLabel.text = `${theta.toFixed(2)} rad`
+    } else {
+      this.phiLabel.text = `${(phi * (180 / Math.PI)).toFixed(2)}°`
+      this.thetaLabel.text = `${(theta * (180 / Math.PI)).toFixed(2)}°`
+    }
+  }
+
+  get labelRadius() {
+    return this.phiLabel.position.length()
+  }
+
+  set labelRadius(radius: number) {
+    this.phiLabel.position.set(radius, 0, 0)
+    this.thetaLabel.position.set(0, radius, 0)
   }
 
   set color(color: number | THREE.Color) {

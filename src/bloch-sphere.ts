@@ -54,6 +54,9 @@ export class BlochSphere {
           font-family: monospace;
           text-shadow: 0 0 2px black;
         }
+        .angle-label {
+          font-size: 18px;
+        }
         .axis-label::before {
           content: '';
           border: solid var(--label-color, white);

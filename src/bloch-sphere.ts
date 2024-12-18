@@ -1,15 +1,6 @@
 import * as THREE from 'three'
-// import { Text } from 'troika-three-text'
-import {
-  CSS2DRenderer,
-  CSS2DObject,
-} from 'three/examples/jsm/renderers/CSS2DRenderer.js'
+import { CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer.js'
 import { OrbitControls } from 'three/examples/jsm/Addons.js'
-import { Qubit } from './qubit'
-import { QubitProjWedge } from './components/qubit-proj-wedge'
-import { QubitArrow } from './components/qubit-arrow'
-import { AngleIndicators } from './components/angle-indicators'
-import { Label } from './components/label'
 import { BlochSphereScene } from './bloch-sphere-scene'
 
 // 3D Bloch Sphere Widget

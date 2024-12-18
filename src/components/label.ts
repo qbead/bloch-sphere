@@ -13,6 +13,7 @@ export class Label extends BaseComponent {
     el.setAttribute('style', '--label-color: #ffffff')
     this.object = new CSS2DObject(el)
     this.object.position.set(0, 0, 0)
+    this.object.userData.component = this
   }
 
   get position() {

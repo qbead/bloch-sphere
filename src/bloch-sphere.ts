@@ -28,11 +28,8 @@ export class BlochSphere {
   grids!: THREE.Object3D
   controls!: OrbitControls
   el!: HTMLElement
-
-  arrow!: QubitArrow
-  wedge!: QubitProjWedge
-  angleIndicators!: AngleIndicators
   labels: Record<string, Label> = {}
+  plotStage: THREE.Group = new THREE.Group()
 
   constructor() {
     this.initRenderer()
@@ -45,17 +42,18 @@ export class BlochSphere {
     this.el.innerHTML = `
       <style>
         .label,
-        .axis-label {
+        .axis-label,
+        .angle-label {
           line-height: 1;
           display: inline-block;
           color: var(--label-color, white);
           text-align: center;
-          font-size: 24px;
+          font-size: 18px;
           font-family: monospace;
           text-shadow: 0 0 2px black;
         }
-        .angle-label {
-          font-size: 18px;
+        .axis-label {
+          font-size: 24px;
         }
         .axis-label::before {
           content: '';
@@ -185,15 +183,7 @@ export class BlochSphere {
     inverseAxes.material.depthFunc = THREE.AlwaysDepth
     this.sphere.add(inverseAxes)
 
-    this.arrow = new QubitArrow()
-    this.sphere.add(this.arrow.object)
-
-    this.wedge = new QubitProjWedge()
-    this.sphere.add(this.wedge.object)
-
-    this.angleIndicators = new AngleIndicators()
-    this.sphere.add(this.angleIndicators.object)
-
+    this.sphere.add(this.plotStage)
     this.scene.add(this.sphere)
   }
 
@@ -241,13 +231,6 @@ export class BlochSphere {
         color: new THREE.Color(0xff00ff),
         type: 'axis-label',
       },
-      {
-        id: 'angles',
-        text: '',
-        position: new THREE.Vector3(0, 0, 0),
-        color: new THREE.Color(0xffffff),
-        type: 'label',
-      },
     ]
 
     labels.forEach((label) => {
@@ -268,15 +251,31 @@ export class BlochSphere {
     this.grids.visible = value
   }
 
-  setState(q: Qubit) {
+  plotState(q: Qubit) {
     let { theta, phi }: any = q
     theta = theta.toFixed(2)
     phi = phi.toFixed(2)
-    this.labels.angles.text = `(${theta}, ${phi})`
-    this.labels.angles.position.copy(q.vector3()).multiplyScalar(1.1)
-    this.arrow.follow(q)
-    this.wedge.follow(q)
-    this.angleIndicators.update(q)
+
+    const arrow = new QubitArrow()
+    arrow.follow(q)
+    this.plotStage.add(arrow.object)
+
+    const wedge = new QubitProjWedge()
+    wedge.follow(q)
+    this.plotStage.add(wedge.object)
+
+    const angleIndicators = new AngleIndicators()
+    angleIndicators.update(q)
+    this.plotStage.add(angleIndicators.object)
+  }
+
+  clear() {
+    this.plotStage.traverse((child) => {
+      if (child instanceof CSS2DObject) {
+        child.element.remove()
+      }
+    })
+    this.plotStage.clear()
   }
 
   scale(size: number) {
@@ -321,7 +320,7 @@ export class BlochSphere {
     this.stop()
     this.renderer.dispose()
     this.el.remove()
-    this.scene.children.forEach((child) => {
+    this.scene.traverse((child) => {
       if (child instanceof THREE.Mesh) {
         child.geometry.dispose()
         child.material.dispose()

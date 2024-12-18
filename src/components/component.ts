@@ -5,6 +5,7 @@ export class BaseComponent {
 
   constructor(name?: string) {
     this.object = new THREE.Group()
+    this.object.userData.component = this
     this._color = new THREE.Color(0xffffff)
     if (name) {
       this.object.name = name

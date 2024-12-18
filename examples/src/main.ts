@@ -7,4 +7,10 @@ blochSphere.attach(document.body)
 // blochSphere.showGrid = false
 
 const state = Qubit.random()
-blochSphere.setState(state)
+blochSphere.plotState(state)
+
+setInterval(() => {
+  blochSphere.clear()
+  const state = Qubit.random()
+  blochSphere.plotState(state)
+}, 1000)

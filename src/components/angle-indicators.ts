@@ -3,6 +3,7 @@ import { BaseComponent } from './component'
 import * as THREE from 'three'
 import { Label } from './label'
 import { AngleUnits, isRadiansUnits } from '../math'
+import { formatDegrees, formatRadians } from '../format'
 
 const yAxis = new THREE.Vector3(0, 1, 0)
 
@@ -89,11 +90,11 @@ export class AngleIndicators extends BaseComponent {
     this.thetaLabelContainer.rotation.set(0, 0, Math.min(theta, 0.5))
     this.phiLabelContainer.rotation.set(0, 0, phi / 2)
     if (isRadiansUnits(this.units)) {
-      this.phiLabel.text = `${phi.toFixed(2)} rad`
-      this.thetaLabel.text = `${theta.toFixed(2)} rad`
+      this.phiLabel.text = formatRadians(phi)
+      this.thetaLabel.text = formatRadians(theta)
     } else {
-      this.phiLabel.text = `${(phi * (180 / Math.PI)).toFixed(2)}°`
-      this.thetaLabel.text = `${(theta * (180 / Math.PI)).toFixed(2)}°`
+      this.phiLabel.text = formatDegrees(phi)
+      this.thetaLabel.text = formatDegrees(theta)
     }
   }
 

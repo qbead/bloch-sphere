@@ -236,10 +236,10 @@ export class BlochSphere {
     labels.forEach((label) => {
       const l = new Label(label.text, label.type)
       const color = label.color.offsetHSL(0, -0.1, -0.3)
-      l.object.position.copy(label.position).multiplyScalar(1.35)
+      l.position.copy(label.position).multiplyScalar(1.35)
       l.color = color
       this.labels[label.id] = l
-      this.sphere.add(l.object)
+      this.sphere.add(l)
     })
   }
 
@@ -258,15 +258,15 @@ export class BlochSphere {
 
     const arrow = new QubitArrow()
     arrow.follow(q)
-    this.plotStage.add(arrow.object)
+    this.plotStage.add(arrow)
 
     const wedge = new QubitProjWedge()
     wedge.follow(q)
-    this.plotStage.add(wedge.object)
+    this.plotStage.add(wedge)
 
     const angleIndicators = new AngleIndicators()
     angleIndicators.update(q)
-    this.plotStage.add(angleIndicators.object)
+    this.plotStage.add(angleIndicators)
   }
 
   clear() {

@@ -39,7 +39,7 @@ export class AngleIndicators extends BaseComponent {
     this.phiLabel = new Label('0', 'label angle-label')
     this.phiLabel.position.set(1, 0, 0)
     this.phiLabelContainer = new THREE.Object3D()
-    this.phiLabelContainer.add(this.phiLabel.object)
+    this.phiLabelContainer.add(this.phiLabel)
     this.phiWedge.add(this.phiLabelContainer)
 
     this.thetaWedge = new THREE.Mesh(
@@ -59,12 +59,12 @@ export class AngleIndicators extends BaseComponent {
     this.thetaLabel = new Label('0', 'label angle-label')
     this.thetaLabel.position.set(0, 1, 0)
     this.thetaLabelContainer = new THREE.Object3D()
-    this.thetaLabelContainer.add(this.thetaLabel.object)
+    this.thetaLabelContainer.add(this.thetaLabel)
     this.thetaWedge.add(this.thetaLabelContainer)
 
     this.phiWedge.add(this.thetaWedge)
-    this.object.add(this.phiWedge, this.thetaWedge)
-    this.scale = scale
+    this.add(this.phiWedge, this.thetaWedge)
+    this.scale.set(scale, scale, scale)
     this.phiColor = this._phiColor
     this.thetaColor = this._thetaColor
     this.labelRadius = 1.1

@@ -32,6 +32,6 @@ export class Wedge extends BaseComponent {
 
     const line = new THREE.Line(geometry, material)
     line.rotation.set(Math.PI / 2, 0, 0)
-    this.object.add(line)
+    this.add(line)
   }
 }

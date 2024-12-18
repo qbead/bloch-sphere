@@ -5,7 +5,7 @@ import { Label } from './label'
 import { formatVector } from '../format'
 
 export class QubitArrow extends BaseComponent {
-  object: THREE.ArrowHelper
+  private arrowHelper: THREE.ArrowHelper
   label: Label
 
   constructor() {
@@ -20,21 +20,21 @@ export class QubitArrow extends BaseComponent {
       0.05
     )
 
-    this.object = arrow
+    this.arrowHelper = arrow
 
     this.label = new Label('(0, 0, 0)')
     this.label.position.set(0, 1.1, 0)
-    this.object.add(this.label.object)
-    this.object.userData.component = this
+    this.arrowHelper.add(this.label)
+    this.arrowHelper.userData.component = this
   }
 
   set color(color: number | THREE.Color) {
     this._color.set(color)
-    this.object.setColor(new THREE.Color(color))
+    this.arrowHelper.setColor(new THREE.Color(color))
   }
 
   follow(qubit: Qubit) {
-    this.object.setDirection(qubit.vector3())
+    this.arrowHelper.setDirection(qubit.vector3())
     this.label.text = formatVector(qubit.vector3())
   }
 }

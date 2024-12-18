@@ -36,4 +36,8 @@ export class Label extends BaseComponent {
       `${this._color.getStyle(THREE.LinearSRGBColorSpace)}`
     )
   }
+
+  destroy() {
+    this.htmlobj.element.remove()
+  }
 }

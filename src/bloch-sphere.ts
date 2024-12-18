@@ -271,8 +271,8 @@ export class BlochSphere {
 
   clear() {
     this.plotStage.traverse((child) => {
-      if (child instanceof CSS2DObject) {
-        child.element.remove()
+      if (child instanceof Label) {
+        child.destroy()
       }
     })
     this.plotStage.clear()
@@ -318,6 +318,7 @@ export class BlochSphere {
 
   dispose() {
     this.stop()
+    this.clear()
     this.renderer.dispose()
     this.el.remove()
     this.scene.traverse((child) => {

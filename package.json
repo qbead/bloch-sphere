@@ -49,6 +49,7 @@
   },
   "peerDependencies": {},
   "dependencies": {
+    "intween": "^1.0.0-beta.7",
     "three": "^0.171.0",
     "troika-three-text": "^0.52.2"
   },

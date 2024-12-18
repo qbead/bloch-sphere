@@ -18,7 +18,11 @@ export class Qubit {
   static random() {
     const theta = Math.random() * Math.PI
     const phi = Math.random() * 2 * Math.PI
-    return Qubit.fromPolar(theta, phi)
+    return Qubit.fromAngles(theta, phi)
+  }
+
+  static zero() {
+    return Qubit.from(Qubit.ZERO)
   }
 
   static from(u: number, v: number, w: number): Qubit
@@ -42,12 +46,8 @@ export class Qubit {
     return new Qubit([u, v, w])
   }
 
-  static fromPolar(theta: number, phi: number) {
-    return new Qubit([
-      Math.sin(theta) * Math.cos(phi),
-      Math.sin(theta) * Math.sin(phi),
-      Math.cos(theta),
-    ])
+  static fromAngles(theta: number, phi: number) {
+    return Qubit.zero().setAngles([theta, phi])
   }
 
   get u() {
@@ -95,5 +95,23 @@ export class Qubit {
 
   vector3() {
     return new Vector3(this.u, this.v, this.w)
+  }
+
+  angles() {
+    return [this.theta, this.phi]
+  }
+
+  setAngles(angles: [number, number]) {
+    const [theta, phi] = angles
+    this.blochVector = [
+      Math.sin(theta) * Math.cos(phi),
+      Math.sin(theta) * Math.sin(phi),
+      Math.cos(theta),
+    ]
+    return this
+  }
+
+  clone() {
+    return new Qubit(this.blochVector)
   }
 }

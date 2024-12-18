@@ -1,2 +1,10 @@
-
 export { BlochSphere } from './bloch-sphere'
+export { QubitDisplay } from './components/qubit-display'
+export { QubitArrow } from './components/qubit-arrow'
+export { AngleIndicators } from './components/angle-indicators'
+export { Label } from './components/label'
+export { Wedge } from './components/wedge'
+export { BlochSphereScene } from './bloch-sphere-scene'
+export { Qubit } from './qubit'
+export { QubitProjWedge } from './components/qubit-proj-wedge'
+export { BaseComponent } from './components/component'

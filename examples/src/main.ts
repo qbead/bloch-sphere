@@ -1,4 +1,4 @@
-import { BlochSphere } from '../../src/index.ts'
+import { BlochSphere, QubitDisplay } from '../../src/index.ts'
 import { Qubit } from '../../src/qubit.ts'
 
 const blochSphere = new BlochSphere()
@@ -7,10 +7,10 @@ blochSphere.attach(document.body)
 // blochSphere.showGrid = false
 
 const state = Qubit.random()
-blochSphere.plotState(state)
+const q = new QubitDisplay(state)
+blochSphere.add(q)
 
 setInterval(() => {
-  blochSphere.clear()
   const state = Qubit.random()
-  blochSphere.plotState(state)
+  q.set(state, 500)
 }, 1000)

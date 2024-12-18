@@ -26,6 +26,7 @@ export class QubitArrow extends BaseComponent {
     this.label.position.set(0, 1.1, 0)
     this.arrowHelper.add(this.label)
     this.arrowHelper.userData.component = this
+    this.add(this.arrowHelper)
   }
 
   set color(color: number | THREE.Color) {

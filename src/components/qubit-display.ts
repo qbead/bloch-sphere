@@ -2,17 +2,17 @@ import { BaseComponent } from './component'
 import { QubitArrow } from './qubit-arrow'
 import { AngleIndicators } from './angle-indicators'
 import { QubitProjWedge } from './qubit-proj-wedge'
-import { Qubit } from '../qubit'
-import { animate } from '../animator'
+import { BlochVector } from '../bloch-vector'
+import { animate } from '../animation'
 import { lerp } from '../math'
 
 export class QubitDisplay extends BaseComponent {
   private arrow: QubitArrow
   private wedge: QubitProjWedge
   private angleIndicators: AngleIndicators
-  state: Qubit
+  state: BlochVector
   private _anim: any = null
-  constructor(q?: Qubit) {
+  constructor(q?: BlochVector) {
     super('qubit-display')
 
     this.arrow = new QubitArrow()
@@ -24,13 +24,13 @@ export class QubitDisplay extends BaseComponent {
     this.angleIndicators = new AngleIndicators()
     this.add(this.angleIndicators)
 
-    this.state = Qubit.zero()
+    this.state = BlochVector.zero()
     if (q) {
       this.set(q)
     }
   }
 
-  set(q: Qubit, duration = 0, easing = 'quadInOut') {
+  set(q: BlochVector, duration = 0, easing = 'quadInOut') {
     if (duration > 0) {
       let start = this.state.angles()
       let end = q.angles()

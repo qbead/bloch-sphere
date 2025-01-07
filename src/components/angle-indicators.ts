@@ -1,4 +1,4 @@
-import { Qubit } from '../qubit'
+import { Qubit } from '../bloch-vector'
 import { BaseComponent } from './component'
 import * as THREE from 'three'
 import { Label } from './label'

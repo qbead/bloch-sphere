@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import { BaseComponent } from './component'
-import { Qubit } from '../qubit'
+import { Qubit } from '../bloch-vector'
 import { Label } from './label'
 import { formatVector } from '../format'
 

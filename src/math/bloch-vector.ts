@@ -8,12 +8,24 @@ export class BlochVector {
     this.vec = vec
   }
 
-  static ZERO = new BlochVector([0, 0, 1])
-  static ONE = new BlochVector([0, 0, -1])
-  static PLUS = new BlochVector([1, 0, 0])
-  static MINUS = new BlochVector([-1, 0, 0])
-  static I = new BlochVector([0, 1, 0])
-  static MINUS_I = new BlochVector([0, -1, 0])
+  static get ZERO() {
+    return new BlochVector([0, 0, 1])
+  }
+  static get ONE() {
+    return new BlochVector([0, 0, -1])
+  }
+  static get PLUS() {
+    return new BlochVector([1, 0, 0])
+  }
+  static get MINUS() {
+    return new BlochVector([-1, 0, 0])
+  }
+  static get I() {
+    return new BlochVector([0, 1, 0])
+  }
+  static get MINUS_I() {
+    return new BlochVector([0, -1, 0])
+  }
 
   static random() {
     const theta = Math.random() * Math.PI

@@ -1,4 +1,4 @@
-import { Qubit } from '../bloch-vector'
+import { Qubit } from '../math/bloch-vector'
 import { Wedge } from './wedge'
 
 export class QubitProjWedge extends Wedge {

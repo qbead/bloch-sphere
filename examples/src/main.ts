@@ -1,5 +1,5 @@
 import { BlochSphere, QubitDisplay } from '../../src/index.ts'
-import { BlochVector } from '../../src/bloch-vector.ts'
+import { BlochVector } from '../../src/math/bloch-vector.ts'
 
 const blochSphere = new BlochSphere()
 blochSphere.attach(document.body)

@@ -2,9 +2,9 @@ import { BaseComponent } from './component'
 import { QubitArrow } from './qubit-arrow'
 import { AngleIndicators } from './angle-indicators'
 import { QubitProjWedge } from './qubit-proj-wedge'
-import { BlochVector } from '../bloch-vector'
+import { BlochVector } from '../math/bloch-vector'
 import { animate } from '../animation'
-import { lerp } from '../math'
+import { lerp } from '../math/interpolation'
 
 export class QubitDisplay extends BaseComponent {
   private arrow: QubitArrow

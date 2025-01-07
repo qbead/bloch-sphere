@@ -1,8 +1,8 @@
-import { Qubit } from '../bloch-vector'
+import { Qubit } from '../math/bloch-vector'
 import { BaseComponent } from './component'
 import * as THREE from 'three'
 import { Label } from './label'
-import { AngleUnits, isRadiansUnits } from '../math'
+import { AngleUnits, isRadiansUnits } from '../math/units'
 import { formatDegrees, formatRadians } from '../format'
 
 const yAxis = new THREE.Vector3(0, 1, 0)

@@ -7,19 +7,26 @@ export type CancelAnimation = () => void
 export function animate(
   callback: AnimationCallback,
   duration = 1000,
-  easing = 'linear'
+  easing = 'linear',
+  loop = false
 ): CancelAnimation {
   const easeFn = Parsers.parseEasing(easing)
-  const start = performance.now()
+  let start = performance.now()
   let cancelled = false
   const step = () => {
     if (cancelled) return
     const time = performance.now()
-    const progress = easeFn(Math.min((time - start) / duration, 1))
-    callback(progress)
-    if (progress < 1) {
-      requestAnimationFrame(step)
+    const progress = Math.min((time - start) / duration, 1)
+    const k = easeFn(progress)
+    callback(k)
+    if (progress >= 1) {
+      if (loop) {
+        start = time
+      } else {
+        return
+      }
     }
+    requestAnimationFrame(step)
   }
   requestAnimationFrame(step)
   return () => {

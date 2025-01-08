@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import { BaseComponent } from './component'
-import { Qubit } from '../math/bloch-vector'
+import { BlochVector } from '../math/bloch-vector'
 import { Label } from './label'
 import { formatVector } from '../format'
 
@@ -34,8 +34,8 @@ export class QubitArrow extends BaseComponent {
     this.arrowHelper.setColor(new THREE.Color(color))
   }
 
-  follow(qubit: Qubit) {
-    this.arrowHelper.setDirection(qubit.vector3())
-    this.label.text = formatVector(qubit.vector3())
+  follow(v: BlochVector) {
+    this.arrowHelper.setDirection(v.vector3())
+    this.label.text = formatVector(v.vector3())
   }
 }

@@ -6,6 +6,7 @@ import { animate } from '../animation'
 export class OperatorDisplay extends BaseComponent {
   operator: Operator
   innerGroup: THREE.Group
+  private anim: any
 
   constructor(op?: Operator) {
     super('operator-display')
@@ -72,11 +73,11 @@ export class OperatorDisplay extends BaseComponent {
     )
     innerGroup.add(disc)
 
-    animate(
+    this.anim = animate(
       (k) => {
         rings.rotation.z = -Math.PI * 2 * k
       },
-      2000,
+      3000,
       'linear',
       true
     )
@@ -102,5 +103,9 @@ export class OperatorDisplay extends BaseComponent {
       n
     )
     this.setRotationFromQuaternion(rot)
+  }
+
+  dispose() {
+    this.anim()
   }
 }

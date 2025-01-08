@@ -52,6 +52,19 @@ export class Operator {
     ])
   }
 
+  conjugateTranspose() {
+    return new Operator([
+      [this.a.conjugate(), this.c.conjugate()],
+      [this.b.conjugate(), this.d.conjugate()],
+    ])
+  }
+
+  // apply to a density matrix
+  applyTo(rho: Complex[][]) {
+    return this.times(new Operator(rho)).times(this.conjugateTranspose())
+      .elements
+  }
+
   plus(other: Operator) {
     const a = this.a.plus(other.a)
     const b = this.b.plus(other.b)

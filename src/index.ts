@@ -1,6 +1,7 @@
 export { BlochSphere } from './bloch-sphere'
 export { QubitDisplay } from './components/qubit-display'
 export { OperatorDisplay } from './components/operator-display'
+export { OperatorPathDisplay } from './components/operator-path-display'
 export { QubitArrow } from './components/qubit-arrow'
 export { AngleIndicators } from './components/angle-indicators'
 export { Label } from './components/label'

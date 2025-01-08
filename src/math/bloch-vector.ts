@@ -1,5 +1,6 @@
 import { Complex } from './complex'
 import { Vector3 } from 'three'
+import { Operator } from './operator'
 
 export class BlochVector {
   vec: [number, number, number] = [0, 0, 1]
@@ -101,8 +102,19 @@ export class BlochVector {
     const i = Complex.from(0, 1)
     return [
       [half.times(w.plus(1)), half.times(u.minus(i.times(v)))],
-      [half.times(u.plus(i.times(v))), half.times(w.minus(1))],
+      [half.times(u.plus(i.times(v))), half.times(Complex.ONE.minus(w))],
     ]
+  }
+
+  static fromDensityMatrix(rho: Complex[][]) {
+    const u = rho[0][1].real * 2
+    const v = rho[1][0].imag * 2
+    const w = rho[0][0].minus(rho[1][1]).real
+    return new BlochVector([u, v, w])
+  }
+
+  applyOperator(op: Operator) {
+    return BlochVector.fromDensityMatrix(op.applyTo(this.rho))
   }
 
   vector3() {
@@ -125,5 +137,9 @@ export class BlochVector {
 
   clone() {
     return new BlochVector(this.vec)
+  }
+
+  toString() {
+    return `(${this.u}, ${this.v}, ${this.w})`
   }
 }

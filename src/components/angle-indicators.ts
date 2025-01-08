@@ -1,4 +1,4 @@
-import { Qubit } from '../math/bloch-vector'
+import { BlochVector } from '../math/bloch-vector'
 import { BaseComponent } from './component'
 import * as THREE from 'three'
 import { Label } from './label'
@@ -71,8 +71,8 @@ export class AngleIndicators extends BaseComponent {
     this.opacity = 0.2
   }
 
-  update(qubit: Qubit) {
-    const { phi, theta } = qubit
+  update(v: BlochVector) {
+    const { phi, theta } = v
     // we need to regenerate the geometry unfortunately
     this.phiWedge.geometry.dispose()
     this.thetaWedge.geometry.dispose()

@@ -58,6 +58,7 @@ export class OperatorPathDisplay extends BaseComponent {
 
   set(op: Operator, v: BlochVector) {
     this.operator = op
+    this.vector = v
     const q = this.operator.quaternion()
     // the quaternion components are the axis of rotation
     // so we want to point this group in that direction
@@ -69,14 +70,14 @@ export class OperatorPathDisplay extends BaseComponent {
     this.setRotationFromQuaternion(rot)
     const angle = 2 * Math.acos(q.w)
     // we need to calculate the radius of the circle for the vector path
-    this.vector = v
     // get the regressed vector
     const l = v.vector3().dot(n)
     const r = Math.sqrt(1 - l ** 2)
     const c = v.vector3().projectOnPlane(n)
     const c0 = new THREE.Vector3(0, 0, 1).projectOnPlane(n)
     const a0 = c.angleTo(c0) * (c0.cross(c).dot(n) < 0 ? -1 : 1)
-    this.path.geometry = new THREE.RingGeometry(r, r + 0.01, 64, 1, a0, angle)
+    // weirdly three.js ring geometry theta length is in the opposite direction
+    this.path.geometry = new THREE.RingGeometry(r, r + 0.01, 64, 1, a0, -angle)
     this.disc.geometry = new THREE.CircleGeometry(r, 64)
     // then shift the path
     this.innerGroup.position.z = l

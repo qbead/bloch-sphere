@@ -75,7 +75,7 @@ export class OperatorDisplay extends BaseComponent {
 
     this.anim = animate(
       (k) => {
-        rings.rotation.z = -Math.PI * 2 * k
+        rings.rotation.z = Math.PI * 2 * k
       },
       3000,
       'linear',

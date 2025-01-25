@@ -19,7 +19,7 @@ export class QubitDisplay extends BaseComponent {
     this.add(this.arrow)
 
     this.wedge = new QubitProjWedge()
-    this.add(this.wedge)
+    // this.add(this.wedge)
 
     this.angleIndicators = new AngleIndicators()
     this.add(this.angleIndicators)

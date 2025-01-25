@@ -22,7 +22,7 @@ export class OperatorPathDisplay extends BaseComponent {
         color: 0xffffff,
         side: THREE.DoubleSide,
         transparent: true,
-        opacity: 0.5,
+        opacity: 0.8,
       })
     )
     innerGroup.add(this.path)
@@ -33,7 +33,7 @@ export class OperatorPathDisplay extends BaseComponent {
         color: 0xffffff,
         side: THREE.DoubleSide,
         transparent: true,
-        opacity: 0.2,
+        opacity: 0.15,
       })
     )
     this.disc.renderOrder = -1

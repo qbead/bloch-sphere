@@ -4,6 +4,11 @@ import { CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer.js'
 import { OrbitControls } from 'three/examples/jsm/Addons.js'
 import { BlochSphereScene } from './bloch-sphere-scene'
 
+export type BlochSphereOptions = {
+  // font size in em
+  fontSize: number
+}
+
 // 3D Bloch Sphere Widget
 // Embeddable widget with configuration options for color, transparency,
 // size, viewport size. And ability to plot: arrows describing state,
@@ -18,13 +23,21 @@ export class BlochSphere {
   camera: THREE.OrthographicCamera
   controls: OrbitControls
 
-  constructor() {
+  constructor(options?: BlochSphereOptions) {
     this.initRenderer()
     this.camera = new THREE.OrthographicCamera(-2, 2, 2, -2, 0.1, 50)
     this.camera.position.set(10, 10, 5)
     this.camera.up.set(0, 0, 1)
     this.controls = new OrbitControls(this.camera, this.renderer.domElement)
     this.scene = new BlochSphereScene()
+    this.setOptions(options)
+  }
+
+  setOptions(options?: BlochSphereOptions) {
+    if (!options) return
+    if (options.fontSize) {
+      this.el.style.fontSize = `${options.fontSize}em`
+    }
   }
 
   private initRenderer() {

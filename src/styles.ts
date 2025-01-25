@@ -7,12 +7,12 @@ export default `
   display: inline-block;
   color: var(--label-color, white);
   text-align: center;
-  font-size: 18px;
+  font-size: 1em;
   font-family: monospace;
   text-shadow: 0 0 2px black;
 }
 .axis-label {
-  font-size: 24px;
+  font-size: 1.6em;
 }
 .axis-label::before {
   content: '';

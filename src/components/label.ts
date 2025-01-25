@@ -23,6 +23,17 @@ export class Label extends BaseComponent {
 
   set text(text: string) {
     this.htmlobj.element.textContent = text
+    if (!text) {
+      this.visible = false
+    }
+  }
+
+  get fontSize() {
+    return parseInt(this.htmlobj.element.style.fontSize || '18')
+  }
+
+  set fontSize(size: number) {
+    this.htmlobj.element.style.fontSize = `${size}em`
   }
 
   get color() {

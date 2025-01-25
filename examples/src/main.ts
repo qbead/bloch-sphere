@@ -6,9 +6,10 @@ import {
 } from '../../src/index.ts'
 import { BlochVector } from '../../src/math/bloch-vector.ts'
 import * as gates from '../../src/math/gates.ts'
-import { Operator } from '../../src/math/operator.ts'
 
-const blochSphere = new BlochSphere()
+const blochSphere = new BlochSphere({
+  fontSize: 1.25,
+})
 blochSphere.attach(document.body)
 
 // blochSphere.showGrid = false
@@ -24,10 +25,13 @@ const path = new OperatorPathDisplay()
 blochSphere.add(path)
 
 const o = gates.hadamard()
+op.label.text = 'H'
+op.label.fontSize = 2
 op.set(o)
 path.set(o, state)
 
 const res = new QubitDisplay()
+res.color = 0x00ff00
 res.set(state.applyOperator(o))
 blochSphere.add(res)
 

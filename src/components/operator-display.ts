@@ -2,10 +2,12 @@ import * as THREE from 'three'
 import { BaseComponent } from './component'
 import { Operator } from '../math/operator'
 import { animate } from '../animation'
+import { Label } from './label'
 
 export class OperatorDisplay extends BaseComponent {
   operator: Operator
   innerGroup: THREE.Group
+  label: Label
   private anim: any
 
   constructor(op?: Operator) {
@@ -83,6 +85,10 @@ export class OperatorDisplay extends BaseComponent {
     )
 
     innerGroup.add(rings)
+
+    this.label = new Label('')
+    this.label.position.z = 1.1
+    innerGroup.add(this.label)
 
     this.add(innerGroup)
 

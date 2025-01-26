@@ -1,0 +1,30 @@
+# github workflow to publish the /examples folder to the gh-pages branch
+
+name: Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # we use bun
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Build
+        working-directory: examples
+        run: |
+          bun install
+          bun build
+      # publish to gh-pages
+      - name: Upload to gh-pages
+        uses: actions/upload-artifact@v3
+        with:
+          path: examples
+      - name: Deploy to gh-pages
+        uses: actions/deploy-pages@v4

@@ -39,7 +39,7 @@ jobs:
           bun run build
       # publish to gh-pages
       - name: Upload to gh-pages
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-pages-artifact@v3
         with:
           path: examples/dist
       - name: Deploy to gh-pages

@@ -7,9 +7,9 @@ import { animate } from '../animation'
 import { lerp } from '../math/interpolation'
 
 export class QubitDisplay extends BaseComponent {
-  private arrow: QubitArrow
-  private wedge: QubitProjWedge
-  private angleIndicators: AngleIndicators
+  arrow: QubitArrow
+  wedge: QubitProjWedge
+  angleIndicators: AngleIndicators
   state: BlochVector
   private _anim: any = null
   constructor(q?: BlochVector) {

@@ -6,6 +6,7 @@ const GRID_DIVISIONS = 36
 export class BlochSphereScene extends THREE.Scene {
   sphere: THREE.Group
   grids: THREE.Group
+  axes: THREE.Group
   labels: Record<string, Label> = {}
   plotStage: THREE.Group = new THREE.Group()
 
@@ -80,12 +81,14 @@ export class BlochSphereScene extends THREE.Scene {
     )
     this.sphere.add(disc)
 
+    this.axes = new THREE.Group()
+    this.sphere.add(this.axes)
     const axes = new THREE.AxesHelper(1.25)
     axes.position.set(0, 0, 0.001)
     // disable depth test so they are always rendered on top
     // @ts-ignore
     axes.material.depthFunc = THREE.AlwaysDepth
-    this.sphere.add(axes)
+    this.axes.add(axes)
     // add the inverse axes
     const inverseAxes = new THREE.AxesHelper(1.25)
     // colors become CMY
@@ -95,7 +98,7 @@ export class BlochSphereScene extends THREE.Scene {
     // disable depth test so they are always rendered on top
     // @ts-ignore
     inverseAxes.material.depthFunc = THREE.AlwaysDepth
-    this.sphere.add(inverseAxes)
+    this.axes.add(inverseAxes)
 
     this.sphere.add(this.plotStage)
     this.add(this.sphere)
@@ -155,7 +158,7 @@ export class BlochSphereScene extends THREE.Scene {
       l.position.copy(label.position).multiplyScalar(1.35)
       l.color = color
       this.labels[label.id] = l
-      this.sphere.add(l)
+      this.axes.add(l)
     })
   }
 

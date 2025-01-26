@@ -4,6 +4,7 @@ import {
   OperatorDisplay,
   OperatorPathDisplay,
 } from '../../src/index.ts'
+import * as THREE from 'three'
 import { BlochVector } from '../../src/math/bloch-vector.ts'
 import * as gates from '../../src/math/gates.ts'
 import GUI from 'lil-gui'
@@ -60,6 +61,7 @@ const config = {
   'Show Angle Indicators': true,
   'Show Operator Indicator': true,
   'Show Operator Path': true,
+  'Result Arrow Color': '#00ff00',
 }
 
 async function update(animate?: boolean) {
@@ -68,6 +70,7 @@ async function update(animate?: boolean) {
   operatorDisplay.visible = config['Show Operator Indicator']
   qubitArrow.angleIndicators.visible = config['Show Angle Indicators']
   resultQubit.angleIndicators.visible = config['Show Angle Indicators']
+  resultQubit.color = new THREE.Color(config['Result Arrow Color'])
 
   if (!animate) {
     qubitArrow.set(state)
@@ -115,3 +118,6 @@ displayOptions.add(config, 'Show Axes').onChange(() => update())
 displayOptions.add(config, 'Show Angle Indicators').onChange(() => update())
 displayOptions.add(config, 'Show Operator Indicator').onChange(() => update())
 displayOptions.add(config, 'Show Operator Path').onChange(() => update())
+
+const resultOptions = gui.addFolder('Result Arrow')
+resultOptions.addColor(config, 'Result Arrow Color').onChange(() => update())

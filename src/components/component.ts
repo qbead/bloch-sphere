@@ -12,7 +12,6 @@ export class BaseComponent extends THREE.Object3D {
   }
 
   get color() {
-    console.log('foo')
     return this._color
   }
 
@@ -20,7 +19,7 @@ export class BaseComponent extends THREE.Object3D {
     this._color.set(color)
     this.traverse((child) => {
       if (child instanceof THREE.Mesh) {
-        child.material = new THREE.MeshBasicMaterial({ color })
+        child.material.color.set(this._color)
       }
     })
   }

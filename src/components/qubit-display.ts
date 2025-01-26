@@ -5,6 +5,7 @@ import { QubitProjWedge } from './qubit-proj-wedge'
 import { BlochVector } from '../math/bloch-vector'
 import { animate } from '../animation'
 import { lerp } from '../math/interpolation'
+import { Color } from 'three'
 
 export class QubitDisplay extends BaseComponent {
   arrow: QubitArrow
@@ -28,6 +29,11 @@ export class QubitDisplay extends BaseComponent {
     if (q) {
       this.set(q)
     }
+  }
+
+  set color(color: number | Color) {
+    super.color = color
+    this.arrow.color = color
   }
 
   set(q: BlochVector, duration = 0, easing = 'quadInOut') {

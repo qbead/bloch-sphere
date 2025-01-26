@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import { BaseComponent } from './component'
 import { Operator } from '../math/operator'
 import { BlochVector } from '../math/bloch-vector'
+import { getGreatArc } from '../math/geometry'
 
 export class OperatorPathDisplay extends BaseComponent {
   operator: Operator
@@ -36,7 +37,6 @@ export class OperatorPathDisplay extends BaseComponent {
         opacity: 0.15,
       })
     )
-    this.disc.renderOrder = -1
     // @ts-ignore
     this.disc.material.depthTest = false
     // this.disc.material.blending = THREE.CustomBlending
@@ -68,19 +68,20 @@ export class OperatorPathDisplay extends BaseComponent {
       n
     )
     this.setRotationFromQuaternion(rot)
-    const angle = 2 * Math.acos(q.w)
-    // we need to calculate the radius of the circle for the vector path
-    // get the regressed vector
-    const l = v.vector3().dot(n)
-    const r = Math.sqrt(1 - l ** 2)
-    const c = v.vector3().projectOnPlane(n)
-    const c0 = new THREE.Vector3(0, 0, 1).projectOnPlane(n)
-    const a0 = c.angleTo(c0) * (c0.cross(c).dot(n) < 0 ? -1 : 1)
-    // weirdly three.js ring geometry theta length is in the opposite direction
-    this.path.geometry = new THREE.RingGeometry(r, r + 0.01, 64, 1, a0, -angle)
-    this.disc.geometry = new THREE.CircleGeometry(r, 64)
+    let angle = 2 * Math.acos(q.w)
+    const greatArc = getGreatArc(v.vector3(), n, angle)
+    const { radius, height, arcOffset, arcAngle } = greatArc
+    this.path.geometry = new THREE.RingGeometry(
+      radius,
+      radius + 0.01,
+      64,
+      1,
+      arcOffset,
+      arcAngle
+    )
+    this.disc.geometry = new THREE.CircleGeometry(radius, 64)
     // then shift the path
-    this.innerGroup.position.z = l
+    this.innerGroup.position.z = height
   }
 
   setOperator(op: Operator) {

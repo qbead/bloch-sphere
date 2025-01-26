@@ -58,6 +58,8 @@ export class OperatorDisplay extends BaseComponent {
         opacity: 0.5,
       })
     )
+    ring.material.depthTest = false
+    ring.renderOrder = 5
     ring.position.z = 0
     const ring2 = ring.clone()
     ring2.rotation.z = Math.PI
@@ -73,6 +75,7 @@ export class OperatorDisplay extends BaseComponent {
         opacity: 0.1,
       })
     )
+    disc.material.depthTest = false
     innerGroup.add(disc)
 
     this.anim = animate(
@@ -91,6 +94,7 @@ export class OperatorDisplay extends BaseComponent {
     innerGroup.add(this.label)
 
     this.add(innerGroup)
+    this.renderOrder = 4
 
     this.operator = Operator.identity()
     if (op) {

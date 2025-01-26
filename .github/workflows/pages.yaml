@@ -16,11 +16,15 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-      - name: Build
+      - name: Build library
+        run: |
+          bun install
+          bun run build
+      - name: Build Examples
         working-directory: examples
         run: |
           bun install
-          bun build
+          bun run build
       # publish to gh-pages
       - name: Upload to gh-pages
         uses: actions/upload-artifact@v3

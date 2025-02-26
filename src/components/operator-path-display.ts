@@ -26,6 +26,8 @@ export class OperatorPathDisplay extends BaseComponent {
         opacity: 0.8,
       })
     )
+    // @ts-ignore
+    this.path.material.depthTest = false
     innerGroup.add(this.path)
 
     this.disc = new THREE.Mesh(

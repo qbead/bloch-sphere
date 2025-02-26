@@ -3,6 +3,7 @@ import * as THREE from 'three'
 import { CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer.js'
 import { OrbitControls } from 'three/examples/jsm/Addons.js'
 import { BlochSphereScene } from './bloch-sphere-scene'
+import { BlochVector } from './math/bloch-vector.js'
 
 export type BlochSphereOptions = {
   // font size in em
@@ -89,6 +90,14 @@ export class BlochSphere {
     parent.appendChild(this.el)
     this.resize()
     this.start()
+  }
+
+  highlightRegion(
+    points: BlochVector[],
+    color: number | THREE.Color = 0xaadd00
+  ) {
+    this.scene.highlightRegionMaterial.setRegion(points)
+    this.scene.highlightRegionMaterial.highlightColor = color
   }
 
   resize(width?: number, height?: number) {

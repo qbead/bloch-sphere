@@ -40,6 +40,12 @@ resultQubit.color = 0x00ff00
 resultQubit.set(state.applyOperator(gate))
 blochSphere.add(resultQubit)
 
+blochSphere.highlightRegion([
+  BlochVector.fromAngles(0, 0),
+  BlochVector.fromAngles(1, 0),
+  BlochVector.fromAngles(1.5, -1.5),
+])
+
 // setInterval(() => {
 //   const state = BlochVector.random()
 //   q.set(state, 500)

@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import { Label } from './components/label'
+import { SphericalPolygonMaterial } from './materials/spherical-polygon'
 
 const GRID_DIVISIONS = 36
 
@@ -9,6 +10,7 @@ export class BlochSphereScene extends THREE.Scene {
   axes: THREE.Group
   labels: Record<string, Label> = {}
   plotStage: THREE.Group = new THREE.Group()
+  highlightRegionMaterial: SphericalPolygonMaterial
 
   constructor() {
     super()
@@ -45,6 +47,14 @@ export class BlochSphereScene extends THREE.Scene {
     this.grids.add(grid)
 
     // inner sphere
+    this.highlightRegionMaterial = new SphericalPolygonMaterial()
+    this.highlightRegionMaterial.highlightColor = 0xddaa00
+    const highlightSphere = new THREE.Mesh(
+      new THREE.SphereGeometry(0.985, 64, 64),
+      this.highlightRegionMaterial
+    )
+    this.sphere.add(highlightSphere)
+
     const sphereSkin = new THREE.Mesh(
       new THREE.SphereGeometry(0.995, 32, 32),
       new THREE.MeshBasicMaterial({
@@ -59,7 +69,7 @@ export class BlochSphereScene extends THREE.Scene {
     this.sphere.add(sphereSkin)
 
     const polarGrid = new THREE.PolarGridHelper(
-      1,
+      0.98,
       GRID_DIVISIONS,
       2,
       64,
@@ -71,7 +81,7 @@ export class BlochSphereScene extends THREE.Scene {
     this.grids.add(polarGrid)
 
     const disc = new THREE.Mesh(
-      new THREE.CircleGeometry(1, 64),
+      new THREE.CircleGeometry(0.98, 64),
       new THREE.MeshBasicMaterial({
         color: 0x443322,
         side: THREE.DoubleSide,

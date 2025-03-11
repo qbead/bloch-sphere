@@ -3,6 +3,8 @@ import {
   QubitDisplay,
   OperatorDisplay,
   OperatorPathDisplay,
+  PathDisplay,
+  PointsDisplay,
 } from '../../src/index.ts'
 import * as THREE from 'three'
 import { BlochVector } from '../../src/math/bloch-vector.ts'
@@ -17,6 +19,21 @@ const blochSphere = new BlochSphere({
 blochSphere.attach(document.body)
 
 // blochSphere.showGrid = false
+const path = new PathDisplay([
+  BlochVector.fromAngles(0, 0),
+  BlochVector.fromAngles(1, 0.1),
+  BlochVector.fromAngles(1, 1),
+])
+path.color = 0xff0000
+blochSphere.add(path)
+
+// generate 100 randomly
+const points = new PointsDisplay(
+  Array.from({ length: 100 }, () => BlochVector.random())
+)
+points.color = 0x00ff00
+points.pointSize = 20
+blochSphere.add(points)
 
 // set up an initial state
 let state = BlochVector.random()

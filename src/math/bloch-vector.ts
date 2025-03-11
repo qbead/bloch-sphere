@@ -1,6 +1,7 @@
 import { Complex } from './complex'
 import { Vector3 } from 'three'
 import { Operator } from './operator'
+import { lerp } from './interpolation'
 
 export class BlochVector {
   vec: [number, number, number] = [0, 0, 1]
@@ -141,5 +142,12 @@ export class BlochVector {
 
   toString() {
     return `(${this.u}, ${this.v}, ${this.w})`
+  }
+
+  lerpTo(other: BlochVector, t: number) {
+    // using spherical interpolation
+    const theta = lerp(this.theta, other.theta, t)
+    const phi = lerp(this.phi, other.phi, t)
+    return BlochVector.fromAngles(theta, phi)
   }
 }

@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import { BaseComponent } from './component'
 import { Operator } from '../math/operator'
 import { BlochVector } from '../math/bloch-vector'
-import { getGreatArc } from '../math/geometry'
+import { getRotationArc } from '../math/geometry'
 
 export class OperatorPathDisplay extends BaseComponent {
   operator: Operator
@@ -71,7 +71,7 @@ export class OperatorPathDisplay extends BaseComponent {
     )
     this.setRotationFromQuaternion(rot)
     let angle = 2 * Math.acos(q.w)
-    const greatArc = getGreatArc(v.vector3(), n, angle)
+    const greatArc = getRotationArc(v.vector3(), n, angle)
     const { radius, height, arcOffset, arcAngle } = greatArc
     this.path.geometry = new THREE.RingGeometry(
       radius,

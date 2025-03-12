@@ -22,10 +22,6 @@
   "classPropertiesFormat": "table",
   "typeDeclarationFormat": "table",
   "propertyMembersFormat": "table",
-  "exclude": [
-    "*.test.ts"
-  ],
-  "plugin": [
-    "typedoc-plugin-markdown"
-  ],
+  "exclude": ["*.test.ts"],
+  "plugin": ["typedoc-plugin-markdown"]
 }

@@ -36,22 +36,21 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "docs": "typedoc --out docs --exclude *.test.ts --plugin typedoc-plugin-markdown src",
+    "docs": "bun run build && typedoc --options typedoc.json src",
     "prepublishOnly": "bun run build && bun run docs"
   },
   "devDependencies": {
-    "@types/three": "^0.170.0",
+    "@types/three": "^0.174.0",
     "bun-types": "latest",
-    "tsup": "^8.3.0",
-    "typedoc": "^0.27",
-    "typedoc-plugin-markdown": "^4.2.9",
-    "typescript": "^5.4.2"
+    "tsup": "^8.4.0",
+    "typedoc": "^0.27.9",
+    "typedoc-plugin-markdown": "^4.4.2",
+    "typescript": "^5.8.2"
   },
   "peerDependencies": {},
   "dependencies": {
     "intween": "^1.0.0-beta.7",
-    "three": "^0.171.0",
-    "troika-three-text": "^0.52.2"
+    "three": "^0.174.0"
   },
   "prettier": {
     "semi": false,

@@ -4,6 +4,7 @@ import * as THREE from 'three'
 import { Label } from './label'
 import { AngleUnits, isRadiansUnits } from '../math/units'
 import { formatDegrees, formatRadians } from '../format'
+import { defaultColors } from '../colors'
 
 const yAxis = new THREE.Vector3(0, 1, 0)
 
@@ -17,8 +18,8 @@ export class AngleIndicators extends BaseComponent {
   private thetaLabel: Label
   private phiLabelContainer: THREE.Object3D
 
-  private _phiColor = new THREE.Color(0xffffff)
-  private _thetaColor = new THREE.Color(0xffffff)
+  private _phiColor = new THREE.Color(defaultColors.text)
+  private _thetaColor = new THREE.Color(defaultColors.text)
 
   constructor(scale = 0.25) {
     super('angle-indicators')
@@ -26,7 +27,7 @@ export class AngleIndicators extends BaseComponent {
     this.phiWedge = new THREE.Mesh(
       new THREE.RingGeometry(0, 1, 16, 1, 0, Math.PI),
       new THREE.MeshBasicMaterial({
-        color: 0xffffff,
+        color: this._phiColor,
         transparent: true,
         opacity: 0.35,
         side: THREE.DoubleSide,
@@ -45,7 +46,7 @@ export class AngleIndicators extends BaseComponent {
     this.thetaWedge = new THREE.Mesh(
       new THREE.RingGeometry(0, 1, 16, 1, 0, Math.PI / 2),
       new THREE.MeshBasicMaterial({
-        color: 0xffffff,
+        color: this._thetaColor,
         transparent: true,
         opacity: 0.35,
         side: THREE.DoubleSide,

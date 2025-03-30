@@ -1,3 +1,5 @@
+import { defaultColors } from './colors'
+const defaultText = defaultColors.text.getStyle()
 export default `
 <style>
 .label,
@@ -5,7 +7,7 @@ export default `
 .angle-label {
   line-height: 1;
   display: inline-block;
-  color: var(--label-color, white);
+  color: var(--label-color, ${defaultText});
   text-align: center;
   font-size: 1em;
   font-family: monospace;
@@ -16,7 +18,7 @@ export default `
 }
 .axis-label::before {
   content: '';
-  border: solid var(--label-color, white);
+  border: solid var(--label-color, ${defaultText});
   border-width: 0 0 0 3px;
   display: inline-block;
   padding: 0.4em;
@@ -24,7 +26,7 @@ export default `
 }
 .axis-label::after {
   content: '';
-  border: solid var(--label-color, white);
+  border: solid var(--label-color, ${defaultText});
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 0.4em;

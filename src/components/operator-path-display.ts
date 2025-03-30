@@ -3,6 +3,7 @@ import { BaseComponent } from './component'
 import { Operator } from '../math/operator'
 import { BlochVector } from '../math/bloch-vector'
 import { getRotationArc } from '../math/geometry'
+import { defaultColors } from '../colors'
 
 export class OperatorPathDisplay extends BaseComponent {
   operator: Operator
@@ -20,7 +21,7 @@ export class OperatorPathDisplay extends BaseComponent {
     this.path = new THREE.Mesh(
       new THREE.RingGeometry(0, 0.01, 64),
       new THREE.MeshBasicMaterial({
-        color: 0xffffff,
+        color: defaultColors.operatorPath,
         side: THREE.DoubleSide,
         transparent: true,
         opacity: 0.8,
@@ -33,7 +34,7 @@ export class OperatorPathDisplay extends BaseComponent {
     this.disc = new THREE.Mesh(
       new THREE.CircleGeometry(1, 64),
       new THREE.MeshBasicMaterial({
-        color: 0xffffff,
+        color: defaultColors.operatorPath,
         side: THREE.DoubleSide,
         transparent: true,
         opacity: 0.15,
@@ -45,7 +46,9 @@ export class OperatorPathDisplay extends BaseComponent {
     // this.disc.material.blendSrc = THREE.SrcAlphaFactor
     // this.disc.material.blendDst = THREE.OneMinusSrcAlphaFactor
     // this.disc.material.blendEquation = THREE.AddEquation
-    innerGroup.add(this.disc)
+
+    // UNCOMMENT THIS TO SEE THE DISC
+    // innerGroup.add(this.disc)
     this.add(innerGroup)
 
     this.operator = Operator.identity()

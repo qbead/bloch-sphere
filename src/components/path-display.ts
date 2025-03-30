@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import { BaseComponent } from './component'
 import { BlochVector } from '../math/bloch-vector'
+import { defaultColors } from '../colors'
 // import { getArcBetween } from '../math/geometry'
 // import { Operator } from '../math/operator'
 
@@ -76,7 +77,7 @@ export class PathDisplay extends BaseComponent {
   set(vertices: BlochVector[]) {
     this.clear()
     const material = new THREE.MeshBasicMaterial({
-      color: 0xffffff,
+      color: defaultColors.path,
       side: THREE.DoubleSide,
       transparent: true,
       opacity: 0.8,

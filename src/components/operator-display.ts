@@ -3,6 +3,7 @@ import { BaseComponent } from './component'
 import { Operator } from '../math/operator'
 import { animate } from '../animation'
 import { Label } from './label'
+import { defaultColors } from '../colors'
 
 export class OperatorDisplay extends BaseComponent {
   operator: Operator
@@ -19,7 +20,7 @@ export class OperatorDisplay extends BaseComponent {
     // const cone = new THREE.Mesh(
     //   new THREE.ConeGeometry(0.25, 0.05, 32),
     //   new THREE.MeshBasicMaterial({
-    //     color: 0x888800,
+    //     color: defaultColors.operator,
     //     transparent: true,
     //     opacity: 0.5,
     //   })
@@ -31,7 +32,7 @@ export class OperatorDisplay extends BaseComponent {
     const cyl = new THREE.Mesh(
       new THREE.CylinderGeometry(0.005, 0.005, 1.05, 32),
       new THREE.MeshBasicMaterial({
-        color: 0x888800,
+        color: defaultColors.operator,
         transparent: true,
         opacity: 0.5,
       })
@@ -52,7 +53,7 @@ export class OperatorDisplay extends BaseComponent {
         Math.PI / 2
       ),
       new THREE.MeshBasicMaterial({
-        color: 0x888800,
+        color: defaultColors.operator,
         side: THREE.DoubleSide,
         transparent: true,
         opacity: 0.5,
@@ -69,7 +70,7 @@ export class OperatorDisplay extends BaseComponent {
     const disc = new THREE.Mesh(
       new THREE.CircleGeometry(ringRadius - 0.01, 64),
       new THREE.MeshBasicMaterial({
-        color: 0x888800,
+        color: defaultColors.operator,
         side: THREE.DoubleSide,
         transparent: true,
         opacity: 0.1,

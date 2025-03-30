@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import { CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer.js'
 import { BaseComponent } from './component'
+import { defaultColors } from '../colors'
 
 export class Label extends BaseComponent {
   private htmlobj: CSS2DObject
@@ -10,7 +11,7 @@ export class Label extends BaseComponent {
     const el = document.createElement('label')
     el.className = type
     el.textContent = text
-    el.setAttribute('style', '--label-color: #ffffff')
+    el.setAttribute('style', `--label-color: ${defaultColors.text.getStyle()}`)
     this.htmlobj = new CSS2DObject(el)
     this.htmlobj.position.set(0, 0, 0)
     this.htmlobj.userData.component = this

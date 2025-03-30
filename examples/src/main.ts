@@ -15,6 +15,7 @@ import GUI from 'lil-gui'
 // initialize the BlochSphere
 const blochSphere = new BlochSphere({
   fontSize: 1.25,
+  showGrid: true,
 })
 // attach the BlochSphere to the DOM
 blochSphere.attach(document.body)
@@ -25,15 +26,15 @@ const path = new PathDisplay([
   BlochVector.fromAngles(1, 0.1),
   BlochVector.fromAngles(1, 1),
 ])
-path.color = 0xff0000
+path.color = 0xc33175
 blochSphere.add(path)
 
 // generate 100 randomly
 const points = new PointsDisplay(
   Array.from({ length: 100 }, () => BlochVector.random())
 )
-points.color = 0xffaa00
-points.pointSize = 20
+points.color = 0xe1b53e
+points.pointSize = 10
 blochSphere.add(points)
 
 // set up an initial state
@@ -54,7 +55,7 @@ operatorDisplay.set(gate)
 pathDisplay.set(gate, state)
 
 const resultQubit = new QubitDisplay()
-resultQubit.color = 0x00ff00
+resultQubit.color = 0x55b785
 resultQubit.set(state.applyOperator(gate))
 blochSphere.add(resultQubit)
 
@@ -63,7 +64,7 @@ const region = new RegionDisplay([
   BlochVector.fromAngles(1, 0),
   BlochVector.fromAngles(1.5, -1.5),
 ])
-region.highlightColor = 0x33dd00
+region.highlightColor = 0x55b785
 blochSphere.add(region)
 
 // setInterval(() => {
@@ -87,7 +88,7 @@ const config = {
   'Show Angle Indicators': true,
   'Show Operator Indicator': true,
   'Show Operator Path': true,
-  'Result Arrow Color': '#00ff00',
+  'Result Arrow Color': '#55b785',
 }
 
 async function update(animate?: boolean) {

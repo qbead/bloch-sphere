@@ -13,14 +13,18 @@ export class PointsDisplay extends BaseComponent {
       vertexShader: `
         uniform float pointSize;
         varying vec2 vUv;
+        varying float distanceToCamera;
         void main() {
           vUv = uv;
+          vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+          distanceToCamera = -mvPosition.z;
           gl_PointSize = pointSize;
           gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
         }
     `,
       fragmentShader: `
         uniform vec3 color;
+        varying float distanceToCamera;
         void main() {
           vec2 coord = gl_PointCoord - vec2(0.5); // Center
           if (length(coord) > 0.5) discard; // Make it circular

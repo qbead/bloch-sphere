@@ -32,7 +32,7 @@ blochSphere.add(path)
 const points = new PointsDisplay(
   Array.from({ length: 100 }, () => BlochVector.random())
 )
-points.color = 0x00ff00
+points.color = 0xffaa00
 points.pointSize = 20
 blochSphere.add(points)
 
@@ -63,7 +63,7 @@ const region = new RegionDisplay([
   BlochVector.fromAngles(1, 0),
   BlochVector.fromAngles(1.5, -1.5),
 ])
-region.highlightColor = 0xff0000
+region.highlightColor = 0x33dd00
 blochSphere.add(region)
 
 // setInterval(() => {

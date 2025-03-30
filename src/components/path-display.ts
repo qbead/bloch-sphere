@@ -32,7 +32,7 @@ function* pairs<T>(arr: T[]): Generator<[T, T]> {
 }
 
 function tubePath(vertices: BlochVector[], material: THREE.Material) {
-  const curves = pairs(vertices)
+  const curves = Array.from(pairs(vertices))
     .map(([v1, v2]) => new BlochSpherePath(v1, v2))
     .reduce((curvePath, curve) => {
       curvePath.add(curve)

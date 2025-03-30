@@ -55,7 +55,7 @@ export class PointsDisplay extends BaseComponent {
 
     const positions = new Float32Array(points.length * 3)
     for (const [i, point] of points.entries()) {
-      const pos = point.vector3()
+      const pos = point
       positions[i * 3] = pos.x
       positions[i * 3 + 1] = pos.y
       positions[i * 3 + 2] = pos.z

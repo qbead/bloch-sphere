@@ -71,7 +71,7 @@ export class OperatorPathDisplay extends BaseComponent {
     )
     this.setRotationFromQuaternion(rot)
     let angle = 2 * Math.acos(q.w)
-    const greatArc = getRotationArc(v.vector3(), n, angle)
+    const greatArc = getRotationArc(v, n, angle)
     const { radius, height, arcOffset, arcAngle } = greatArc
     this.path.geometry = new THREE.RingGeometry(
       radius,

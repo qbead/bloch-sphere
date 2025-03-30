@@ -20,7 +20,7 @@ class BlochSpherePath extends THREE.Curve<THREE.Vector3> {
     optionalTarget: THREE.Vector3 = new THREE.Vector3()
   ): THREE.Vector3 {
     // we interpolate using their angles so they interpolate spherically
-    optionalTarget.copy(this.from.lerpTo(this.to, t).vector3())
+    optionalTarget.copy(this.from.lerpTo(this.to, t))
     return optionalTarget
   }
 }
@@ -46,8 +46,8 @@ function tubePath(vertices: BlochVector[], material: THREE.Material) {
 // function makeMeshes(path: BlochVector[], material: THREE.Material) {
 //   return pairs(path).map(([v1, v2]) => {
 //     const { arcOffset, arcAngle, norm } = getArcBetween(
-//       v1.vector3(),
-//       v2.vector3()
+//       v1,
+//       v2
 //     )
 //     // const geo = new THREE.RingGeometry(1, 1 + 0.01, 64, 1, arcOffset, arcAngle)
 //     // TODO: potentially use tube geometry

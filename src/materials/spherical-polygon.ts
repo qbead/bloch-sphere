@@ -30,7 +30,7 @@ function sortRegionPoints(regionPoints: THREE.Vector3[]) {
 function getRegionPoints(region: BlochVector[]) {
   const points = []
   for (const v of region) {
-    points.push(v.vector3())
+    points.push(v)
   }
   // sort the points
   const sortedPoints = sortRegionPoints(points)

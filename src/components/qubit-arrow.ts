@@ -35,7 +35,7 @@ export class QubitArrow extends BaseComponent {
   }
 
   follow(v: BlochVector) {
-    this.arrowHelper.setDirection(v.vector3())
-    this.label.text = formatVector(v.vector3())
+    this.arrowHelper.setDirection(v)
+    this.label.text = formatVector(v)
   }
 }

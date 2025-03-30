@@ -40,7 +40,7 @@ export class Label extends BaseComponent {
     return this._color
   }
 
-  set color(color: number | THREE.Color) {
+  set color(color: THREE.ColorRepresentation) {
     this._color.set(color)
     this.htmlobj.element.style.setProperty(
       '--label-color',

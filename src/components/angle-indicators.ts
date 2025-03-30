@@ -119,15 +119,17 @@ export class AngleIndicators extends BaseComponent {
     this.thetaLabel.position.set(0, radius, 0)
   }
 
-  set color(color: number | THREE.Color) {
-    // do nothing
+  set color(color: THREE.ColorRepresentation) {
+    // set both
+    this.phiColor = color
+    this.thetaColor = color
   }
 
   get phiColor() {
     return this._phiColor
   }
 
-  set phiColor(color: number | THREE.Color) {
+  set phiColor(color: THREE.ColorRepresentation) {
     this._phiColor.set(color)
     // @ts-ignore
     this.phiWedge.material.color = this._phiColor
@@ -138,7 +140,7 @@ export class AngleIndicators extends BaseComponent {
     return this._thetaColor
   }
 
-  set thetaColor(color: number | THREE.Color) {
+  set thetaColor(color: THREE.ColorRepresentation) {
     this._thetaColor.set(color)
     // @ts-ignore
     this.thetaWedge.material.color = this._thetaColor

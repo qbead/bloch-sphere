@@ -5,7 +5,7 @@ import { QubitProjWedge } from './qubit-proj-wedge'
 import { BlochVector } from '../math/bloch-vector'
 import { animate } from '../animation'
 import { lerp } from '../math/interpolation'
-import { Color } from 'three'
+import type { ColorRepresentation, Color } from 'three'
 
 export class QubitDisplay extends BaseComponent {
   arrow: QubitArrow
@@ -31,7 +31,7 @@ export class QubitDisplay extends BaseComponent {
     }
   }
 
-  set color(color: number | Color) {
+  set color(color: ColorRepresentation) {
     super.color = color
     this.arrow.color = color
   }

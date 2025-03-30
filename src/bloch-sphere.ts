@@ -94,7 +94,7 @@ export class BlochSphere {
 
   highlightRegion(
     points: BlochVector[],
-    color: number | THREE.Color = 0xaadd00
+    color: THREE.ColorRepresentation = 0xaadd00
   ) {
     this.scene.highlightRegionMaterial.setRegion(points)
     this.scene.highlightRegionMaterial.highlightColor = color

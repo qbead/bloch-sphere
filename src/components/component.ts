@@ -15,7 +15,7 @@ export class BaseComponent extends THREE.Object3D {
     return this._color
   }
 
-  set color(color: number | THREE.Color) {
+  set color(color: THREE.ColorRepresentation) {
     this._color.set(color)
     this.traverse((child) => {
       if (child instanceof THREE.Mesh) {

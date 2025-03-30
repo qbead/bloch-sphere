@@ -29,7 +29,7 @@ export class QubitArrow extends BaseComponent {
     this.add(this.arrowHelper)
   }
 
-  set color(color: number | THREE.Color) {
+  set color(color: THREE.ColorRepresentation) {
     this._color.set(color)
     this.arrowHelper.setColor(new THREE.Color(color))
   }

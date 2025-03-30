@@ -115,7 +115,7 @@ export class SphericalPolygonMaterial extends THREE.ShaderMaterial {
     return this.uniforms.highlightColor.value
   }
 
-  set highlightColor(color: number | THREE.Color) {
+  set highlightColor(color: THREE.ColorRepresentation) {
     this.uniforms.highlightColor.value = new THREE.Color(
       color
     ).convertLinearToSRGB()

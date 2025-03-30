@@ -45,7 +45,7 @@ export class PointsDisplay extends BaseComponent {
     this.pointMaterial.uniforms.pointSize.value = size
   }
 
-  set color(color: number | THREE.Color) {
+  set color(color: THREE.ColorRepresentation) {
     const colorValue = new THREE.Color(color)
     this.pointMaterial.uniforms.color.value = colorValue.convertLinearToSRGB()
   }

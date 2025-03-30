@@ -5,6 +5,7 @@ import {
   OperatorPathDisplay,
   PathDisplay,
   PointsDisplay,
+  RegionDisplay,
 } from '../../src/index.ts'
 import * as THREE from 'three'
 import { BlochVector } from '../../src/math/bloch-vector.ts'
@@ -57,11 +58,13 @@ resultQubit.color = 0x00ff00
 resultQubit.set(state.applyOperator(gate))
 blochSphere.add(resultQubit)
 
-blochSphere.highlightRegion([
+const region = new RegionDisplay([
   BlochVector.fromAngles(0, 0),
   BlochVector.fromAngles(1, 0),
   BlochVector.fromAngles(1.5, -1.5),
 ])
+region.highlightColor = 0xff0000
+blochSphere.add(region)
 
 // setInterval(() => {
 //   const state = BlochVector.random()

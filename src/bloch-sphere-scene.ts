@@ -10,7 +10,6 @@ export class BlochSphereScene extends THREE.Scene {
   axes: THREE.Group
   labels: Record<string, Label> = {}
   plotStage: THREE.Group = new THREE.Group()
-  highlightRegionMaterial: SphericalPolygonMaterial
 
   constructor() {
     super()
@@ -45,15 +44,6 @@ export class BlochSphereScene extends THREE.Scene {
     )
     grid.rotation.x = Math.PI / 2
     this.grids.add(grid)
-
-    // inner sphere
-    this.highlightRegionMaterial = new SphericalPolygonMaterial()
-    this.highlightRegionMaterial.highlightColor = 0xddaa00
-    const highlightSphere = new THREE.Mesh(
-      new THREE.SphereGeometry(0.985, 64, 64),
-      this.highlightRegionMaterial
-    )
-    this.sphere.add(highlightSphere)
 
     const sphereSkin = new THREE.Mesh(
       new THREE.SphereGeometry(0.995, 32, 32),

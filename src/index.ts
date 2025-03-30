@@ -1,6 +1,7 @@
 export { BlochSphere } from './bloch-sphere'
 export { QubitDisplay } from './components/qubit-display'
 export { PathDisplay } from './components/path-display'
+export { RegionDisplay } from './components/region-display'
 export { PointsDisplay } from './components/points-display'
 export { OperatorDisplay } from './components/operator-display'
 export { OperatorPathDisplay } from './components/operator-path-display'

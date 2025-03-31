@@ -4,6 +4,7 @@
   "module": "./dist/index.mjs",
   "version": "1.1.4",
   "type": "module",
+  "description": "A 3D Bloch Sphere visualisation built with Three.js and TypeScript.",
   "exports": {
     ".": {
       "types": "./src/index.d.ts",

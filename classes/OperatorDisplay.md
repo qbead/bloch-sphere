@@ -6,7 +6,7 @@
 
 # Class: OperatorDisplay
 
-Defined in: [src/components/operator-display.ts:18](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/operator-display.ts#L18)
+Defined in: [src/components/operator-display.ts:18](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/operator-display.ts#L18)
 
 A display for a quantum operator
 
@@ -28,7 +28,7 @@ blochSphere.add(display)
 
 > **new OperatorDisplay**(`op`?): `OperatorDisplay`
 
-Defined in: [src/components/operator-display.ts:24](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/operator-display.ts#L24)
+Defined in: [src/components/operator-display.ts:24](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/operator-display.ts#L24)
 
 #### Parameters
 
@@ -48,7 +48,7 @@ Defined in: [src/components/operator-display.ts:24](https://github.com/qbead/blo
 
 | Property | Modifier | Type | Default value | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`_color`](BaseComponent.md#_color) | [src/components/component.ts:7](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/component.ts#L7) |
+| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`_color`](BaseComponent.md#_color) | [src/components/component.ts:7](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/component.ts#L7) |
 | <a id="animations"></a> `animations` | `public` | `AnimationClip`[] | `[]` | Array with object's animation clips. | [`BaseComponent`](BaseComponent.md).[`animations`](BaseComponent.md#animations) | node\_modules/@types/three/src/core/Object3D.d.ts:266 |
 | <a id="castshadow"></a> `castShadow` | `public` | `boolean` | `false` | Whether the object gets rendered into shadow map. | [`BaseComponent`](BaseComponent.md).[`castShadow`](BaseComponent.md#castshadow) | node\_modules/@types/three/src/core/Object3D.d.ts:238 |
 | <a id="children"></a> `children` | `public` | `Object3D`\<`Object3DEventMap`\>[] | `[]` | Array with object's children. **See** THREE.Object3DGroup \| Group for info on manually grouping objects. | [`BaseComponent`](BaseComponent.md).[`children`](BaseComponent.md#children) | node\_modules/@types/three/src/core/Object3D.d.ts:145 |
@@ -57,9 +57,9 @@ Defined in: [src/components/operator-display.ts:24](https://github.com/qbead/blo
 | <a id="customdistancematerial"></a> `customDistanceMaterial?` | `public` | `Material` | `undefined` | Same as [customDepthMaterial](QubitDisplay.md#customdepthmaterial), but used with THREE.Object3DPointLight \| PointLight. | [`BaseComponent`](BaseComponent.md).[`customDistanceMaterial`](BaseComponent.md#customdistancematerial) | node\_modules/@types/three/src/core/Object3D.d.ts:288 |
 | <a id="frustumculled"></a> `frustumCulled` | `public` | `boolean` | `true` | When this is set, it checks every frame if the object is in the frustum of the camera before rendering the object. If set to `false` the object gets rendered every frame even if it is not in the frustum of the camera. | [`BaseComponent`](BaseComponent.md).[`frustumCulled`](BaseComponent.md#frustumculled) | node\_modules/@types/three/src/core/Object3D.d.ts:251 |
 | <a id="id"></a> `id` | `readonly` | `number` | `undefined` | Unique number for this Object3D instance. **Remarks** Note that ids are assigned in chronological order: 1, 2, 3, ..., incrementing by one for each new object. Expects a `Integer` | [`BaseComponent`](BaseComponent.md).[`id`](BaseComponent.md#id) | node\_modules/@types/three/src/core/Object3D.d.ts:109 |
-| <a id="innergroup"></a> `innerGroup` | `public` | `Group` | `undefined` | - | - | [src/components/operator-display.ts:20](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/operator-display.ts#L20) |
+| <a id="innergroup"></a> `innerGroup` | `public` | `Group` | `undefined` | - | - | [src/components/operator-display.ts:20](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/operator-display.ts#L20) |
 | <a id="isobject3d"></a> `isObject3D` | `readonly` | `true` | `true` | Flag to check if a given object is of type Object3D. **Remarks** This is a _constant_ value | [`BaseComponent`](BaseComponent.md).[`isObject3D`](BaseComponent.md#isobject3d) | node\_modules/@types/three/src/core/Object3D.d.ts:102 |
-| <a id="label"></a> `label` | `public` | [`Label`](Label.md) | `undefined` | - | - | [src/components/operator-display.ts:21](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/operator-display.ts#L21) |
+| <a id="label"></a> `label` | `public` | [`Label`](Label.md) | `undefined` | - | - | [src/components/operator-display.ts:21](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/operator-display.ts#L21) |
 | <a id="layers"></a> `layers` | `public` | `Layers` | `new THREE.Layers()` | The layer membership of the object. **Remarks** The object is only visible if it has at least one layer in common with the THREE.Object3DCamera \| Camera in use. This property can also be used to filter out unwanted objects in ray-intersection tests when using THREE.Raycaster \| Raycaster. | [`BaseComponent`](BaseComponent.md).[`layers`](BaseComponent.md#layers) | node\_modules/@types/three/src/core/Object3D.d.ts:226 |
 | <a id="matrix"></a> `matrix` | `public` | `Matrix4` | `new THREE.Matrix4()` | The local transform matrix. | [`BaseComponent`](BaseComponent.md).[`matrix`](BaseComponent.md#matrix) | node\_modules/@types/three/src/core/Object3D.d.ts:191 |
 | <a id="matrixautoupdate"></a> `matrixAutoUpdate` | `public` | `boolean` | DEFAULT_MATRIX_AUTO_UPDATE - that is `(true)`. | When this is set, it calculates the matrix of position, (rotation or quaternion) and scale every frame and also recalculates the matrixWorld property. | [`BaseComponent`](BaseComponent.md).[`matrixAutoUpdate`](BaseComponent.md#matrixautoupdate) | node\_modules/@types/three/src/core/Object3D.d.ts:205 |
@@ -70,7 +70,7 @@ Defined in: [src/components/operator-display.ts:24](https://github.com/qbead/blo
 | <a id="name"></a> `name` | `public` | `string` | `""` | Optional name of the object **Remarks** _(doesn't need to be unique)_. | [`BaseComponent`](BaseComponent.md).[`name`](BaseComponent.md#name) | node\_modules/@types/three/src/core/Object3D.d.ts:122 |
 | <a id="normalmatrix"></a> `normalMatrix` | `readonly` | `Matrix3` | `new THREE.Matrix3()` | - | [`BaseComponent`](BaseComponent.md).[`normalMatrix`](BaseComponent.md#normalmatrix) | node\_modules/@types/three/src/core/Object3D.d.ts:185 |
 | <a id="occlusiontest"></a> `occlusionTest?` | `public` | `boolean` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`occlusionTest`](BaseComponent.md#occlusiontest) | node\_modules/@types/three/src/renderers/common/Backend.d.ts:9 |
-| <a id="operator"></a> `operator` | `public` | [`Operator`](Operator.md) | `undefined` | - | - | [src/components/operator-display.ts:19](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/operator-display.ts#L19) |
+| <a id="operator"></a> `operator` | `public` | [`Operator`](Operator.md) | `undefined` | - | - | [src/components/operator-display.ts:19](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/operator-display.ts#L19) |
 | <a id="parent"></a> `parent` | `public` | `null` \| `Object3D`\<`Object3DEventMap`\> | `null` | Object's parent in the [scene graph](https://en.wikipedia.org/wiki/Scene_graph). **Remarks** An object can have at most one parent. | [`BaseComponent`](BaseComponent.md).[`parent`](BaseComponent.md#parent) | node\_modules/@types/three/src/core/Object3D.d.ts:137 |
 | <a id="position"></a> `position` | `readonly` | `Vector3` | `new THREE.Vector3()` - that is `(0, 0, 0)`. | Object's local position. | [`BaseComponent`](BaseComponent.md).[`position`](BaseComponent.md#position) | node\_modules/@types/three/src/core/Object3D.d.ts:157 |
 | <a id="quaternion"></a> `quaternion` | `readonly` | `Quaternion` | `new THREE.Quaternion()` - that is `(0, 0, 0, 1)`. | Object's local rotation as a THREE.Quaternion \| Quaternion. | [`BaseComponent`](BaseComponent.md).[`quaternion`](BaseComponent.md#quaternion) | node\_modules/@types/three/src/core/Object3D.d.ts:169 |
@@ -96,7 +96,7 @@ Defined in: [src/components/operator-display.ts:24](https://github.com/qbead/blo
 
 > **get** **color**(): `ColorRepresentation`
 
-Defined in: [src/components/component.ts:21](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/component.ts#L21)
+Defined in: [src/components/component.ts:21](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/component.ts#L21)
 
 Get color of the component
 
@@ -108,7 +108,7 @@ Get color of the component
 
 > **set** **color**(`color`): `void`
 
-Defined in: [src/components/component.ts:28](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/component.ts#L28)
+Defined in: [src/components/component.ts:28](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/component.ts#L28)
 
 Set color of the component
 
@@ -378,7 +378,7 @@ Fire an event type.
 
 > **dispose**(): `void`
 
-Defined in: [src/components/operator-display.ts:136](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/operator-display.ts#L136)
+Defined in: [src/components/operator-display.ts:136](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/operator-display.ts#L136)
 
 Perform cleanup tasks
 
@@ -1116,7 +1116,7 @@ Rotates the object around _z_ axis in local space.
 
 > **set**(`op`): `void`
 
-Defined in: [src/components/operator-display.ts:120](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/operator-display.ts#L120)
+Defined in: [src/components/operator-display.ts:120](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/operator-display.ts#L120)
 
 Set the operator to display
 

@@ -8,7 +8,7 @@
 
 > **z**(): [`Operator`](../../../../classes/Operator.md)
 
-Defined in: [src/math/gates.ts:39](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/math/gates.ts#L39)
+Defined in: [src/math/gates.ts:39](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/math/gates.ts#L39)
 
 The Pauli-Z operator
 

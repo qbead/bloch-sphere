@@ -30,7 +30,7 @@
 | [QubitDisplay](classes/QubitDisplay.md) | A display for a qubit state on the Bloch sphere |
 | [QubitProjWedge](classes/QubitProjWedge.md) | A wedge which is a quarter of a circle |
 | [RegionDisplay](classes/RegionDisplay.md) | A display for a region on the Bloch sphere |
-| [Wedge](classes/Wedge.md) | Creates a three.js wedge, that is the outline of a quarter of a circle. |
+| [Wedge](classes/Wedge.md) | Creates a wedge, that is the outline of a quarter of a circle. |
 
 ## Type Aliases
 

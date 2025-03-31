@@ -1,10 +1,16 @@
 import { Complex } from './complex'
 import { Operator } from './operator'
 
+/**
+ * The identity operator
+ */
 export function identity() {
   return Operator.identity()
 }
 
+/**
+ * The Pauli-X operator (also known as NOT or bit-flip operator)
+ */
 export function x() {
   return new Operator([
     [Complex.ZERO, Complex.ONE],
@@ -12,8 +18,14 @@ export function x() {
   ])
 }
 
+/**
+ * Alias for the Pauli-X operator
+ */
 export const not = x
 
+/**
+ * The Pauli-Y operator
+ */
 export function y() {
   return new Operator([
     [Complex.ZERO, Complex.I.times(-1)],
@@ -21,6 +33,9 @@ export function y() {
   ])
 }
 
+/**
+ * The Pauli-Z operator
+ */
 export function z() {
   return new Operator([
     [Complex.ONE, Complex.ZERO],
@@ -28,12 +43,22 @@ export function z() {
   ])
 }
 
+/**
+ * The Hadamard operator
+ *
+ * Often used to create superposition states from the |0> state
+ */
 export function hadamard() {
   return x()
     .plus(z())
     .scale(1 / Math.sqrt(2))
 }
 
+/**
+ * The phase operator
+ *
+ * Applies a phase of `phi` to the |1> state
+ */
 export function phase(phi: number) {
   return new Operator([
     [Complex.ONE, Complex.ZERO],
@@ -42,6 +67,10 @@ export function phase(phi: number) {
 }
 
 // TODO check these
+/**
+ * Rotation around the X axis
+ * Applies a rotation of `theta` radians around the X axis
+ */
 export function rx(theta: number) {
   return new Operator([
     [
@@ -55,6 +84,10 @@ export function rx(theta: number) {
   ])
 }
 
+/**
+ * Rotation around the Y axis
+ * Applies a rotation of `theta` radians around the Y axis
+ */
 export function ry(theta: number) {
   return new Operator([
     [
@@ -68,6 +101,10 @@ export function ry(theta: number) {
   ])
 }
 
+/**
+ * Rotation around the Z axis
+ * Applies a rotation of `theta` radians around the Z axis
+ */
 export function rz(theta: number) {
   return new Operator([
     [

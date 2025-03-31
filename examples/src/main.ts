@@ -6,10 +6,10 @@ import {
   PathDisplay,
   PointsDisplay,
   RegionDisplay,
+  gates,
+  BlochVector,
 } from '../../src/index.ts'
 import * as THREE from 'three'
-import { BlochVector } from '../../src/math/bloch-vector.ts'
-import * as gates from '../../src/math/gates.ts'
 import GUI from 'lil-gui'
 
 // initialize the BlochSphere
@@ -19,6 +19,14 @@ const blochSphere = new BlochSphere({
 })
 // attach the BlochSphere to the DOM
 blochSphere.attach(document.body)
+
+window.addEventListener(
+  'resize',
+  () => {
+    blochSphere.resize()
+  },
+  { passive: true }
+)
 
 // blochSphere.showGrid = false
 const path = new PathDisplay([
@@ -64,7 +72,7 @@ const region = new RegionDisplay([
   BlochVector.fromAngles(1, 0),
   BlochVector.fromAngles(1.5, -1.5),
 ])
-region.highlightColor = 0x55b785
+region.color = 0x55b785
 blochSphere.add(region)
 
 // setInterval(() => {

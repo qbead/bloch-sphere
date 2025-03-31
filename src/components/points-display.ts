@@ -2,6 +2,20 @@ import * as THREE from 'three'
 import { BaseComponent } from './component'
 import { BlochVector } from '../math/bloch-vector'
 
+/**
+ * A display for points on the Bloch sphere
+ *
+ * @example
+ * ```ts
+ * // generate 100 randomly
+ * const points = new PointsDisplay(
+ *   Array.from({ length: 100 }, () => BlochVector.random())
+ * )
+ * points.color = 0xe1b53e
+ * points.pointSize = 10
+ * blochSphere.add(points)
+ * ```
+ */
 export class PointsDisplay extends BaseComponent {
   private pointMaterial: THREE.ShaderMaterial
 
@@ -41,6 +55,9 @@ export class PointsDisplay extends BaseComponent {
     }
   }
 
+  /**
+   * Set the size of the points
+   */
   get pointSize() {
     return this.pointMaterial.uniforms.pointSize.value
   }
@@ -49,11 +66,17 @@ export class PointsDisplay extends BaseComponent {
     this.pointMaterial.uniforms.pointSize.value = size
   }
 
+  /**
+   * Set the color of the points
+   */
   set color(color: THREE.ColorRepresentation) {
     const colorValue = new THREE.Color(color)
     this.pointMaterial.uniforms.color.value = colorValue.convertLinearToSRGB()
   }
 
+  /**
+   * Set the points to display
+   */
   set(points: BlochVector[]) {
     this.clear()
 

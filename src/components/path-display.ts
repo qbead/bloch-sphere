@@ -21,7 +21,7 @@ class BlochSpherePath extends THREE.Curve<THREE.Vector3> {
     optionalTarget: THREE.Vector3 = new THREE.Vector3()
   ): THREE.Vector3 {
     // we interpolate using their angles so they interpolate spherically
-    optionalTarget.copy(this.from.lerpTo(this.to, t))
+    optionalTarget.copy(this.from.slerpTo(this.to, t))
     return optionalTarget
   }
 }
@@ -65,6 +65,22 @@ function tubePath(vertices: BlochVector[], material: THREE.Material) {
 //   })
 // }
 
+/**
+ * A display for a path on the Bloch sphere
+ *
+ * The path is defined by a series of Bloch vectors.
+ *
+ * @example
+ * ```ts
+ * const path = new PathDisplay([
+ *   BlochVector.fromAngles(0, 0),
+ *   BlochVector.fromAngles(1, 0.1),
+ *   BlochVector.fromAngles(1, 1),
+ * ])
+ * path.color = 0xc33175
+ * blochSphere.add(path)
+ * ```
+ */
 export class PathDisplay extends BaseComponent {
   constructor(path?: BlochVector[]) {
     super('path-display')
@@ -74,6 +90,7 @@ export class PathDisplay extends BaseComponent {
     }
   }
 
+  /// Set the path
   set(vertices: BlochVector[]) {
     this.clear()
     const material = new THREE.MeshBasicMaterial({

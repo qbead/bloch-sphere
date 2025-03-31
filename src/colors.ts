@@ -28,4 +28,5 @@ export const defaultColors = {
   operatorPath: beige,
 
   path: beige,
+  region: green,
 }

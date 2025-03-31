@@ -10,6 +10,9 @@ export const BlockSphereSceneOptions = {
   sphereSkinOpacity: 0.55,
 }
 
+/**
+ * A scene for the Bloch sphere which extends the THREE.Scene class
+ */
 export class BlochSphereScene extends THREE.Scene {
   sphere: THREE.Group
   grids: THREE.Group

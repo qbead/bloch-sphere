@@ -10,6 +10,18 @@ export { AngleIndicators } from './components/angle-indicators'
 export { Label } from './components/label'
 export { Wedge } from './components/wedge'
 export { BlochSphereScene } from './bloch-sphere-scene'
-export { BlochVector } from './math/bloch-vector'
 export { QubitProjWedge } from './components/qubit-proj-wedge'
 export { BaseComponent } from './components/component'
+
+export { BlochVector } from './math/bloch-vector'
+/**
+ * A set of utilities for standard quantum gates (operators)
+ */
+export * as gates from './math/gates'
+export * from './math/complex'
+export * from './math/geometry'
+export * from './math/interpolation'
+export * from './math/operator'
+export * from './animation'
+
+export * from './format'

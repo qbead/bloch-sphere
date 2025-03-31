@@ -5,6 +5,16 @@ import { animate } from '../animation'
 import { Label } from './label'
 import { defaultColors } from '../colors'
 
+/**
+ * A display for a quantum operator
+ *
+ * @example
+ * ```ts
+ * const op = gates.hadamard()
+ * const display = new OperatorDisplay(op)
+ * blochSphere.add(display)
+ * ```
+ */
 export class OperatorDisplay extends BaseComponent {
   operator: Operator
   innerGroup: THREE.Group
@@ -103,6 +113,10 @@ export class OperatorDisplay extends BaseComponent {
     }
   }
 
+  /**
+   * Set the operator to display
+   * @param op The operator to display
+   */
   set(op: Operator) {
     this.operator = op
     const q = this.operator.quaternion()
@@ -116,6 +130,9 @@ export class OperatorDisplay extends BaseComponent {
     this.setRotationFromQuaternion(rot)
   }
 
+  /**
+   * Perform cleanup tasks
+   */
   dispose() {
     this.anim()
   }

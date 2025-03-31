@@ -4,6 +4,20 @@ import { BlochVector } from '../math/bloch-vector'
 import { Label } from './label'
 import { formatVector } from '../format'
 
+/**
+ * A display for just a qubit arrow
+ *
+ * @see {@link QubitDisplay} for a full qubit display
+ *
+ * @example
+ * ```ts
+ * const q = new BlochVector(0, 0, 1)
+ * const arrow = new QubitArrow()
+ * arrow.color = 0xe1b53e
+ * arrow.follow(q)
+ * blochSphere.add(arrow)
+ * ```
+ */
 export class QubitArrow extends BaseComponent {
   private arrowHelper: THREE.ArrowHelper
   label: Label

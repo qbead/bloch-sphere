@@ -1,4 +1,8 @@
 import * as THREE from 'three'
+
+/**
+ * Abstract base class for all components
+ */
 export class BaseComponent extends THREE.Object3D {
   protected _color: THREE.Color
 
@@ -11,10 +15,16 @@ export class BaseComponent extends THREE.Object3D {
     }
   }
 
+  /**
+   * Get color of the component
+   */
   get color() {
     return this._color
   }
 
+  /**
+   * Set color of the component
+   */
   set color(color: THREE.ColorRepresentation) {
     this._color.set(color)
     this.traverse((child) => {

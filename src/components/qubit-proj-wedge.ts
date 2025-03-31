@@ -1,6 +1,9 @@
 import { BlochVector } from '../math/bloch-vector'
 import { Wedge } from './wedge'
 
+/**
+ * A wedge which is a quarter of a circle
+ */
 export class QubitProjWedge extends Wedge {
   constructor() {
     super()

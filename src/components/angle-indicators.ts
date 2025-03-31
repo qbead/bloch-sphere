@@ -8,6 +8,17 @@ import { defaultColors } from '../colors'
 
 const yAxis = new THREE.Vector3(0, 1, 0)
 
+/**
+ * Display angle indicators for a Bloch vector
+ *
+ * @example
+ * ```ts
+ * const angleIndicators = new AngleIndicators()
+ * angleIndicators.update(blochVector)
+ * angleIndicators.color = 0xe1b53e
+ * blochSphere.add(angleIndicators)
+ * ```
+ */
 export class AngleIndicators extends BaseComponent {
   public units: AngleUnits = 'deg'
 
@@ -21,6 +32,11 @@ export class AngleIndicators extends BaseComponent {
   private _phiColor = new THREE.Color(defaultColors.text)
   private _thetaColor = new THREE.Color(defaultColors.text)
 
+  /**
+   * Creates a new AngleIndicators component
+   *
+   * @param scale - The scale of the angle indicators (default is 0.25)
+   */
   constructor(scale = 0.25) {
     super('angle-indicators')
 
@@ -72,6 +88,9 @@ export class AngleIndicators extends BaseComponent {
     this.opacity = 0.2
   }
 
+  /**
+   * Update the angle indicators for the given Bloch vector
+   */
   update(v: BlochVector) {
     const { phi, theta } = v
     // we need to regenerate the geometry unfortunately
@@ -111,6 +130,9 @@ export class AngleIndicators extends BaseComponent {
     this.thetaWedge.material.opacity = opacity
   }
 
+  /**
+   * The distance of the labels from the center of the sphere
+   */
   get labelRadius() {
     return this.phiLabel.position.length()
   }

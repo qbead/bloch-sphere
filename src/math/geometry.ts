@@ -1,11 +1,39 @@
 import * as THREE from 'three'
 
-// Gets properties of a great arc starting from v and rotating about n by angle
+/**
+ * Properties of a arc on a sphere
+ */
+export type ArcProperties = {
+  /**
+   * The radius of the arc
+   */
+  radius: number
+  /**
+   * The distance from the center of the sphere to the plane containing the arc
+   */
+  height: number
+  /**
+   * The normal vector of the plane containing the arc
+   */
+  norm: THREE.Vector3
+  /**
+   * The angle of the arc offset from the x-axis
+   */
+  arcOffset: number
+  /**
+   * The angle of the arc
+   */
+  arcAngle: number
+}
+
+/**
+ * Gets properties of an arc starting from v and rotating about n by angle
+ */
 export function getRotationArc(
   v: THREE.Vector3,
   n: THREE.Vector3,
   angle: number
-) {
+): ArcProperties {
   const height = v.dot(n)
   const radius = Math.sqrt(1 - height ** 2)
   // project the vector onto the plane defined by n

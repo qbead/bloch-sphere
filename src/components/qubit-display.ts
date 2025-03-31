@@ -7,6 +7,19 @@ import { animate } from '../animation'
 import { lerp } from '../math/interpolation'
 import type { ColorRepresentation, Color } from 'three'
 
+/**
+ * A display for a qubit state on the Bloch sphere
+ *
+ * This component shows the arrow, angle indicators, and a label.
+ *
+ * @example
+ * ```ts
+ * const q = new BlochVector(0, 0, 1)
+ * const qubit = new QubitDisplay(q)
+ * qubit.color = 0xe1b53e
+ * blochSphere.add(qubit)
+ * ```
+ */
 export class QubitDisplay extends BaseComponent {
   arrow: QubitArrow
   wedge: QubitProjWedge
@@ -36,6 +49,15 @@ export class QubitDisplay extends BaseComponent {
     this.arrow.color = color
   }
 
+  /**
+   * Set the bloch vector state of the display
+   *
+   * Can also be used to animate the state of the qubit.
+   *
+   * @param q - The new Bloch vector state to set.
+   * @param duration - The duration of the animation (default is 0).
+   * @param easing - The easing function to use for the animation (default is 'quadInOut').
+   */
   set(q: BlochVector, duration = 0, easing = 'quadInOut') {
     if (duration > 0) {
       let start = this.state.angles()

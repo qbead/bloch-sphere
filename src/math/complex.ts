@@ -1,5 +1,11 @@
+/**
+ * A type that can be converted to a Complex number.
+ */
 export type IntoComplex = Complex | number | [number, number]
 
+/**
+ * A class representing a complex number.
+ */
 export class Complex {
   real: number
   imag: number

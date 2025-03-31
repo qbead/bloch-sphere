@@ -3,8 +3,28 @@ import { CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer.js'
 import { BaseComponent } from './component'
 import { defaultColors } from '../colors'
 
+/**
+ * Label component for displaying text in 3D space
+ *
+ * @example
+ * ```typescript
+ * const label = new Label('Hello World');
+ * label.position.set(0, 1, 0);
+ * label.color = 'red';
+ * label.fontSize = 2;
+ * blochSphere.add(label);
+ * ```
+ *
+ * @extends BaseComponent
+ */
 export class Label extends BaseComponent {
   private htmlobj: CSS2DObject
+
+  /**
+   * Create a new label
+   * @param text The text to display
+   * @param type The type of label, corresponding to the html class (default: 'label')
+   */
   constructor(text: string, type = 'label') {
     super('label')
 
@@ -37,7 +57,7 @@ export class Label extends BaseComponent {
     this.htmlobj.element.style.fontSize = `${size}em`
   }
 
-  get color() {
+  get color(): THREE.Color {
     return this._color
   }
 
@@ -49,6 +69,9 @@ export class Label extends BaseComponent {
     )
   }
 
+  /**
+   * Cleanup tasks
+   */
   destroy() {
     this.htmlobj.element.remove()
   }

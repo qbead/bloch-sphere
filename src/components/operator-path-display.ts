@@ -5,6 +5,16 @@ import { BlochVector } from '../math/bloch-vector'
 import { getRotationArc } from '../math/geometry'
 import { defaultColors } from '../colors'
 
+/**
+ * A display for the path a qbit takes when it is rotated by an operator
+ * @example
+ * ```ts
+ * const op = gates.hadamard()
+ * const v = new BlochVector(0, 0, 1)
+ * const display = new OperatorPathDisplay(v, op)
+ * blochSphere.add(display)
+ * ```
+ */
 export class OperatorPathDisplay extends BaseComponent {
   operator: Operator
   vector: BlochVector
@@ -61,6 +71,9 @@ export class OperatorPathDisplay extends BaseComponent {
     }
   }
 
+  /**
+   * Set the operator and vector
+   */
   set(op: Operator, v: BlochVector) {
     this.operator = op
     this.vector = v
@@ -89,10 +102,16 @@ export class OperatorPathDisplay extends BaseComponent {
     this.innerGroup.position.z = height
   }
 
+  /**
+   * Set the operator
+   */
   setOperator(op: Operator) {
     this.set(op, this.vector)
   }
 
+  /**
+   * Set the vector
+   */
   setVector(v: BlochVector) {
     this.set(this.operator, v)
   }

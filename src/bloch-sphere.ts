@@ -4,18 +4,53 @@ import { CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer.js'
 import { OrbitControls } from 'three/examples/jsm/Addons.js'
 import { BlochSphereScene, BlockSphereSceneOptions } from './bloch-sphere-scene'
 
+/**
+ * Options for the Bloch Sphere widget
+ */
 export type BlochSphereOptions = {
-  // font size in em
+  /** font size in em */
   fontSize?: number
+  /** show grid */
   showGrid?: boolean
 } & Partial<typeof BlockSphereSceneOptions>
 
-// 3D Bloch Sphere Widget
-// Embeddable widget with configuration options for color, transparency,
-// size, viewport size. And ability to plot: arrows describing state,
-// surface areas, surface point-clouds, surface trajectories.
-// API to allow for programatic access, including camera motion, camera control.
-
+/**
+ * A Bloch Sphere Widget
+ *
+ * This class is a wrapper around the THREE.js WebGLRenderer and CSS2DRenderer
+ * to create a Bloch sphere visualization.
+ *
+ * It provides methods to add and remove objects from the scene.
+ *
+ * It must be attached to a parent element in the DOM to be visible. It will
+ * automatically resize to fit the parent element.
+ *
+ * To resize on window resize, you can call the `resize` method in the
+ * window resize event listener.
+ *
+ * @example
+ * ```ts
+ * import { BlochSphere } from 'bloch-sphere'
+ *
+ * const blochSphere = new BlochSphere({
+ *  fontSize: 1.25,
+ * })
+ *
+ * blochSphere.attach(document.body)
+ * window.addEventListener(
+ *  'resize',
+ *  () => {
+ *   blochSphere.resize()
+ *  },
+ *  { passive: true }
+ * )
+ *
+ * // create a qubit display
+ * const qubit = new QubitDisplay(BlochVector.fromAngles(1, 0))
+ * // add the qubit to the Bloch sphere
+ * blochSphere.add(qubit)
+ * ```
+ */
 export class BlochSphere {
   renderer!: THREE.WebGLRenderer
   cssRenderer!: CSS2DRenderer
@@ -80,14 +115,27 @@ export class BlochSphere {
     this.scene.plotStage.remove(item)
   }
 
+  /**
+   * Removes all objects from the plot
+   *
+   * This will not remove the grid or the sphere.
+   */
   clearPlot() {
     this.scene.clearPlot()
   }
 
+  /**
+   * Rescales the sphere
+   */
   scale(size: number) {
     this.scene.sphere.scale.set(size, size, size)
   }
 
+  /**
+   * Attaches the widget to a parent element
+   *
+   * Must be called to make the widget visible.
+   */
   attach(parent?: HTMLElement) {
     parent = parent ?? document.body
     parent.appendChild(this.el)
@@ -95,6 +143,11 @@ export class BlochSphere {
     this.start()
   }
 
+  /**
+   * Resizes the widget to fit the parent element
+   *
+   * Optionally, you can specify the width and height to resize to.
+   */
   resize(width?: number, height?: number) {
     width = width ?? this.el.parentElement?.clientWidth ?? 200
     height = height ?? this.el.parentElement?.clientHeight ?? 200
@@ -106,22 +159,43 @@ export class BlochSphere {
     this.camera.updateProjectionMatrix()
   }
 
+  /**
+   * Renders the scene
+   *
+   * This is called automatically in the animation loop unless that
+   * loop is stopped.
+   */
   render() {
     this.renderer.render(this.scene, this.camera)
     this.cssRenderer.render(this.scene, this.camera)
     this.controls.update()
   }
 
+  /**
+   * Starts the animation loop
+   *
+   * Automatically started when the widget is attached to a parent element.
+   *
+   * This will call the render method automatically.
+   */
   start() {
     this.renderer.setAnimationLoop(() => {
       this.render()
     })
   }
 
+  /**
+   * Stops the animation loop
+   *
+   * This will stop the render loop
+   */
   stop() {
     this.renderer.setAnimationLoop(null)
   }
 
+  /**
+   * Performs cleanup and disposes everything contained in the widget
+   */
   dispose() {
     this.stop()
     this.clearPlot()

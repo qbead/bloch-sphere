@@ -8,7 +8,7 @@ on:
 
 jobs:
   release:
-    name: Publish twine-core to npmjs
+    name: Publish to npmjs
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

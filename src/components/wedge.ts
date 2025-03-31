@@ -22,7 +22,7 @@ geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3))
 geometry.dispose = () => {}
 
 /**
- * Creates a three.js wedge, that is the outline of
+ * Creates a wedge, that is the outline of
  * a quarter of a circle.
  */
 export class Wedge extends BaseComponent {

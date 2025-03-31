@@ -6,15 +6,52 @@
 
 # Class: BlochSphere
 
-Defined in: [src/bloch-sphere.ts:19](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere.ts#L19)
+Defined in: [src/bloch-sphere.ts:54](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere.ts#L54)
+
+A Bloch Sphere Widget
+
+This class is a wrapper around the THREE.js WebGLRenderer and CSS2DRenderer
+to create a Bloch sphere visualization.
+
+It provides methods to add and remove objects from the scene.
+
+It must be attached to a parent element in the DOM to be visible. It will
+automatically resize to fit the parent element.
+
+To resize on window resize, you can call the `resize` method in the
+window resize event listener.
+
+## Example
+
+```ts
+import { BlochSphere } from 'bloch-sphere'
+
+const blochSphere = new BlochSphere({
+ fontSize: 1.25,
+})
+
+blochSphere.attach(document.body)
+window.addEventListener(
+ 'resize',
+ () => {
+  blochSphere.resize()
+ },
+ { passive: true }
+)
+
+// create a qubit display
+const qubit = new QubitDisplay(BlochVector.fromAngles(1, 0))
+// add the qubit to the Bloch sphere
+blochSphere.add(qubit)
+```
 
 ## Constructors
 
-### new BlochSphere()
+### Constructor
 
-> **new BlochSphere**(`options`?): [`BlochSphere`](BlochSphere.md)
+> **new BlochSphere**(`options`?): `BlochSphere`
 
-Defined in: [src/bloch-sphere.ts:27](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere.ts#L27)
+Defined in: [src/bloch-sphere.ts:62](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere.ts#L62)
 
 #### Parameters
 
@@ -24,18 +61,18 @@ Defined in: [src/bloch-sphere.ts:27](https://github.com/qbead/bloch-sphere/blob/
 
 #### Returns
 
-[`BlochSphere`](BlochSphere.md)
+`BlochSphere`
 
 ## Properties
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="camera"></a> `camera` | `OrthographicCamera` | [src/bloch-sphere.ts:24](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere.ts#L24) |
-| <a id="controls"></a> `controls` | `OrbitControls` | [src/bloch-sphere.ts:25](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere.ts#L25) |
-| <a id="cssrenderer"></a> `cssRenderer` | `CSS2DRenderer` | [src/bloch-sphere.ts:21](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere.ts#L21) |
-| <a id="el"></a> `el` | `HTMLElement` | [src/bloch-sphere.ts:22](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere.ts#L22) |
-| <a id="renderer"></a> `renderer` | `WebGLRenderer` | [src/bloch-sphere.ts:20](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere.ts#L20) |
-| <a id="scene"></a> `scene` | [`BlochSphereScene`](BlochSphereScene.md) | [src/bloch-sphere.ts:23](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere.ts#L23) |
+| <a id="camera"></a> `camera` | `OrthographicCamera` | [src/bloch-sphere.ts:59](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere.ts#L59) |
+| <a id="controls"></a> `controls` | `OrbitControls` | [src/bloch-sphere.ts:60](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere.ts#L60) |
+| <a id="cssrenderer"></a> `cssRenderer` | `CSS2DRenderer` | [src/bloch-sphere.ts:56](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere.ts#L56) |
+| <a id="el"></a> `el` | `HTMLElement` | [src/bloch-sphere.ts:57](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere.ts#L57) |
+| <a id="renderer"></a> `renderer` | `WebGLRenderer` | [src/bloch-sphere.ts:55](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere.ts#L55) |
+| <a id="scene"></a> `scene` | [`BlochSphereScene`](BlochSphereScene.md) | [src/bloch-sphere.ts:58](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere.ts#L58) |
 
 ## Accessors
 
@@ -45,7 +82,7 @@ Defined in: [src/bloch-sphere.ts:27](https://github.com/qbead/bloch-sphere/blob/
 
 > **get** **showGrid**(): `boolean`
 
-Defined in: [src/bloch-sphere.ts:64](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere.ts#L64)
+Defined in: [src/bloch-sphere.ts:102](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere.ts#L102)
 
 ##### Returns
 
@@ -55,7 +92,7 @@ Defined in: [src/bloch-sphere.ts:64](https://github.com/qbead/bloch-sphere/blob/
 
 > **set** **showGrid**(`value`): `void`
 
-Defined in: [src/bloch-sphere.ts:68](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere.ts#L68)
+Defined in: [src/bloch-sphere.ts:106](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere.ts#L106)
 
 ##### Parameters
 
@@ -73,7 +110,7 @@ Defined in: [src/bloch-sphere.ts:68](https://github.com/qbead/bloch-sphere/blob/
 
 > **add**(`item`): `void`
 
-Defined in: [src/bloch-sphere.ts:72](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere.ts#L72)
+Defined in: [src/bloch-sphere.ts:110](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere.ts#L110)
 
 #### Parameters
 
@@ -91,7 +128,11 @@ Defined in: [src/bloch-sphere.ts:72](https://github.com/qbead/bloch-sphere/blob/
 
 > **attach**(`parent`?): `void`
 
-Defined in: [src/bloch-sphere.ts:88](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere.ts#L88)
+Defined in: [src/bloch-sphere.ts:139](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere.ts#L139)
+
+Attaches the widget to a parent element
+
+Must be called to make the widget visible.
 
 #### Parameters
 
@@ -109,7 +150,11 @@ Defined in: [src/bloch-sphere.ts:88](https://github.com/qbead/bloch-sphere/blob/
 
 > **clearPlot**(): `void`
 
-Defined in: [src/bloch-sphere.ts:80](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere.ts#L80)
+Defined in: [src/bloch-sphere.ts:123](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere.ts#L123)
+
+Removes all objects from the plot
+
+This will not remove the grid or the sphere.
 
 #### Returns
 
@@ -121,26 +166,9 @@ Defined in: [src/bloch-sphere.ts:80](https://github.com/qbead/bloch-sphere/blob/
 
 > **dispose**(): `void`
 
-Defined in: [src/bloch-sphere.ts:130](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere.ts#L130)
+Defined in: [src/bloch-sphere.ts:199](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere.ts#L199)
 
-#### Returns
-
-`void`
-
-***
-
-### highlightRegion()
-
-> **highlightRegion**(`points`, `color`): `void`
-
-Defined in: [src/bloch-sphere.ts:95](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere.ts#L95)
-
-#### Parameters
-
-| Parameter | Type | Default value |
-| ------ | ------ | ------ |
-| `points` | [`BlochVector`](BlochVector.md)[] | `undefined` |
-| `color` | `number` \| `Color` | `0xaadd00` |
+Performs cleanup and disposes everything contained in the widget
 
 #### Returns
 
@@ -152,7 +180,7 @@ Defined in: [src/bloch-sphere.ts:95](https://github.com/qbead/bloch-sphere/blob/
 
 > **remove**(`item`): `void`
 
-Defined in: [src/bloch-sphere.ts:76](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere.ts#L76)
+Defined in: [src/bloch-sphere.ts:114](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere.ts#L114)
 
 #### Parameters
 
@@ -170,7 +198,12 @@ Defined in: [src/bloch-sphere.ts:76](https://github.com/qbead/bloch-sphere/blob/
 
 > **render**(): `void`
 
-Defined in: [src/bloch-sphere.ts:114](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere.ts#L114)
+Defined in: [src/bloch-sphere.ts:168](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere.ts#L168)
+
+Renders the scene
+
+This is called automatically in the animation loop unless that
+loop is stopped.
 
 #### Returns
 
@@ -182,7 +215,11 @@ Defined in: [src/bloch-sphere.ts:114](https://github.com/qbead/bloch-sphere/blob
 
 > **resize**(`width`?, `height`?): `void`
 
-Defined in: [src/bloch-sphere.ts:103](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere.ts#L103)
+Defined in: [src/bloch-sphere.ts:151](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere.ts#L151)
+
+Resizes the widget to fit the parent element
+
+Optionally, you can specify the width and height to resize to.
 
 #### Parameters
 
@@ -201,7 +238,9 @@ Defined in: [src/bloch-sphere.ts:103](https://github.com/qbead/bloch-sphere/blob
 
 > **scale**(`size`): `void`
 
-Defined in: [src/bloch-sphere.ts:84](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere.ts#L84)
+Defined in: [src/bloch-sphere.ts:130](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere.ts#L130)
+
+Rescales the sphere
 
 #### Parameters
 
@@ -219,7 +258,7 @@ Defined in: [src/bloch-sphere.ts:84](https://github.com/qbead/bloch-sphere/blob/
 
 > **setOptions**(`options`?): `void`
 
-Defined in: [src/bloch-sphere.ts:37](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere.ts#L37)
+Defined in: [src/bloch-sphere.ts:72](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere.ts#L72)
 
 #### Parameters
 
@@ -237,7 +276,13 @@ Defined in: [src/bloch-sphere.ts:37](https://github.com/qbead/bloch-sphere/blob/
 
 > **start**(): `void`
 
-Defined in: [src/bloch-sphere.ts:120](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere.ts#L120)
+Defined in: [src/bloch-sphere.ts:181](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere.ts#L181)
+
+Starts the animation loop
+
+Automatically started when the widget is attached to a parent element.
+
+This will call the render method automatically.
 
 #### Returns
 
@@ -249,7 +294,11 @@ Defined in: [src/bloch-sphere.ts:120](https://github.com/qbead/bloch-sphere/blob
 
 > **stop**(): `void`
 
-Defined in: [src/bloch-sphere.ts:126](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere.ts#L126)
+Defined in: [src/bloch-sphere.ts:192](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere.ts#L192)
+
+Stops the animation loop
+
+This will stop the render loop
 
 #### Returns
 

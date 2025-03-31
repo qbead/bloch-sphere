@@ -6,7 +6,9 @@
 
 # Class: QubitProjWedge
 
-Defined in: [src/components/qubit-proj-wedge.ts:4](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/qubit-proj-wedge.ts#L4)
+Defined in: [src/components/qubit-proj-wedge.ts:7](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/qubit-proj-wedge.ts#L7)
+
+A wedge which is a quarter of a circle
 
 ## Extends
 
@@ -14,25 +16,25 @@ Defined in: [src/components/qubit-proj-wedge.ts:4](https://github.com/qbead/bloc
 
 ## Constructors
 
-### new QubitProjWedge()
+### Constructor
 
-> **new QubitProjWedge**(): [`QubitProjWedge`](QubitProjWedge.md)
+> **new QubitProjWedge**(): `QubitProjWedge`
 
-Defined in: [src/components/qubit-proj-wedge.ts:5](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/qubit-proj-wedge.ts#L5)
+Defined in: [src/components/qubit-proj-wedge.ts:8](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/qubit-proj-wedge.ts#L8)
 
 #### Returns
 
-[`QubitProjWedge`](QubitProjWedge.md)
+`QubitProjWedge`
 
 #### Overrides
 
-[`Wedge`](Wedge.md).[`constructor`](Wedge.md#constructors)
+[`Wedge`](Wedge.md).[`constructor`](Wedge.md#constructor)
 
 ## Properties
 
 | Property | Modifier | Type | Default value | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`Wedge`](Wedge.md).[`_color`](Wedge.md#_color) | [src/components/component.ts:3](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/component.ts#L3) |
+| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`Wedge`](Wedge.md).[`_color`](Wedge.md#_color) | [src/components/component.ts:7](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/component.ts#L7) |
 | <a id="animations"></a> `animations` | `public` | `AnimationClip`[] | `[]` | Array with object's animation clips. | [`Wedge`](Wedge.md).[`animations`](Wedge.md#animations) | node\_modules/@types/three/src/core/Object3D.d.ts:266 |
 | <a id="castshadow"></a> `castShadow` | `public` | `boolean` | `false` | Whether the object gets rendered into shadow map. | [`Wedge`](Wedge.md).[`castShadow`](Wedge.md#castshadow) | node\_modules/@types/three/src/core/Object3D.d.ts:238 |
 | <a id="children"></a> `children` | `public` | `Object3D`\<`Object3DEventMap`\>[] | `[]` | Array with object's children. **See** THREE.Object3DGroup \| Group for info on manually grouping objects. | [`Wedge`](Wedge.md).[`children`](Wedge.md#children) | node\_modules/@types/three/src/core/Object3D.d.ts:145 |
@@ -61,7 +63,7 @@ Defined in: [src/components/qubit-proj-wedge.ts:5](https://github.com/qbead/bloc
 | <a id="scale"></a> `scale` | `readonly` | `Vector3` | `new THREE.Vector3( 1, 1, 1 )` | The object's local scale. | [`Wedge`](Wedge.md).[`scale`](Wedge.md#scale) | node\_modules/@types/three/src/core/Object3D.d.ts:175 |
 | <a id="static"></a> `static?` | `public` | `boolean` | `undefined` | - | [`Wedge`](Wedge.md).[`static`](Wedge.md#static) | node\_modules/@types/three/src/renderers/common/Backend.d.ts:11 |
 | <a id="type"></a> `type` | `readonly` | `string` | `Object3D` | A Read-only _string_ to check `this` object type. **Remarks** This can be used to find a specific type of Object3D in a scene. Sub-classes will update this value. | [`Wedge`](Wedge.md).[`type`](Wedge.md#type) | node\_modules/@types/three/src/core/Object3D.d.ts:130 |
-| <a id="up"></a> `up` | `public` | `Vector3` | Object3D.DEFAULT_UP - that is `(0, 1, 0)`. | This is used by the [lookAt](QubitProjWedge.md#lookat) method, for example, to determine the orientation of the result. | [`Wedge`](Wedge.md).[`up`](Wedge.md#up) | node\_modules/@types/three/src/core/Object3D.d.ts:151 |
+| <a id="up"></a> `up` | `public` | `Vector3` | Object3D.DEFAULT_UP - that is `(0, 1, 0)`. | This is used by the [lookAt](#lookat) method, for example, to determine the orientation of the result. | [`Wedge`](Wedge.md).[`up`](Wedge.md#up) | node\_modules/@types/three/src/core/Object3D.d.ts:151 |
 | <a id="userdata"></a> `userData` | `public` | `Record`\<`string`, `any`\> | `undefined` | An object that can be used to store custom data about the Object3D. **Remarks** It should not hold references to _functions_ as these **will not** be cloned. **Default** `{}` | [`Wedge`](Wedge.md).[`userData`](Wedge.md#userdata) | node\_modules/@types/three/src/core/Object3D.d.ts:273 |
 | <a id="uuid"></a> `uuid` | `public` | `string` | `undefined` | [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier) of this object instance. **Remarks** This gets automatically assigned and shouldn't be edited. | [`Wedge`](Wedge.md).[`uuid`](Wedge.md#uuid) | node\_modules/@types/three/src/core/Object3D.d.ts:115 |
 | <a id="visible"></a> `visible` | `public` | `boolean` | `true` | Object gets rendered if `true`. | [`Wedge`](Wedge.md).[`visible`](Wedge.md#visible) | node\_modules/@types/three/src/core/Object3D.d.ts:232 |
@@ -75,25 +77,29 @@ Defined in: [src/components/qubit-proj-wedge.ts:5](https://github.com/qbead/bloc
 
 #### Get Signature
 
-> **get** **color**(): `number` \| `Color`
+> **get** **color**(): `ColorRepresentation`
 
-Defined in: [src/components/component.ts:14](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/component.ts#L14)
+Defined in: [src/components/component.ts:21](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/component.ts#L21)
+
+Get color of the component
 
 ##### Returns
 
-`number` \| `Color`
+`ColorRepresentation`
 
 #### Set Signature
 
 > **set** **color**(`color`): `void`
 
-Defined in: [src/components/component.ts:18](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/component.ts#L18)
+Defined in: [src/components/component.ts:28](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/component.ts#L28)
+
+Set color of the component
 
 ##### Parameters
 
 | Parameter | Type |
 | ------ | ------ |
-| `color` | `number` \| `Color` |
+| `color` | `ColorRepresentation` |
 
 ##### Returns
 
@@ -126,11 +132,11 @@ Adds another Object3D as child of this Object3D.
 #### Remarks
 
 An arbitrary number of objects may be added
-Any current parent on an [object](QubitDisplay.md#object) passed in here will be removed, since an Object3D can have at most one parent.
+Any current parent on an [object](QubitDisplay.md#add-1) passed in here will be removed, since an Object3D can have at most one parent.
 
 #### See
 
- - [attach](QubitProjWedge.md#attach)
+ - [attach](#attach)
  - THREE.Group \| Group for info on manually grouping objects.
 
 #### Inherited from
@@ -158,7 +164,7 @@ Adds a listener to an event type.
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `type` | `T` | The type of event to listen to. |
-| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, [`QubitProjWedge`](QubitProjWedge.md)\> | The function that gets called when the event is fired. |
+| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, `QubitProjWedge`\> | The function that gets called when the event is fired. |
 
 #### Returns
 
@@ -242,7 +248,7 @@ Note: This method does not support scene graphs having non-uniformly-scaled node
 
 #### See
 
-[add](QubitProjWedge.md#add)
+[add](#add)
 
 #### Inherited from
 
@@ -355,7 +361,7 @@ Fire an event type.
 
 > **follow**(`v`): `void`
 
-Defined in: [src/components/qubit-proj-wedge.ts:9](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/qubit-proj-wedge.ts#L9)
+Defined in: [src/components/qubit-proj-wedge.ts:12](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/qubit-proj-wedge.ts#L12)
 
 #### Parameters
 
@@ -393,7 +399,7 @@ Note that ids are assigned in chronological order: 1, 2, 3, ..., incrementing by
 
 #### See
 
-[id](QubitDisplay.md#id-1)
+[id](QubitDisplay.md#getobjectbyid-1)
 
 #### Inherited from
 
@@ -598,7 +604,7 @@ Checks if listener is added to an event type.
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `type` | `T` | The type of event to listen to. |
-| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, [`QubitProjWedge`](QubitProjWedge.md)\> | The function that gets called when the event is fired. |
+| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, `QubitProjWedge`\> | The function that gets called when the event is fired. |
 
 #### Returns
 
@@ -932,7 +938,7 @@ Removes a listener from an event type.
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `type` | `T` | The type of the listener that gets removed. |
-| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, [`QubitProjWedge`](QubitProjWedge.md)\> | The listener function that gets removed. |
+| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, `QubitProjWedge`\> | The listener function that gets removed. |
 
 #### Returns
 
@@ -1099,7 +1105,7 @@ Rotates the object around _z_ axis in local space.
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:398
 
-Calls THREE.Quaternion.setFromAxisAngle \| setFromAxisAngle([axis](QubitDisplay.md#axis-2), [angle](QubitDisplay.md#angle-5)) on the [.quaternion](QubitDisplay.md#quaternion).
+Calls THREE.Quaternion.setFromAxisAngle \| setFromAxisAngle([axis](QubitDisplay.md#setrotationfromaxisangle-1), [angle](QubitDisplay.md#setrotationfromaxisangle-1)) on the [.quaternion](QubitDisplay.md#quaternion).
 
 #### Parameters
 
@@ -1124,7 +1130,7 @@ Calls THREE.Quaternion.setFromAxisAngle \| setFromAxisAngle([axis](QubitDisplay.
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:404
 
-Calls THREE.Quaternion.setFromEuler \| setFromEuler([euler](QubitDisplay.md#euler)) on the [.quaternion](QubitDisplay.md#quaternion).
+Calls THREE.Quaternion.setFromEuler \| setFromEuler([euler](QubitDisplay.md#setrotationfromeuler-1)) on the [.quaternion](QubitDisplay.md#quaternion).
 
 #### Parameters
 
@@ -1148,7 +1154,7 @@ Calls THREE.Quaternion.setFromEuler \| setFromEuler([euler](QubitDisplay.md#eule
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:411
 
-Calls THREE.Quaternion.setFromRotationMatrix \| setFromRotationMatrix([m](QubitDisplay.md#m)) on the [.quaternion](QubitDisplay.md#quaternion).
+Calls THREE.Quaternion.setFromRotationMatrix \| setFromRotationMatrix([m](QubitDisplay.md#setrotationfrommatrix-1)) on the [.quaternion](QubitDisplay.md#quaternion).
 
 #### Parameters
 
@@ -1253,7 +1259,7 @@ The axis is assumed to be normalized.
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:466
 
-Translates object along x axis in object space by [distance](QubitDisplay.md#distance-1) units.
+Translates object along x axis in object space by [distance](QubitDisplay.md#translatex-1) units.
 
 #### Parameters
 
@@ -1277,7 +1283,7 @@ Translates object along x axis in object space by [distance](QubitDisplay.md#dis
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:472
 
-Translates object along _y_ axis in object space by [distance](QubitDisplay.md#distance-2) units.
+Translates object along _y_ axis in object space by [distance](QubitDisplay.md#translatey-1) units.
 
 #### Parameters
 
@@ -1301,7 +1307,7 @@ Translates object along _y_ axis in object space by [distance](QubitDisplay.md#d
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:478
 
-Translates object along _z_ axis in object space by [distance](QubitDisplay.md#distance-3) units.
+Translates object along _z_ axis in object space by [distance](QubitDisplay.md#translatez-1) units.
 
 #### Parameters
 
@@ -1429,7 +1435,7 @@ Updates local transform.
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:645
 
 Updates the global transform of the object.
-And will update the object descendants if [.matrixWorldNeedsUpdate](QubitDisplay.md#matrixworldneedsupdate) is set to true or if the [force](QubitDisplay.md#force) parameter is set to `true`.
+And will update the object descendants if [.matrixWorldNeedsUpdate](QubitDisplay.md#matrixworldneedsupdate) is set to true or if the [force](QubitDisplay.md#updatematrixworld-1) parameter is set to `true`.
 
 #### Parameters
 

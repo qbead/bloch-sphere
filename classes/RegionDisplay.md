@@ -2,23 +2,26 @@
 
 ***
 
-[@qbead/bloch-sphere](../index.md) / QubitDisplay
+[@qbead/bloch-sphere](../index.md) / RegionDisplay
 
-# Class: QubitDisplay
+# Class: RegionDisplay
 
-Defined in: [src/components/qubit-display.ts:23](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/qubit-display.ts#L23)
+Defined in: [src/components/region-display.ts:23](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/region-display.ts#L23)
 
-A display for a qubit state on the Bloch sphere
+A display for a region on the Bloch sphere
 
-This component shows the arrow, angle indicators, and a label.
+This component shows a spherical polygon on the Bloch sphere.
 
 ## Example
 
 ```ts
-const q = new BlochVector(0, 0, 1)
-const qubit = new QubitDisplay(q)
-qubit.color = 0xe1b53e
-blochSphere.add(qubit)
+const region = new RegionDisplay([
+  BlochVector.fromAngles(0, 0),
+  BlochVector.fromAngles(1, 0.1),
+  BlochVector.fromAngles(1, 1),
+])
+region.color = 0xe1b53e
+blochSphere.add(region)
 ```
 
 ## Extends
@@ -29,19 +32,19 @@ blochSphere.add(qubit)
 
 ### Constructor
 
-> **new QubitDisplay**(`q`?): `QubitDisplay`
+> **new RegionDisplay**(`region`?): `RegionDisplay`
 
-Defined in: [src/components/qubit-display.ts:29](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/qubit-display.ts#L29)
+Defined in: [src/components/region-display.ts:25](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/region-display.ts#L25)
 
 #### Parameters
 
 | Parameter | Type |
 | ------ | ------ |
-| `q`? | [`BlochVector`](BlochVector.md) |
+| `region`? | [`BlochVector`](BlochVector.md)[] |
 
 #### Returns
 
-`QubitDisplay`
+`RegionDisplay`
 
 #### Overrides
 
@@ -52,14 +55,12 @@ Defined in: [src/components/qubit-display.ts:29](https://github.com/qbead/bloch-
 | Property | Modifier | Type | Default value | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`_color`](BaseComponent.md#_color) | [src/components/component.ts:7](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/component.ts#L7) |
-| <a id="angleindicators"></a> `angleIndicators` | `public` | [`AngleIndicators`](AngleIndicators.md) | `undefined` | - | - | [src/components/qubit-display.ts:26](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/qubit-display.ts#L26) |
 | <a id="animations"></a> `animations` | `public` | `AnimationClip`[] | `[]` | Array with object's animation clips. | [`BaseComponent`](BaseComponent.md).[`animations`](BaseComponent.md#animations) | node\_modules/@types/three/src/core/Object3D.d.ts:266 |
-| <a id="arrow"></a> `arrow` | `public` | [`QubitArrow`](QubitArrow.md) | `undefined` | - | - | [src/components/qubit-display.ts:24](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/qubit-display.ts#L24) |
 | <a id="castshadow"></a> `castShadow` | `public` | `boolean` | `false` | Whether the object gets rendered into shadow map. | [`BaseComponent`](BaseComponent.md).[`castShadow`](BaseComponent.md#castshadow) | node\_modules/@types/three/src/core/Object3D.d.ts:238 |
 | <a id="children"></a> `children` | `public` | `Object3D`\<`Object3DEventMap`\>[] | `[]` | Array with object's children. **See** THREE.Object3DGroup \| Group for info on manually grouping objects. | [`BaseComponent`](BaseComponent.md).[`children`](BaseComponent.md#children) | node\_modules/@types/three/src/core/Object3D.d.ts:145 |
 | <a id="count"></a> `count?` | `public` | `number` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`count`](BaseComponent.md#count) | node\_modules/@types/three/src/renderers/common/Backend.d.ts:7 |
 | <a id="customdepthmaterial"></a> `customDepthMaterial?` | `public` | `Material` | `undefined` | Custom depth material to be used when rendering to the depth map. **Remarks** Can only be used in context of meshes. When shadow-casting with a THREE.DirectionalLight \| DirectionalLight or THREE.SpotLight \| SpotLight, if you are modifying vertex positions in the vertex shader you must specify a customDepthMaterial for proper shadows. | [`BaseComponent`](BaseComponent.md).[`customDepthMaterial`](BaseComponent.md#customdepthmaterial) | node\_modules/@types/three/src/core/Object3D.d.ts:282 |
-| <a id="customdistancematerial"></a> `customDistanceMaterial?` | `public` | `Material` | `undefined` | Same as [customDepthMaterial](#customdepthmaterial), but used with THREE.Object3DPointLight \| PointLight. | [`BaseComponent`](BaseComponent.md).[`customDistanceMaterial`](BaseComponent.md#customdistancematerial) | node\_modules/@types/three/src/core/Object3D.d.ts:288 |
+| <a id="customdistancematerial"></a> `customDistanceMaterial?` | `public` | `Material` | `undefined` | Same as [customDepthMaterial](QubitDisplay.md#customdepthmaterial), but used with THREE.Object3DPointLight \| PointLight. | [`BaseComponent`](BaseComponent.md).[`customDistanceMaterial`](BaseComponent.md#customdistancematerial) | node\_modules/@types/three/src/core/Object3D.d.ts:288 |
 | <a id="frustumculled"></a> `frustumCulled` | `public` | `boolean` | `true` | When this is set, it checks every frame if the object is in the frustum of the camera before rendering the object. If set to `false` the object gets rendered every frame even if it is not in the frustum of the camera. | [`BaseComponent`](BaseComponent.md).[`frustumCulled`](BaseComponent.md#frustumculled) | node\_modules/@types/three/src/core/Object3D.d.ts:251 |
 | <a id="id"></a> `id` | `readonly` | `number` | `undefined` | Unique number for this Object3D instance. **Remarks** Note that ids are assigned in chronological order: 1, 2, 3, ..., incrementing by one for each new object. Expects a `Integer` | [`BaseComponent`](BaseComponent.md).[`id`](BaseComponent.md#id) | node\_modules/@types/three/src/core/Object3D.d.ts:109 |
 | <a id="isobject3d"></a> `isObject3D` | `readonly` | `true` | `true` | Flag to check if a given object is of type Object3D. **Remarks** This is a _constant_ value | [`BaseComponent`](BaseComponent.md).[`isObject3D`](BaseComponent.md#isobject3d) | node\_modules/@types/three/src/core/Object3D.d.ts:102 |
@@ -80,27 +81,37 @@ Defined in: [src/components/qubit-display.ts:29](https://github.com/qbead/bloch-
 | <a id="renderorder"></a> `renderOrder` | `public` | `number` | `0` | This value allows the default rendering order of [scene graph](https://en.wikipedia.org/wiki/Scene_graph) objects to be overridden although opaque and transparent objects remain sorted independently. **Remarks** When this property is set for an instance of Group \| Group, all descendants objects will be sorted and rendered together. Sorting is from lowest to highest renderOrder. | [`BaseComponent`](BaseComponent.md).[`renderOrder`](BaseComponent.md#renderorder) | node\_modules/@types/three/src/core/Object3D.d.ts:260 |
 | <a id="rotation"></a> `rotation` | `readonly` | `Euler` | `new THREE.Euler()` - that is `(0, 0, 0, Euler.DEFAULT_ORDER)`. | Object's local rotation ([Euler angles](https://en.wikipedia.org/wiki/Euler_angles)), in radians. | [`BaseComponent`](BaseComponent.md).[`rotation`](BaseComponent.md#rotation) | node\_modules/@types/three/src/core/Object3D.d.ts:163 |
 | <a id="scale"></a> `scale` | `readonly` | `Vector3` | `new THREE.Vector3( 1, 1, 1 )` | The object's local scale. | [`BaseComponent`](BaseComponent.md).[`scale`](BaseComponent.md#scale) | node\_modules/@types/three/src/core/Object3D.d.ts:175 |
-| <a id="state"></a> `state` | `public` | [`BlochVector`](BlochVector.md) | `undefined` | - | - | [src/components/qubit-display.ts:27](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/qubit-display.ts#L27) |
 | <a id="static"></a> `static?` | `public` | `boolean` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`static`](BaseComponent.md#static) | node\_modules/@types/three/src/renderers/common/Backend.d.ts:11 |
 | <a id="type"></a> `type` | `readonly` | `string` | `Object3D` | A Read-only _string_ to check `this` object type. **Remarks** This can be used to find a specific type of Object3D in a scene. Sub-classes will update this value. | [`BaseComponent`](BaseComponent.md).[`type`](BaseComponent.md#type) | node\_modules/@types/three/src/core/Object3D.d.ts:130 |
 | <a id="up"></a> `up` | `public` | `Vector3` | Object3D.DEFAULT_UP - that is `(0, 1, 0)`. | This is used by the [lookAt](#lookat) method, for example, to determine the orientation of the result. | [`BaseComponent`](BaseComponent.md).[`up`](BaseComponent.md#up) | node\_modules/@types/three/src/core/Object3D.d.ts:151 |
 | <a id="userdata"></a> `userData` | `public` | `Record`\<`string`, `any`\> | `undefined` | An object that can be used to store custom data about the Object3D. **Remarks** It should not hold references to _functions_ as these **will not** be cloned. **Default** `{}` | [`BaseComponent`](BaseComponent.md).[`userData`](BaseComponent.md#userdata) | node\_modules/@types/three/src/core/Object3D.d.ts:273 |
 | <a id="uuid"></a> `uuid` | `public` | `string` | `undefined` | [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier) of this object instance. **Remarks** This gets automatically assigned and shouldn't be edited. | [`BaseComponent`](BaseComponent.md).[`uuid`](BaseComponent.md#uuid) | node\_modules/@types/three/src/core/Object3D.d.ts:115 |
 | <a id="visible"></a> `visible` | `public` | `boolean` | `true` | Object gets rendered if `true`. | [`BaseComponent`](BaseComponent.md).[`visible`](BaseComponent.md#visible) | node\_modules/@types/three/src/core/Object3D.d.ts:232 |
-| <a id="wedge"></a> `wedge` | `public` | [`QubitProjWedge`](QubitProjWedge.md) | `undefined` | - | - | [src/components/qubit-display.ts:25](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/qubit-display.ts#L25) |
-| <a id="default_matrix_auto_update"></a> `DEFAULT_MATRIX_AUTO_UPDATE` | `static` | `boolean` | `true` | The default setting for [matrixAutoUpdate](#matrixautoupdate) for newly created Object3Ds. | [`BaseComponent`](BaseComponent.md).[`DEFAULT_MATRIX_AUTO_UPDATE`](BaseComponent.md#default_matrix_auto_update) | node\_modules/@types/three/src/core/Object3D.d.ts:373 |
-| <a id="default_matrix_world_auto_update"></a> `DEFAULT_MATRIX_WORLD_AUTO_UPDATE` | `static` | `boolean` | `true` | The default setting for [matrixWorldAutoUpdate](#matrixworldautoupdate) for newly created Object3Ds. | [`BaseComponent`](BaseComponent.md).[`DEFAULT_MATRIX_WORLD_AUTO_UPDATE`](BaseComponent.md#default_matrix_world_auto_update) | node\_modules/@types/three/src/core/Object3D.d.ts:379 |
-| <a id="default_up"></a> `DEFAULT_UP` | `static` | `Vector3` | `new THREE.Vector3( 0, 1, 0)` | The default [up](#up) direction for objects, also used as the default position for THREE.DirectionalLight \| DirectionalLight, THREE.HemisphereLight \| HemisphereLight and THREE.Spotlight \| Spotlight (which creates lights shining from the top down). | [`BaseComponent`](BaseComponent.md).[`DEFAULT_UP`](BaseComponent.md#default_up) | node\_modules/@types/three/src/core/Object3D.d.ts:367 |
+| <a id="default_matrix_auto_update"></a> `DEFAULT_MATRIX_AUTO_UPDATE` | `static` | `boolean` | `true` | The default setting for [matrixAutoUpdate](QubitDisplay.md#matrixautoupdate) for newly created Object3Ds. | [`BaseComponent`](BaseComponent.md).[`DEFAULT_MATRIX_AUTO_UPDATE`](BaseComponent.md#default_matrix_auto_update) | node\_modules/@types/three/src/core/Object3D.d.ts:373 |
+| <a id="default_matrix_world_auto_update"></a> `DEFAULT_MATRIX_WORLD_AUTO_UPDATE` | `static` | `boolean` | `true` | The default setting for [matrixWorldAutoUpdate](QubitDisplay.md#matrixworldautoupdate) for newly created Object3Ds. | [`BaseComponent`](BaseComponent.md).[`DEFAULT_MATRIX_WORLD_AUTO_UPDATE`](BaseComponent.md#default_matrix_world_auto_update) | node\_modules/@types/three/src/core/Object3D.d.ts:379 |
+| <a id="default_up"></a> `DEFAULT_UP` | `static` | `Vector3` | `new THREE.Vector3( 0, 1, 0)` | The default [up](QubitDisplay.md#up) direction for objects, also used as the default position for THREE.DirectionalLight \| DirectionalLight, THREE.HemisphereLight \| HemisphereLight and THREE.Spotlight \| Spotlight (which creates lights shining from the top down). | [`BaseComponent`](BaseComponent.md).[`DEFAULT_UP`](BaseComponent.md#default_up) | node\_modules/@types/three/src/core/Object3D.d.ts:367 |
 
 ## Accessors
 
 ### color
 
+#### Get Signature
+
+> **get** **color**(): `ColorRepresentation`
+
+Defined in: [src/components/region-display.ts:41](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/region-display.ts#L41)
+
+Get color of the component
+
+##### Returns
+
+`ColorRepresentation`
+
 #### Set Signature
 
 > **set** **color**(`color`): `void`
 
-Defined in: [src/components/qubit-display.ts:47](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/qubit-display.ts#L47)
+Defined in: [src/components/region-display.ts:46](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/region-display.ts#L46)
 
 Get color of the component
 
@@ -141,7 +152,7 @@ Adds another Object3D as child of this Object3D.
 #### Remarks
 
 An arbitrary number of objects may be added
-Any current parent on an [object](#add-1) passed in here will be removed, since an Object3D can have at most one parent.
+Any current parent on an [object](QubitDisplay.md#add-1) passed in here will be removed, since an Object3D can have at most one parent.
 
 #### See
 
@@ -173,7 +184,7 @@ Adds a listener to an event type.
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `type` | `T` | The type of event to listen to. |
-| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, `QubitDisplay`\> | The function that gets called when the event is fired. |
+| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, `RegionDisplay`\> | The function that gets called when the event is fired. |
 
 #### Returns
 
@@ -390,7 +401,7 @@ Note that ids are assigned in chronological order: 1, 2, 3, ..., incrementing by
 
 #### See
 
-[id](#getobjectbyid-1)
+[id](QubitDisplay.md#getobjectbyid-1)
 
 #### Inherited from
 
@@ -595,7 +606,7 @@ Checks if listener is added to an event type.
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `type` | `T` | The type of event to listen to. |
-| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, `QubitDisplay`\> | The function that gets called when the event is fired. |
+| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, `RegionDisplay`\> | The function that gets called when the event is fired. |
 
 #### Returns
 
@@ -929,7 +940,7 @@ Removes a listener from an event type.
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `type` | `T` | The type of the listener that gets removed. |
-| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, `QubitDisplay`\> | The listener function that gets removed. |
+| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, `RegionDisplay`\> | The listener function that gets removed. |
 
 #### Returns
 
@@ -1090,27 +1101,23 @@ Rotates the object around _z_ axis in local space.
 
 ***
 
-### set()
+### setRegion()
 
-> **set**(`q`, `duration`, `easing`): `any`
+> **setRegion**(`points`): `void`
 
-Defined in: [src/components/qubit-display.ts:61](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/qubit-display.ts#L61)
+Defined in: [src/components/region-display.ts:56](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/region-display.ts#L56)
 
-Set the bloch vector state of the display
-
-Can also be used to animate the state of the qubit.
+Set the region of the display
 
 #### Parameters
 
-| Parameter | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| `q` | [`BlochVector`](BlochVector.md) | `undefined` | The new Bloch vector state to set. |
-| `duration` | `number` | `0` | The duration of the animation (default is 0). |
-| `easing` | `string` | `'quadInOut'` | The easing function to use for the animation (default is 'quadInOut'). |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `points` | [`BlochVector`](BlochVector.md)[] | The bloch vectors that define the region. |
 
 #### Returns
 
-`any`
+`void`
 
 ***
 
@@ -1120,7 +1127,7 @@ Can also be used to animate the state of the qubit.
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:398
 
-Calls THREE.Quaternion.setFromAxisAngle \| setFromAxisAngle([axis](#setrotationfromaxisangle-1), [angle](#setrotationfromaxisangle-1)) on the [.quaternion](#quaternion).
+Calls THREE.Quaternion.setFromAxisAngle \| setFromAxisAngle([axis](QubitDisplay.md#setrotationfromaxisangle-1), [angle](QubitDisplay.md#setrotationfromaxisangle-1)) on the [.quaternion](QubitDisplay.md#quaternion).
 
 #### Parameters
 
@@ -1145,7 +1152,7 @@ Calls THREE.Quaternion.setFromAxisAngle \| setFromAxisAngle([axis](#setrotationf
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:404
 
-Calls THREE.Quaternion.setFromEuler \| setFromEuler([euler](#setrotationfromeuler-1)) on the [.quaternion](#quaternion).
+Calls THREE.Quaternion.setFromEuler \| setFromEuler([euler](QubitDisplay.md#setrotationfromeuler-1)) on the [.quaternion](QubitDisplay.md#quaternion).
 
 #### Parameters
 
@@ -1169,7 +1176,7 @@ Calls THREE.Quaternion.setFromEuler \| setFromEuler([euler](#setrotationfromeule
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:411
 
-Calls THREE.Quaternion.setFromRotationMatrix \| setFromRotationMatrix([m](#setrotationfrommatrix-1)) on the [.quaternion](#quaternion).
+Calls THREE.Quaternion.setFromRotationMatrix \| setFromRotationMatrix([m](QubitDisplay.md#setrotationfrommatrix-1)) on the [.quaternion](QubitDisplay.md#quaternion).
 
 #### Parameters
 
@@ -1197,7 +1204,7 @@ Note that this assumes that the upper 3x3 of m is a pure rotation matrix (i.e, u
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:417
 
-Copy the given THREE.Quaternion \| Quaternion into [.quaternion](#quaternion).
+Copy the given THREE.Quaternion \| Quaternion into [.quaternion](QubitDisplay.md#quaternion).
 
 #### Parameters
 
@@ -1274,7 +1281,7 @@ The axis is assumed to be normalized.
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:466
 
-Translates object along x axis in object space by [distance](#translatex-1) units.
+Translates object along x axis in object space by [distance](QubitDisplay.md#translatex-1) units.
 
 #### Parameters
 
@@ -1298,7 +1305,7 @@ Translates object along x axis in object space by [distance](#translatex-1) unit
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:472
 
-Translates object along _y_ axis in object space by [distance](#translatey-1) units.
+Translates object along _y_ axis in object space by [distance](QubitDisplay.md#translatey-1) units.
 
 #### Parameters
 
@@ -1322,7 +1329,7 @@ Translates object along _y_ axis in object space by [distance](#translatey-1) un
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:478
 
-Translates object along _z_ axis in object space by [distance](#translatez-1) units.
+Translates object along _z_ axis in object space by [distance](QubitDisplay.md#translatez-1) units.
 
 #### Parameters
 
@@ -1450,13 +1457,13 @@ Updates local transform.
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:645
 
 Updates the global transform of the object.
-And will update the object descendants if [.matrixWorldNeedsUpdate](#matrixworldneedsupdate) is set to true or if the [force](#updatematrixworld-1) parameter is set to `true`.
+And will update the object descendants if [.matrixWorldNeedsUpdate](QubitDisplay.md#matrixworldneedsupdate) is set to true or if the [force](QubitDisplay.md#updatematrixworld-1) parameter is set to `true`.
 
 #### Parameters
 
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
-| `force`? | `boolean` | A boolean that can be used to bypass [.matrixWorldAutoUpdate](#matrixworldautoupdate), to recalculate the world matrix of the object and descendants on the current frame. Useful if you cannot wait for the renderer to update it on the next frame, assuming [.matrixWorldAutoUpdate](#matrixworldautoupdate) set to `true`. |
+| `force`? | `boolean` | A boolean that can be used to bypass [.matrixWorldAutoUpdate](QubitDisplay.md#matrixworldautoupdate), to recalculate the world matrix of the object and descendants on the current frame. Useful if you cannot wait for the renderer to update it on the next frame, assuming [.matrixWorldAutoUpdate](QubitDisplay.md#matrixworldautoupdate) set to `true`. |
 
 #### Returns
 

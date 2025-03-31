@@ -6,7 +6,23 @@
 
 # Class: PathDisplay
 
-Defined in: [src/components/path-display.ts:67](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/path-display.ts#L67)
+Defined in: [src/components/path-display.ts:84](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/path-display.ts#L84)
+
+A display for a path on the Bloch sphere
+
+The path is defined by a series of Bloch vectors.
+
+## Example
+
+```ts
+const path = new PathDisplay([
+  BlochVector.fromAngles(0, 0),
+  BlochVector.fromAngles(1, 0.1),
+  BlochVector.fromAngles(1, 1),
+])
+path.color = 0xc33175
+blochSphere.add(path)
+```
 
 ## Extends
 
@@ -14,11 +30,11 @@ Defined in: [src/components/path-display.ts:67](https://github.com/qbead/bloch-s
 
 ## Constructors
 
-### new PathDisplay()
+### Constructor
 
-> **new PathDisplay**(`path`?): [`PathDisplay`](PathDisplay.md)
+> **new PathDisplay**(`path`?): `PathDisplay`
 
-Defined in: [src/components/path-display.ts:68](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/path-display.ts#L68)
+Defined in: [src/components/path-display.ts:85](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/path-display.ts#L85)
 
 #### Parameters
 
@@ -28,17 +44,17 @@ Defined in: [src/components/path-display.ts:68](https://github.com/qbead/bloch-s
 
 #### Returns
 
-[`PathDisplay`](PathDisplay.md)
+`PathDisplay`
 
 #### Overrides
 
-[`BaseComponent`](BaseComponent.md).[`constructor`](BaseComponent.md#constructors)
+[`BaseComponent`](BaseComponent.md).[`constructor`](BaseComponent.md#constructor)
 
 ## Properties
 
 | Property | Modifier | Type | Default value | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`_color`](BaseComponent.md#_color) | [src/components/component.ts:3](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/component.ts#L3) |
+| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`_color`](BaseComponent.md#_color) | [src/components/component.ts:7](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/component.ts#L7) |
 | <a id="animations"></a> `animations` | `public` | `AnimationClip`[] | `[]` | Array with object's animation clips. | [`BaseComponent`](BaseComponent.md).[`animations`](BaseComponent.md#animations) | node\_modules/@types/three/src/core/Object3D.d.ts:266 |
 | <a id="castshadow"></a> `castShadow` | `public` | `boolean` | `false` | Whether the object gets rendered into shadow map. | [`BaseComponent`](BaseComponent.md).[`castShadow`](BaseComponent.md#castshadow) | node\_modules/@types/three/src/core/Object3D.d.ts:238 |
 | <a id="children"></a> `children` | `public` | `Object3D`\<`Object3DEventMap`\>[] | `[]` | Array with object's children. **See** THREE.Object3DGroup \| Group for info on manually grouping objects. | [`BaseComponent`](BaseComponent.md).[`children`](BaseComponent.md#children) | node\_modules/@types/three/src/core/Object3D.d.ts:145 |
@@ -55,7 +71,7 @@ Defined in: [src/components/path-display.ts:68](https://github.com/qbead/bloch-s
 | <a id="matrixworldautoupdate"></a> `matrixWorldAutoUpdate` | `public` | `boolean` | DEFAULT_MATRIX_WORLD_AUTO_UPDATE - that is `(true)`. | If set, then the renderer checks every frame if the object and its children need matrix updates. When it isn't, then you have to maintain all matrices in the object and its children yourself. | [`BaseComponent`](BaseComponent.md).[`matrixWorldAutoUpdate`](BaseComponent.md#matrixworldautoupdate) | node\_modules/@types/three/src/core/Object3D.d.ts:212 |
 | <a id="matrixworldneedsupdate"></a> `matrixWorldNeedsUpdate` | `public` | `boolean` | `false` | When this is set, it calculates the matrixWorld in that frame and resets this property to false. | [`BaseComponent`](BaseComponent.md).[`matrixWorldNeedsUpdate`](BaseComponent.md#matrixworldneedsupdate) | node\_modules/@types/three/src/core/Object3D.d.ts:218 |
 | <a id="modelviewmatrix"></a> `modelViewMatrix` | `readonly` | `Matrix4` | `new THREE.Matrix4()` | - | [`BaseComponent`](BaseComponent.md).[`modelViewMatrix`](BaseComponent.md#modelviewmatrix) | node\_modules/@types/three/src/core/Object3D.d.ts:180 |
-| <a id="name"></a> `name` | `public` | `string` | `""` | Optional name of the object **Remarks** _(doesn't need to be unique)_. | [`BaseComponent`](BaseComponent.md).[`name`](BaseComponent.md#name-1) | node\_modules/@types/three/src/core/Object3D.d.ts:122 |
+| <a id="name"></a> `name` | `public` | `string` | `""` | Optional name of the object **Remarks** _(doesn't need to be unique)_. | [`BaseComponent`](BaseComponent.md).[`name`](BaseComponent.md#name) | node\_modules/@types/three/src/core/Object3D.d.ts:122 |
 | <a id="normalmatrix"></a> `normalMatrix` | `readonly` | `Matrix3` | `new THREE.Matrix3()` | - | [`BaseComponent`](BaseComponent.md).[`normalMatrix`](BaseComponent.md#normalmatrix) | node\_modules/@types/three/src/core/Object3D.d.ts:185 |
 | <a id="occlusiontest"></a> `occlusionTest?` | `public` | `boolean` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`occlusionTest`](BaseComponent.md#occlusiontest) | node\_modules/@types/three/src/renderers/common/Backend.d.ts:9 |
 | <a id="parent"></a> `parent` | `public` | `null` \| `Object3D`\<`Object3DEventMap`\> | `null` | Object's parent in the [scene graph](https://en.wikipedia.org/wiki/Scene_graph). **Remarks** An object can have at most one parent. | [`BaseComponent`](BaseComponent.md).[`parent`](BaseComponent.md#parent) | node\_modules/@types/three/src/core/Object3D.d.ts:137 |
@@ -67,7 +83,7 @@ Defined in: [src/components/path-display.ts:68](https://github.com/qbead/bloch-s
 | <a id="scale"></a> `scale` | `readonly` | `Vector3` | `new THREE.Vector3( 1, 1, 1 )` | The object's local scale. | [`BaseComponent`](BaseComponent.md).[`scale`](BaseComponent.md#scale) | node\_modules/@types/three/src/core/Object3D.d.ts:175 |
 | <a id="static"></a> `static?` | `public` | `boolean` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`static`](BaseComponent.md#static) | node\_modules/@types/three/src/renderers/common/Backend.d.ts:11 |
 | <a id="type"></a> `type` | `readonly` | `string` | `Object3D` | A Read-only _string_ to check `this` object type. **Remarks** This can be used to find a specific type of Object3D in a scene. Sub-classes will update this value. | [`BaseComponent`](BaseComponent.md).[`type`](BaseComponent.md#type) | node\_modules/@types/three/src/core/Object3D.d.ts:130 |
-| <a id="up"></a> `up` | `public` | `Vector3` | Object3D.DEFAULT_UP - that is `(0, 1, 0)`. | This is used by the [lookAt](PathDisplay.md#lookat) method, for example, to determine the orientation of the result. | [`BaseComponent`](BaseComponent.md).[`up`](BaseComponent.md#up) | node\_modules/@types/three/src/core/Object3D.d.ts:151 |
+| <a id="up"></a> `up` | `public` | `Vector3` | Object3D.DEFAULT_UP - that is `(0, 1, 0)`. | This is used by the [lookAt](#lookat) method, for example, to determine the orientation of the result. | [`BaseComponent`](BaseComponent.md).[`up`](BaseComponent.md#up) | node\_modules/@types/three/src/core/Object3D.d.ts:151 |
 | <a id="userdata"></a> `userData` | `public` | `Record`\<`string`, `any`\> | `undefined` | An object that can be used to store custom data about the Object3D. **Remarks** It should not hold references to _functions_ as these **will not** be cloned. **Default** `{}` | [`BaseComponent`](BaseComponent.md).[`userData`](BaseComponent.md#userdata) | node\_modules/@types/three/src/core/Object3D.d.ts:273 |
 | <a id="uuid"></a> `uuid` | `public` | `string` | `undefined` | [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier) of this object instance. **Remarks** This gets automatically assigned and shouldn't be edited. | [`BaseComponent`](BaseComponent.md).[`uuid`](BaseComponent.md#uuid) | node\_modules/@types/three/src/core/Object3D.d.ts:115 |
 | <a id="visible"></a> `visible` | `public` | `boolean` | `true` | Object gets rendered if `true`. | [`BaseComponent`](BaseComponent.md).[`visible`](BaseComponent.md#visible) | node\_modules/@types/three/src/core/Object3D.d.ts:232 |
@@ -81,25 +97,29 @@ Defined in: [src/components/path-display.ts:68](https://github.com/qbead/bloch-s
 
 #### Get Signature
 
-> **get** **color**(): `number` \| `Color`
+> **get** **color**(): `ColorRepresentation`
 
-Defined in: [src/components/component.ts:14](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/component.ts#L14)
+Defined in: [src/components/component.ts:21](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/component.ts#L21)
+
+Get color of the component
 
 ##### Returns
 
-`number` \| `Color`
+`ColorRepresentation`
 
 #### Set Signature
 
 > **set** **color**(`color`): `void`
 
-Defined in: [src/components/component.ts:18](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/component.ts#L18)
+Defined in: [src/components/component.ts:28](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/component.ts#L28)
+
+Set color of the component
 
 ##### Parameters
 
 | Parameter | Type |
 | ------ | ------ |
-| `color` | `number` \| `Color` |
+| `color` | `ColorRepresentation` |
 
 ##### Returns
 
@@ -132,11 +152,11 @@ Adds another Object3D as child of this Object3D.
 #### Remarks
 
 An arbitrary number of objects may be added
-Any current parent on an [object](QubitDisplay.md#object) passed in here will be removed, since an Object3D can have at most one parent.
+Any current parent on an [object](QubitDisplay.md#add-1) passed in here will be removed, since an Object3D can have at most one parent.
 
 #### See
 
- - [attach](PathDisplay.md#attach)
+ - [attach](#attach)
  - THREE.Group \| Group for info on manually grouping objects.
 
 #### Inherited from
@@ -164,7 +184,7 @@ Adds a listener to an event type.
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `type` | `T` | The type of event to listen to. |
-| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, [`PathDisplay`](PathDisplay.md)\> | The function that gets called when the event is fired. |
+| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, `PathDisplay`\> | The function that gets called when the event is fired. |
 
 #### Returns
 
@@ -248,7 +268,7 @@ Note: This method does not support scene graphs having non-uniformly-scaled node
 
 #### See
 
-[add](PathDisplay.md#add)
+[add](#add)
 
 #### Inherited from
 
@@ -381,7 +401,7 @@ Note that ids are assigned in chronological order: 1, 2, 3, ..., incrementing by
 
 #### See
 
-[id](QubitDisplay.md#id-1)
+[id](QubitDisplay.md#getobjectbyid-1)
 
 #### Inherited from
 
@@ -586,7 +606,7 @@ Checks if listener is added to an event type.
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `type` | `T` | The type of event to listen to. |
-| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, [`PathDisplay`](PathDisplay.md)\> | The function that gets called when the event is fired. |
+| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, `PathDisplay`\> | The function that gets called when the event is fired. |
 
 #### Returns
 
@@ -920,7 +940,7 @@ Removes a listener from an event type.
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `type` | `T` | The type of the listener that gets removed. |
-| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, [`PathDisplay`](PathDisplay.md)\> | The listener function that gets removed. |
+| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, `PathDisplay`\> | The listener function that gets removed. |
 
 #### Returns
 
@@ -1085,7 +1105,7 @@ Rotates the object around _z_ axis in local space.
 
 > **set**(`vertices`): `void`
 
-Defined in: [src/components/path-display.ts:76](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/path-display.ts#L76)
+Defined in: [src/components/path-display.ts:94](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/path-display.ts#L94)
 
 #### Parameters
 
@@ -1105,7 +1125,7 @@ Defined in: [src/components/path-display.ts:76](https://github.com/qbead/bloch-s
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:398
 
-Calls THREE.Quaternion.setFromAxisAngle \| setFromAxisAngle([axis](QubitDisplay.md#axis-2), [angle](QubitDisplay.md#angle-5)) on the [.quaternion](QubitDisplay.md#quaternion).
+Calls THREE.Quaternion.setFromAxisAngle \| setFromAxisAngle([axis](QubitDisplay.md#setrotationfromaxisangle-1), [angle](QubitDisplay.md#setrotationfromaxisangle-1)) on the [.quaternion](QubitDisplay.md#quaternion).
 
 #### Parameters
 
@@ -1130,7 +1150,7 @@ Calls THREE.Quaternion.setFromAxisAngle \| setFromAxisAngle([axis](QubitDisplay.
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:404
 
-Calls THREE.Quaternion.setFromEuler \| setFromEuler([euler](QubitDisplay.md#euler)) on the [.quaternion](QubitDisplay.md#quaternion).
+Calls THREE.Quaternion.setFromEuler \| setFromEuler([euler](QubitDisplay.md#setrotationfromeuler-1)) on the [.quaternion](QubitDisplay.md#quaternion).
 
 #### Parameters
 
@@ -1154,7 +1174,7 @@ Calls THREE.Quaternion.setFromEuler \| setFromEuler([euler](QubitDisplay.md#eule
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:411
 
-Calls THREE.Quaternion.setFromRotationMatrix \| setFromRotationMatrix([m](QubitDisplay.md#m)) on the [.quaternion](QubitDisplay.md#quaternion).
+Calls THREE.Quaternion.setFromRotationMatrix \| setFromRotationMatrix([m](QubitDisplay.md#setrotationfrommatrix-1)) on the [.quaternion](QubitDisplay.md#quaternion).
 
 #### Parameters
 
@@ -1259,7 +1279,7 @@ The axis is assumed to be normalized.
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:466
 
-Translates object along x axis in object space by [distance](QubitDisplay.md#distance-1) units.
+Translates object along x axis in object space by [distance](QubitDisplay.md#translatex-1) units.
 
 #### Parameters
 
@@ -1283,7 +1303,7 @@ Translates object along x axis in object space by [distance](QubitDisplay.md#dis
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:472
 
-Translates object along _y_ axis in object space by [distance](QubitDisplay.md#distance-2) units.
+Translates object along _y_ axis in object space by [distance](QubitDisplay.md#translatey-1) units.
 
 #### Parameters
 
@@ -1307,7 +1327,7 @@ Translates object along _y_ axis in object space by [distance](QubitDisplay.md#d
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:478
 
-Translates object along _z_ axis in object space by [distance](QubitDisplay.md#distance-3) units.
+Translates object along _z_ axis in object space by [distance](QubitDisplay.md#translatez-1) units.
 
 #### Parameters
 
@@ -1435,7 +1455,7 @@ Updates local transform.
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:645
 
 Updates the global transform of the object.
-And will update the object descendants if [.matrixWorldNeedsUpdate](QubitDisplay.md#matrixworldneedsupdate) is set to true or if the [force](QubitDisplay.md#force) parameter is set to `true`.
+And will update the object descendants if [.matrixWorldNeedsUpdate](QubitDisplay.md#matrixworldneedsupdate) is set to true or if the [force](QubitDisplay.md#updatematrixworld-1) parameter is set to `true`.
 
 #### Parameters
 

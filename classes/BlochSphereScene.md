@@ -6,7 +6,9 @@
 
 # Class: BlochSphereScene
 
-Defined in: [src/bloch-sphere-scene.ts:7](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere-scene.ts#L7)
+Defined in: [src/bloch-sphere-scene.ts:16](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere-scene.ts#L16)
+
+A scene for the Bloch sphere which extends the THREE.Scene class
 
 ## Extends
 
@@ -14,15 +16,21 @@ Defined in: [src/bloch-sphere-scene.ts:7](https://github.com/qbead/bloch-sphere/
 
 ## Constructors
 
-### new BlochSphereScene()
+### Constructor
 
-> **new BlochSphereScene**(): [`BlochSphereScene`](BlochSphereScene.md)
+> **new BlochSphereScene**(`options`?): `BlochSphereScene`
 
-Defined in: [src/bloch-sphere-scene.ts:15](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere-scene.ts#L15)
+Defined in: [src/bloch-sphere-scene.ts:23](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere-scene.ts#L23)
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `options`? | `Partial`\<\{ `backgroundColor`: `Color`; `gridColor`: `Color`; `gridDivisions`: `number`; `sphereSkinColor`: `Color`; `sphereSkinOpacity`: `number`; \}\> |
 
 #### Returns
 
-[`BlochSphereScene`](BlochSphereScene.md)
+`BlochSphereScene`
 
 #### Overrides
 
@@ -33,7 +41,7 @@ Defined in: [src/bloch-sphere-scene.ts:15](https://github.com/qbead/bloch-sphere
 | Property | Modifier | Type | Default value | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | <a id="animations"></a> `animations` | `public` | `AnimationClip`[] | `[]` | Array with object's animation clips. | `THREE.Scene.animations` | node\_modules/@types/three/src/core/Object3D.d.ts:266 |
-| <a id="axes"></a> `axes` | `public` | `Group` | `undefined` | - | - | [src/bloch-sphere-scene.ts:10](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere-scene.ts#L10) |
+| <a id="axes"></a> `axes` | `public` | `Group` | `undefined` | - | - | [src/bloch-sphere-scene.ts:19](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere-scene.ts#L19) |
 | <a id="background"></a> `background` | `public` | `null` \| `Color` \| `Texture` \| `CubeTexture` | `null` | Defines the background of the scene. **Remarks** Valid inputs are: - A THREE.Color \| Color for defining a uniform colored background. - A THREE.Texture \| Texture for defining a (flat) textured background. - Texture cubes (THREE.CubeTexture \| CubeTexture) or equirectangular textures for defining a skybox.</li> | `THREE.Scene.background` | node\_modules/@types/three/src/scenes/Scene.d.ts:86 |
 | <a id="backgroundblurriness"></a> `backgroundBlurriness` | `public` | `number` | `0` | Sets the blurriness of the background. Only influences environment maps assigned to THREE.Scene.background \| Scene.background. **Remarks** Expects a `Float` between `0` and `1`. | `THREE.Scene.backgroundBlurriness` | node\_modules/@types/three/src/scenes/Scene.d.ts:63 |
 | <a id="backgroundintensity"></a> `backgroundIntensity` | `public` | `number` | `1` | Attenuates the color of the background. Only applies to background textures. **Remarks** Expects a `Float` | `THREE.Scene.backgroundIntensity` | node\_modules/@types/three/src/scenes/Scene.d.ts:70 |
@@ -51,12 +59,11 @@ Defined in: [src/bloch-sphere-scene.ts:15](https://github.com/qbead/bloch-sphere
 | <a id="fog"></a> `fog` | `public` | `null` \| `Fog` \| `FogExp2` | `null` | A Fog \| fog instance defining the type of fog that affects everything rendered in the scene. | `THREE.Scene.fog` | node\_modules/@types/three/src/scenes/Scene.d.ts:56 |
 | <a id="fognode"></a> `fogNode?` | `public` | `null` \| `ShaderNodeObject`\<`Node`\> | `undefined` | - | `THREE.Scene.fogNode` | node\_modules/@types/three/src/renderers/common/nodes/Nodes.d.ts:50 |
 | <a id="frustumculled"></a> `frustumCulled` | `public` | `boolean` | `true` | When this is set, it checks every frame if the object is in the frustum of the camera before rendering the object. If set to `false` the object gets rendered every frame even if it is not in the frustum of the camera. | `THREE.Scene.frustumCulled` | node\_modules/@types/three/src/core/Object3D.d.ts:251 |
-| <a id="grids"></a> `grids` | `public` | `Group` | `undefined` | - | - | [src/bloch-sphere-scene.ts:9](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere-scene.ts#L9) |
-| <a id="highlightregionmaterial"></a> `highlightRegionMaterial` | `public` | `SphericalPolygonMaterial` | `undefined` | - | - | [src/bloch-sphere-scene.ts:13](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere-scene.ts#L13) |
+| <a id="grids"></a> `grids` | `public` | `Group` | `undefined` | - | - | [src/bloch-sphere-scene.ts:18](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere-scene.ts#L18) |
 | <a id="id"></a> `id` | `readonly` | `number` | `undefined` | Unique number for this Object3D instance. **Remarks** Note that ids are assigned in chronological order: 1, 2, 3, ..., incrementing by one for each new object. Expects a `Integer` | `THREE.Scene.id` | node\_modules/@types/three/src/core/Object3D.d.ts:109 |
 | <a id="isobject3d"></a> `isObject3D` | `readonly` | `true` | `true` | Flag to check if a given object is of type Object3D. **Remarks** This is a _constant_ value | `THREE.Scene.isObject3D` | node\_modules/@types/three/src/core/Object3D.d.ts:102 |
 | <a id="isscene"></a> `isScene` | `readonly` | `true` | `true` | Read-only flag to check if a given object is of type Scene. **Remarks** This is a _constant_ value | `THREE.Scene.isScene` | node\_modules/@types/three/src/scenes/Scene.d.ts:45 |
-| <a id="labels"></a> `labels` | `public` | `Record`\<`string`, [`Label`](Label.md)\> | `{}` | - | - | [src/bloch-sphere-scene.ts:11](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere-scene.ts#L11) |
+| <a id="labels"></a> `labels` | `public` | `Record`\<`string`, [`Label`](Label.md)\> | `{}` | - | - | [src/bloch-sphere-scene.ts:20](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere-scene.ts#L20) |
 | <a id="layers"></a> `layers` | `public` | `Layers` | `new THREE.Layers()` | The layer membership of the object. **Remarks** The object is only visible if it has at least one layer in common with the THREE.Object3DCamera \| Camera in use. This property can also be used to filter out unwanted objects in ray-intersection tests when using THREE.Raycaster \| Raycaster. | `THREE.Scene.layers` | node\_modules/@types/three/src/core/Object3D.d.ts:226 |
 | <a id="matrix"></a> `matrix` | `public` | `Matrix4` | `new THREE.Matrix4()` | The local transform matrix. | `THREE.Scene.matrix` | node\_modules/@types/three/src/core/Object3D.d.ts:191 |
 | <a id="matrixautoupdate"></a> `matrixAutoUpdate` | `public` | `boolean` | DEFAULT_MATRIX_AUTO_UPDATE - that is `(true)`. | When this is set, it calculates the matrix of position, (rotation or quaternion) and scale every frame and also recalculates the matrixWorld property. | `THREE.Scene.matrixAutoUpdate` | node\_modules/@types/three/src/core/Object3D.d.ts:205 |
@@ -69,23 +76,53 @@ Defined in: [src/bloch-sphere-scene.ts:15](https://github.com/qbead/bloch-sphere
 | <a id="occlusiontest"></a> `occlusionTest?` | `public` | `boolean` | `undefined` | - | `THREE.Scene.occlusionTest` | node\_modules/@types/three/src/renderers/common/Backend.d.ts:9 |
 | <a id="overridematerial"></a> `overrideMaterial` | `public` | `null` \| `Material` | `null` | Forces everything in the Scene to be rendered with the defined material. | `THREE.Scene.overrideMaterial` | node\_modules/@types/three/src/scenes/Scene.d.ts:76 |
 | <a id="parent"></a> `parent` | `public` | `null` \| `Object3D`\<`Object3DEventMap`\> | `null` | Object's parent in the [scene graph](https://en.wikipedia.org/wiki/Scene_graph). **Remarks** An object can have at most one parent. | `THREE.Scene.parent` | node\_modules/@types/three/src/core/Object3D.d.ts:137 |
-| <a id="plotstage"></a> `plotStage` | `public` | `Group` | `undefined` | - | - | [src/bloch-sphere-scene.ts:12](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere-scene.ts#L12) |
+| <a id="plotstage"></a> `plotStage` | `public` | `Group` | `undefined` | - | - | [src/bloch-sphere-scene.ts:21](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere-scene.ts#L21) |
 | <a id="position"></a> `position` | `readonly` | `Vector3` | `new THREE.Vector3()` - that is `(0, 0, 0)`. | Object's local position. | `THREE.Scene.position` | node\_modules/@types/three/src/core/Object3D.d.ts:157 |
 | <a id="quaternion"></a> `quaternion` | `readonly` | `Quaternion` | `new THREE.Quaternion()` - that is `(0, 0, 0, 1)`. | Object's local rotation as a THREE.Quaternion \| Quaternion. | `THREE.Scene.quaternion` | node\_modules/@types/three/src/core/Object3D.d.ts:169 |
 | <a id="receiveshadow"></a> `receiveShadow` | `public` | `boolean` | `false` | Whether the material receives shadows. | `THREE.Scene.receiveShadow` | node\_modules/@types/three/src/core/Object3D.d.ts:244 |
 | <a id="renderorder"></a> `renderOrder` | `public` | `number` | `0` | This value allows the default rendering order of [scene graph](https://en.wikipedia.org/wiki/Scene_graph) objects to be overridden although opaque and transparent objects remain sorted independently. **Remarks** When this property is set for an instance of Group \| Group, all descendants objects will be sorted and rendered together. Sorting is from lowest to highest renderOrder. | `THREE.Scene.renderOrder` | node\_modules/@types/three/src/core/Object3D.d.ts:260 |
 | <a id="rotation"></a> `rotation` | `readonly` | `Euler` | `new THREE.Euler()` - that is `(0, 0, 0, Euler.DEFAULT_ORDER)`. | Object's local rotation ([Euler angles](https://en.wikipedia.org/wiki/Euler_angles)), in radians. | `THREE.Scene.rotation` | node\_modules/@types/three/src/core/Object3D.d.ts:163 |
 | <a id="scale"></a> `scale` | `readonly` | `Vector3` | `new THREE.Vector3( 1, 1, 1 )` | The object's local scale. | `THREE.Scene.scale` | node\_modules/@types/three/src/core/Object3D.d.ts:175 |
-| <a id="sphere"></a> `sphere` | `public` | `Group` | `undefined` | - | - | [src/bloch-sphere-scene.ts:8](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere-scene.ts#L8) |
+| <a id="sphere"></a> `sphere` | `public` | `Group` | `undefined` | - | - | [src/bloch-sphere-scene.ts:17](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere-scene.ts#L17) |
 | <a id="static"></a> `static?` | `public` | `boolean` | `undefined` | - | `THREE.Scene.static` | node\_modules/@types/three/src/renderers/common/Backend.d.ts:11 |
 | <a id="type"></a> `type` | `public` | `"Scene"` | `Scene` | - | `THREE.Scene.type` | node\_modules/@types/three/src/scenes/Scene.d.ts:50 |
-| <a id="up"></a> `up` | `public` | `Vector3` | Object3D.DEFAULT_UP - that is `(0, 1, 0)`. | This is used by the [lookAt](BlochSphereScene.md#lookat) method, for example, to determine the orientation of the result. | `THREE.Scene.up` | node\_modules/@types/three/src/core/Object3D.d.ts:151 |
+| <a id="up"></a> `up` | `public` | `Vector3` | Object3D.DEFAULT_UP - that is `(0, 1, 0)`. | This is used by the [lookAt](#lookat) method, for example, to determine the orientation of the result. | `THREE.Scene.up` | node\_modules/@types/three/src/core/Object3D.d.ts:151 |
 | <a id="userdata"></a> `userData` | `public` | `Record`\<`string`, `any`\> | `undefined` | An object that can be used to store custom data about the Object3D. **Remarks** It should not hold references to _functions_ as these **will not** be cloned. **Default** `{}` | `THREE.Scene.userData` | node\_modules/@types/three/src/core/Object3D.d.ts:273 |
 | <a id="uuid"></a> `uuid` | `public` | `string` | `undefined` | [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier) of this object instance. **Remarks** This gets automatically assigned and shouldn't be edited. | `THREE.Scene.uuid` | node\_modules/@types/three/src/core/Object3D.d.ts:115 |
 | <a id="visible"></a> `visible` | `public` | `boolean` | `true` | Object gets rendered if `true`. | `THREE.Scene.visible` | node\_modules/@types/three/src/core/Object3D.d.ts:232 |
 | <a id="default_matrix_auto_update"></a> `DEFAULT_MATRIX_AUTO_UPDATE` | `static` | `boolean` | `true` | The default setting for [matrixAutoUpdate](QubitDisplay.md#matrixautoupdate) for newly created Object3Ds. | `THREE.Scene.DEFAULT_MATRIX_AUTO_UPDATE` | node\_modules/@types/three/src/core/Object3D.d.ts:373 |
 | <a id="default_matrix_world_auto_update"></a> `DEFAULT_MATRIX_WORLD_AUTO_UPDATE` | `static` | `boolean` | `true` | The default setting for [matrixWorldAutoUpdate](QubitDisplay.md#matrixworldautoupdate) for newly created Object3Ds. | `THREE.Scene.DEFAULT_MATRIX_WORLD_AUTO_UPDATE` | node\_modules/@types/three/src/core/Object3D.d.ts:379 |
 | <a id="default_up"></a> `DEFAULT_UP` | `static` | `Vector3` | `new THREE.Vector3( 0, 1, 0)` | The default [up](QubitDisplay.md#up) direction for objects, also used as the default position for THREE.DirectionalLight \| DirectionalLight, THREE.HemisphereLight \| HemisphereLight and THREE.Spotlight \| Spotlight (which creates lights shining from the top down). | `THREE.Scene.DEFAULT_UP` | node\_modules/@types/three/src/core/Object3D.d.ts:367 |
+
+## Accessors
+
+### backgroundColor
+
+#### Get Signature
+
+> **get** **backgroundColor**(): `Color`
+
+Defined in: [src/bloch-sphere-scene.ts:136](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere-scene.ts#L136)
+
+##### Returns
+
+`Color`
+
+#### Set Signature
+
+> **set** **backgroundColor**(`color`): `void`
+
+Defined in: [src/bloch-sphere-scene.ts:140](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere-scene.ts#L140)
+
+##### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `color` | `ColorRepresentation` |
+
+##### Returns
+
+`void`
 
 ## Methods
 
@@ -110,11 +147,11 @@ Adds another Object3D as child of this Object3D.
 #### Remarks
 
 An arbitrary number of objects may be added
-Any current parent on an [object](QubitDisplay.md#object) passed in here will be removed, since an Object3D can have at most one parent.
+Any current parent on an [object](QubitDisplay.md#add-1) passed in here will be removed, since an Object3D can have at most one parent.
 
 #### See
 
- - [attach](BlochSphereScene.md#attach)
+ - [attach](#attach)
  - THREE.Group \| Group for info on manually grouping objects.
 
 #### Inherited from
@@ -142,7 +179,7 @@ Adds a listener to an event type.
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `type` | `T` | The type of event to listen to. |
-| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, [`BlochSphereScene`](BlochSphereScene.md)\> | The function that gets called when the event is fired. |
+| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, `BlochSphereScene`\> | The function that gets called when the event is fired. |
 
 #### Returns
 
@@ -226,7 +263,7 @@ Note: This method does not support scene graphs having non-uniformly-scaled node
 
 #### See
 
-[add](BlochSphereScene.md#add)
+[add](#add)
 
 #### Inherited from
 
@@ -256,7 +293,7 @@ Removes all child objects.
 
 > **clearPlot**(): `void`
 
-Defined in: [src/bloch-sphere-scene.ts:175](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/bloch-sphere-scene.ts#L175)
+Defined in: [src/bloch-sphere-scene.ts:207](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/bloch-sphere-scene.ts#L207)
 
 #### Returns
 
@@ -371,7 +408,7 @@ Note that ids are assigned in chronological order: 1, 2, 3, ..., incrementing by
 
 #### See
 
-[id](QubitDisplay.md#id-1)
+[id](QubitDisplay.md#getobjectbyid-1)
 
 #### Inherited from
 
@@ -576,7 +613,7 @@ Checks if listener is added to an event type.
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `type` | `T` | The type of event to listen to. |
-| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, [`BlochSphereScene`](BlochSphereScene.md)\> | The function that gets called when the event is fired. |
+| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, `BlochSphereScene`\> | The function that gets called when the event is fired. |
 
 #### Returns
 
@@ -910,7 +947,7 @@ Removes a listener from an event type.
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `type` | `T` | The type of the listener that gets removed. |
-| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, [`BlochSphereScene`](BlochSphereScene.md)\> | The listener function that gets removed. |
+| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, `BlochSphereScene`\> | The listener function that gets removed. |
 
 #### Returns
 
@@ -1077,7 +1114,7 @@ Rotates the object around _z_ axis in local space.
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:398
 
-Calls THREE.Quaternion.setFromAxisAngle \| setFromAxisAngle([axis](QubitDisplay.md#axis-2), [angle](QubitDisplay.md#angle-5)) on the [.quaternion](QubitDisplay.md#quaternion).
+Calls THREE.Quaternion.setFromAxisAngle \| setFromAxisAngle([axis](QubitDisplay.md#setrotationfromaxisangle-1), [angle](QubitDisplay.md#setrotationfromaxisangle-1)) on the [.quaternion](QubitDisplay.md#quaternion).
 
 #### Parameters
 
@@ -1102,7 +1139,7 @@ Calls THREE.Quaternion.setFromAxisAngle \| setFromAxisAngle([axis](QubitDisplay.
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:404
 
-Calls THREE.Quaternion.setFromEuler \| setFromEuler([euler](QubitDisplay.md#euler)) on the [.quaternion](QubitDisplay.md#quaternion).
+Calls THREE.Quaternion.setFromEuler \| setFromEuler([euler](QubitDisplay.md#setrotationfromeuler-1)) on the [.quaternion](QubitDisplay.md#quaternion).
 
 #### Parameters
 
@@ -1126,7 +1163,7 @@ Calls THREE.Quaternion.setFromEuler \| setFromEuler([euler](QubitDisplay.md#eule
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:411
 
-Calls THREE.Quaternion.setFromRotationMatrix \| setFromRotationMatrix([m](QubitDisplay.md#m)) on the [.quaternion](QubitDisplay.md#quaternion).
+Calls THREE.Quaternion.setFromRotationMatrix \| setFromRotationMatrix([m](QubitDisplay.md#setrotationfrommatrix-1)) on the [.quaternion](QubitDisplay.md#quaternion).
 
 #### Parameters
 
@@ -1231,7 +1268,7 @@ The axis is assumed to be normalized.
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:466
 
-Translates object along x axis in object space by [distance](QubitDisplay.md#distance-1) units.
+Translates object along x axis in object space by [distance](QubitDisplay.md#translatex-1) units.
 
 #### Parameters
 
@@ -1255,7 +1292,7 @@ Translates object along x axis in object space by [distance](QubitDisplay.md#dis
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:472
 
-Translates object along _y_ axis in object space by [distance](QubitDisplay.md#distance-2) units.
+Translates object along _y_ axis in object space by [distance](QubitDisplay.md#translatey-1) units.
 
 #### Parameters
 
@@ -1279,7 +1316,7 @@ Translates object along _y_ axis in object space by [distance](QubitDisplay.md#d
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:478
 
-Translates object along _z_ axis in object space by [distance](QubitDisplay.md#distance-3) units.
+Translates object along _z_ axis in object space by [distance](QubitDisplay.md#translatez-1) units.
 
 #### Parameters
 
@@ -1407,7 +1444,7 @@ Updates local transform.
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:645
 
 Updates the global transform of the object.
-And will update the object descendants if [.matrixWorldNeedsUpdate](QubitDisplay.md#matrixworldneedsupdate) is set to true or if the [force](QubitDisplay.md#force) parameter is set to `true`.
+And will update the object descendants if [.matrixWorldNeedsUpdate](QubitDisplay.md#matrixworldneedsupdate) is set to true or if the [force](QubitDisplay.md#updatematrixworld-1) parameter is set to `true`.
 
 #### Parameters
 

@@ -6,7 +6,18 @@
 
 # Class: AngleIndicators
 
-Defined in: [src/components/angle-indicators.ts:10](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/angle-indicators.ts#L10)
+Defined in: [src/components/angle-indicators.ts:22](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/angle-indicators.ts#L22)
+
+Display angle indicators for a Bloch vector
+
+## Example
+
+```ts
+const angleIndicators = new AngleIndicators()
+angleIndicators.update(blochVector)
+angleIndicators.color = 0xe1b53e
+blochSphere.add(angleIndicators)
+```
 
 ## Extends
 
@@ -14,31 +25,33 @@ Defined in: [src/components/angle-indicators.ts:10](https://github.com/qbead/blo
 
 ## Constructors
 
-### new AngleIndicators()
+### Constructor
 
-> **new AngleIndicators**(`scale`): [`AngleIndicators`](AngleIndicators.md)
+> **new AngleIndicators**(`scale`): `AngleIndicators`
 
-Defined in: [src/components/angle-indicators.ts:23](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/angle-indicators.ts#L23)
+Defined in: [src/components/angle-indicators.ts:40](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/angle-indicators.ts#L40)
+
+Creates a new AngleIndicators component
 
 #### Parameters
 
-| Parameter | Type | Default value |
-| ------ | ------ | ------ |
-| `scale` | `number` | `0.25` |
+| Parameter | Type | Default value | Description |
+| ------ | ------ | ------ | ------ |
+| `scale` | `number` | `0.25` | The scale of the angle indicators (default is 0.25) |
 
 #### Returns
 
-[`AngleIndicators`](AngleIndicators.md)
+`AngleIndicators`
 
 #### Overrides
 
-[`BaseComponent`](BaseComponent.md).[`constructor`](BaseComponent.md#constructors)
+[`BaseComponent`](BaseComponent.md).[`constructor`](BaseComponent.md#constructor)
 
 ## Properties
 
 | Property | Modifier | Type | Default value | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`_color`](BaseComponent.md#_color) | [src/components/component.ts:3](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/component.ts#L3) |
+| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`_color`](BaseComponent.md#_color) | [src/components/component.ts:7](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/component.ts#L7) |
 | <a id="animations"></a> `animations` | `public` | `AnimationClip`[] | `[]` | Array with object's animation clips. | [`BaseComponent`](BaseComponent.md).[`animations`](BaseComponent.md#animations) | node\_modules/@types/three/src/core/Object3D.d.ts:266 |
 | <a id="castshadow"></a> `castShadow` | `public` | `boolean` | `false` | Whether the object gets rendered into shadow map. | [`BaseComponent`](BaseComponent.md).[`castShadow`](BaseComponent.md#castshadow) | node\_modules/@types/three/src/core/Object3D.d.ts:238 |
 | <a id="children"></a> `children` | `public` | `Object3D`\<`Object3DEventMap`\>[] | `[]` | Array with object's children. **See** THREE.Object3DGroup \| Group for info on manually grouping objects. | [`BaseComponent`](BaseComponent.md).[`children`](BaseComponent.md#children) | node\_modules/@types/three/src/core/Object3D.d.ts:145 |
@@ -55,7 +68,7 @@ Defined in: [src/components/angle-indicators.ts:23](https://github.com/qbead/blo
 | <a id="matrixworldautoupdate"></a> `matrixWorldAutoUpdate` | `public` | `boolean` | DEFAULT_MATRIX_WORLD_AUTO_UPDATE - that is `(true)`. | If set, then the renderer checks every frame if the object and its children need matrix updates. When it isn't, then you have to maintain all matrices in the object and its children yourself. | [`BaseComponent`](BaseComponent.md).[`matrixWorldAutoUpdate`](BaseComponent.md#matrixworldautoupdate) | node\_modules/@types/three/src/core/Object3D.d.ts:212 |
 | <a id="matrixworldneedsupdate"></a> `matrixWorldNeedsUpdate` | `public` | `boolean` | `false` | When this is set, it calculates the matrixWorld in that frame and resets this property to false. | [`BaseComponent`](BaseComponent.md).[`matrixWorldNeedsUpdate`](BaseComponent.md#matrixworldneedsupdate) | node\_modules/@types/three/src/core/Object3D.d.ts:218 |
 | <a id="modelviewmatrix"></a> `modelViewMatrix` | `readonly` | `Matrix4` | `new THREE.Matrix4()` | - | [`BaseComponent`](BaseComponent.md).[`modelViewMatrix`](BaseComponent.md#modelviewmatrix) | node\_modules/@types/three/src/core/Object3D.d.ts:180 |
-| <a id="name"></a> `name` | `public` | `string` | `""` | Optional name of the object **Remarks** _(doesn't need to be unique)_. | [`BaseComponent`](BaseComponent.md).[`name`](BaseComponent.md#name-1) | node\_modules/@types/three/src/core/Object3D.d.ts:122 |
+| <a id="name"></a> `name` | `public` | `string` | `""` | Optional name of the object **Remarks** _(doesn't need to be unique)_. | [`BaseComponent`](BaseComponent.md).[`name`](BaseComponent.md#name) | node\_modules/@types/three/src/core/Object3D.d.ts:122 |
 | <a id="normalmatrix"></a> `normalMatrix` | `readonly` | `Matrix3` | `new THREE.Matrix3()` | - | [`BaseComponent`](BaseComponent.md).[`normalMatrix`](BaseComponent.md#normalmatrix) | node\_modules/@types/three/src/core/Object3D.d.ts:185 |
 | <a id="occlusiontest"></a> `occlusionTest?` | `public` | `boolean` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`occlusionTest`](BaseComponent.md#occlusiontest) | node\_modules/@types/three/src/renderers/common/Backend.d.ts:9 |
 | <a id="parent"></a> `parent` | `public` | `null` \| `Object3D`\<`Object3DEventMap`\> | `null` | Object's parent in the [scene graph](https://en.wikipedia.org/wiki/Scene_graph). **Remarks** An object can have at most one parent. | [`BaseComponent`](BaseComponent.md).[`parent`](BaseComponent.md#parent) | node\_modules/@types/three/src/core/Object3D.d.ts:137 |
@@ -64,11 +77,11 @@ Defined in: [src/components/angle-indicators.ts:23](https://github.com/qbead/blo
 | <a id="receiveshadow"></a> `receiveShadow` | `public` | `boolean` | `false` | Whether the material receives shadows. | [`BaseComponent`](BaseComponent.md).[`receiveShadow`](BaseComponent.md#receiveshadow) | node\_modules/@types/three/src/core/Object3D.d.ts:244 |
 | <a id="renderorder"></a> `renderOrder` | `public` | `number` | `0` | This value allows the default rendering order of [scene graph](https://en.wikipedia.org/wiki/Scene_graph) objects to be overridden although opaque and transparent objects remain sorted independently. **Remarks** When this property is set for an instance of Group \| Group, all descendants objects will be sorted and rendered together. Sorting is from lowest to highest renderOrder. | [`BaseComponent`](BaseComponent.md).[`renderOrder`](BaseComponent.md#renderorder) | node\_modules/@types/three/src/core/Object3D.d.ts:260 |
 | <a id="rotation"></a> `rotation` | `readonly` | `Euler` | `new THREE.Euler()` - that is `(0, 0, 0, Euler.DEFAULT_ORDER)`. | Object's local rotation ([Euler angles](https://en.wikipedia.org/wiki/Euler_angles)), in radians. | [`BaseComponent`](BaseComponent.md).[`rotation`](BaseComponent.md#rotation) | node\_modules/@types/three/src/core/Object3D.d.ts:163 |
-| <a id="scale-1"></a> `scale` | `readonly` | `Vector3` | `new THREE.Vector3( 1, 1, 1 )` | The object's local scale. | [`BaseComponent`](BaseComponent.md).[`scale`](BaseComponent.md#scale) | node\_modules/@types/three/src/core/Object3D.d.ts:175 |
+| <a id="scale"></a> `scale` | `readonly` | `Vector3` | `new THREE.Vector3( 1, 1, 1 )` | The object's local scale. | [`BaseComponent`](BaseComponent.md).[`scale`](BaseComponent.md#scale) | node\_modules/@types/three/src/core/Object3D.d.ts:175 |
 | <a id="static"></a> `static?` | `public` | `boolean` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`static`](BaseComponent.md#static) | node\_modules/@types/three/src/renderers/common/Backend.d.ts:11 |
 | <a id="type"></a> `type` | `readonly` | `string` | `Object3D` | A Read-only _string_ to check `this` object type. **Remarks** This can be used to find a specific type of Object3D in a scene. Sub-classes will update this value. | [`BaseComponent`](BaseComponent.md).[`type`](BaseComponent.md#type) | node\_modules/@types/three/src/core/Object3D.d.ts:130 |
-| <a id="units"></a> `units` | `public` | `AngleUnits` | `'deg'` | - | - | [src/components/angle-indicators.ts:11](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/angle-indicators.ts#L11) |
-| <a id="up"></a> `up` | `public` | `Vector3` | Object3D.DEFAULT_UP - that is `(0, 1, 0)`. | This is used by the [lookAt](AngleIndicators.md#lookat) method, for example, to determine the orientation of the result. | [`BaseComponent`](BaseComponent.md).[`up`](BaseComponent.md#up) | node\_modules/@types/three/src/core/Object3D.d.ts:151 |
+| <a id="units"></a> `units` | `public` | `AngleUnits` | `'deg'` | - | - | [src/components/angle-indicators.ts:23](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/angle-indicators.ts#L23) |
+| <a id="up"></a> `up` | `public` | `Vector3` | Object3D.DEFAULT_UP - that is `(0, 1, 0)`. | This is used by the [lookAt](#lookat) method, for example, to determine the orientation of the result. | [`BaseComponent`](BaseComponent.md).[`up`](BaseComponent.md#up) | node\_modules/@types/three/src/core/Object3D.d.ts:151 |
 | <a id="userdata"></a> `userData` | `public` | `Record`\<`string`, `any`\> | `undefined` | An object that can be used to store custom data about the Object3D. **Remarks** It should not hold references to _functions_ as these **will not** be cloned. **Default** `{}` | [`BaseComponent`](BaseComponent.md).[`userData`](BaseComponent.md#userdata) | node\_modules/@types/three/src/core/Object3D.d.ts:273 |
 | <a id="uuid"></a> `uuid` | `public` | `string` | `undefined` | [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier) of this object instance. **Remarks** This gets automatically assigned and shouldn't be edited. | [`BaseComponent`](BaseComponent.md).[`uuid`](BaseComponent.md#uuid) | node\_modules/@types/three/src/core/Object3D.d.ts:115 |
 | <a id="visible"></a> `visible` | `public` | `boolean` | `true` | Object gets rendered if `true`. | [`BaseComponent`](BaseComponent.md).[`visible`](BaseComponent.md#visible) | node\_modules/@types/three/src/core/Object3D.d.ts:232 |
@@ -84,13 +97,15 @@ Defined in: [src/components/angle-indicators.ts:23](https://github.com/qbead/blo
 
 > **set** **color**(`color`): `void`
 
-Defined in: [src/components/angle-indicators.ts:122](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/angle-indicators.ts#L122)
+Defined in: [src/components/angle-indicators.ts:145](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/angle-indicators.ts#L145)
+
+Get color of the component
 
 ##### Parameters
 
 | Parameter | Type |
 | ------ | ------ |
-| `color` | `number` \| `Color` |
+| `color` | `ColorRepresentation` |
 
 ##### Returns
 
@@ -108,7 +123,9 @@ Defined in: [src/components/angle-indicators.ts:122](https://github.com/qbead/bl
 
 > **get** **labelRadius**(): `number`
 
-Defined in: [src/components/angle-indicators.ts:113](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/angle-indicators.ts#L113)
+Defined in: [src/components/angle-indicators.ts:136](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/angle-indicators.ts#L136)
+
+The distance of the labels from the center of the sphere
 
 ##### Returns
 
@@ -118,7 +135,7 @@ Defined in: [src/components/angle-indicators.ts:113](https://github.com/qbead/bl
 
 > **set** **labelRadius**(`radius`): `void`
 
-Defined in: [src/components/angle-indicators.ts:117](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/angle-indicators.ts#L117)
+Defined in: [src/components/angle-indicators.ts:140](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/angle-indicators.ts#L140)
 
 ##### Parameters
 
@@ -138,7 +155,7 @@ Defined in: [src/components/angle-indicators.ts:117](https://github.com/qbead/bl
 
 > **get** **opacity**(): `number`
 
-Defined in: [src/components/angle-indicators.ts:101](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/angle-indicators.ts#L101)
+Defined in: [src/components/angle-indicators.ts:121](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/angle-indicators.ts#L121)
 
 ##### Returns
 
@@ -148,7 +165,7 @@ Defined in: [src/components/angle-indicators.ts:101](https://github.com/qbead/bl
 
 > **set** **opacity**(`opacity`): `void`
 
-Defined in: [src/components/angle-indicators.ts:106](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/angle-indicators.ts#L106)
+Defined in: [src/components/angle-indicators.ts:126](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/angle-indicators.ts#L126)
 
 ##### Parameters
 
@@ -166,25 +183,25 @@ Defined in: [src/components/angle-indicators.ts:106](https://github.com/qbead/bl
 
 #### Get Signature
 
-> **get** **phiColor**(): `number` \| `Color`
+> **get** **phiColor**(): `ColorRepresentation`
 
-Defined in: [src/components/angle-indicators.ts:126](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/angle-indicators.ts#L126)
+Defined in: [src/components/angle-indicators.ts:151](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/angle-indicators.ts#L151)
 
 ##### Returns
 
-`number` \| `Color`
+`ColorRepresentation`
 
 #### Set Signature
 
 > **set** **phiColor**(`color`): `void`
 
-Defined in: [src/components/angle-indicators.ts:130](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/angle-indicators.ts#L130)
+Defined in: [src/components/angle-indicators.ts:155](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/angle-indicators.ts#L155)
 
 ##### Parameters
 
 | Parameter | Type |
 | ------ | ------ |
-| `color` | `number` \| `Color` |
+| `color` | `ColorRepresentation` |
 
 ##### Returns
 
@@ -196,25 +213,25 @@ Defined in: [src/components/angle-indicators.ts:130](https://github.com/qbead/bl
 
 #### Get Signature
 
-> **get** **thetaColor**(): `number` \| `Color`
+> **get** **thetaColor**(): `ColorRepresentation`
 
-Defined in: [src/components/angle-indicators.ts:137](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/angle-indicators.ts#L137)
+Defined in: [src/components/angle-indicators.ts:162](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/angle-indicators.ts#L162)
 
 ##### Returns
 
-`number` \| `Color`
+`ColorRepresentation`
 
 #### Set Signature
 
 > **set** **thetaColor**(`color`): `void`
 
-Defined in: [src/components/angle-indicators.ts:141](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/angle-indicators.ts#L141)
+Defined in: [src/components/angle-indicators.ts:166](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/angle-indicators.ts#L166)
 
 ##### Parameters
 
 | Parameter | Type |
 | ------ | ------ |
-| `color` | `number` \| `Color` |
+| `color` | `ColorRepresentation` |
 
 ##### Returns
 
@@ -243,11 +260,11 @@ Adds another Object3D as child of this Object3D.
 #### Remarks
 
 An arbitrary number of objects may be added
-Any current parent on an [object](QubitDisplay.md#object) passed in here will be removed, since an Object3D can have at most one parent.
+Any current parent on an [object](QubitDisplay.md#add-1) passed in here will be removed, since an Object3D can have at most one parent.
 
 #### See
 
- - [attach](AngleIndicators.md#attach)
+ - [attach](#attach)
  - THREE.Group \| Group for info on manually grouping objects.
 
 #### Inherited from
@@ -275,7 +292,7 @@ Adds a listener to an event type.
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `type` | `T` | The type of event to listen to. |
-| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, [`AngleIndicators`](AngleIndicators.md)\> | The function that gets called when the event is fired. |
+| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, `AngleIndicators`\> | The function that gets called when the event is fired. |
 
 #### Returns
 
@@ -359,7 +376,7 @@ Note: This method does not support scene graphs having non-uniformly-scaled node
 
 #### See
 
-[add](AngleIndicators.md#add)
+[add](#add)
 
 #### Inherited from
 
@@ -492,7 +509,7 @@ Note that ids are assigned in chronological order: 1, 2, 3, ..., incrementing by
 
 #### See
 
-[id](QubitDisplay.md#id-1)
+[id](QubitDisplay.md#getobjectbyid-1)
 
 #### Inherited from
 
@@ -697,7 +714,7 @@ Checks if listener is added to an event type.
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `type` | `T` | The type of event to listen to. |
-| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, [`AngleIndicators`](AngleIndicators.md)\> | The function that gets called when the event is fired. |
+| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, `AngleIndicators`\> | The function that gets called when the event is fired. |
 
 #### Returns
 
@@ -1031,7 +1048,7 @@ Removes a listener from an event type.
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `type` | `T` | The type of the listener that gets removed. |
-| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, [`AngleIndicators`](AngleIndicators.md)\> | The listener function that gets removed. |
+| `listener` | `EventListener`\<`Object3DEventMap`\[`T`\], `T`, `AngleIndicators`\> | The listener function that gets removed. |
 
 #### Returns
 
@@ -1198,7 +1215,7 @@ Rotates the object around _z_ axis in local space.
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:398
 
-Calls THREE.Quaternion.setFromAxisAngle \| setFromAxisAngle([axis](QubitDisplay.md#axis-2), [angle](QubitDisplay.md#angle-5)) on the [.quaternion](QubitDisplay.md#quaternion).
+Calls THREE.Quaternion.setFromAxisAngle \| setFromAxisAngle([axis](QubitDisplay.md#setrotationfromaxisangle-1), [angle](QubitDisplay.md#setrotationfromaxisangle-1)) on the [.quaternion](QubitDisplay.md#quaternion).
 
 #### Parameters
 
@@ -1223,7 +1240,7 @@ Calls THREE.Quaternion.setFromAxisAngle \| setFromAxisAngle([axis](QubitDisplay.
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:404
 
-Calls THREE.Quaternion.setFromEuler \| setFromEuler([euler](QubitDisplay.md#euler)) on the [.quaternion](QubitDisplay.md#quaternion).
+Calls THREE.Quaternion.setFromEuler \| setFromEuler([euler](QubitDisplay.md#setrotationfromeuler-1)) on the [.quaternion](QubitDisplay.md#quaternion).
 
 #### Parameters
 
@@ -1247,7 +1264,7 @@ Calls THREE.Quaternion.setFromEuler \| setFromEuler([euler](QubitDisplay.md#eule
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:411
 
-Calls THREE.Quaternion.setFromRotationMatrix \| setFromRotationMatrix([m](QubitDisplay.md#m)) on the [.quaternion](QubitDisplay.md#quaternion).
+Calls THREE.Quaternion.setFromRotationMatrix \| setFromRotationMatrix([m](QubitDisplay.md#setrotationfrommatrix-1)) on the [.quaternion](QubitDisplay.md#quaternion).
 
 #### Parameters
 
@@ -1352,7 +1369,7 @@ The axis is assumed to be normalized.
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:466
 
-Translates object along x axis in object space by [distance](QubitDisplay.md#distance-1) units.
+Translates object along x axis in object space by [distance](QubitDisplay.md#translatex-1) units.
 
 #### Parameters
 
@@ -1376,7 +1393,7 @@ Translates object along x axis in object space by [distance](QubitDisplay.md#dis
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:472
 
-Translates object along _y_ axis in object space by [distance](QubitDisplay.md#distance-2) units.
+Translates object along _y_ axis in object space by [distance](QubitDisplay.md#translatey-1) units.
 
 #### Parameters
 
@@ -1400,7 +1417,7 @@ Translates object along _y_ axis in object space by [distance](QubitDisplay.md#d
 
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:478
 
-Translates object along _z_ axis in object space by [distance](QubitDisplay.md#distance-3) units.
+Translates object along _z_ axis in object space by [distance](QubitDisplay.md#translatez-1) units.
 
 #### Parameters
 
@@ -1507,7 +1524,9 @@ Note: Modifying the scene graph inside the callback is discouraged.
 
 > **update**(`v`): `void`
 
-Defined in: [src/components/angle-indicators.ts:74](https://github.com/qbead/bloch-sphere/blob/3766f2f3df1d632e3531ec172a87f2dd1e6d0061/src/components/angle-indicators.ts#L74)
+Defined in: [src/components/angle-indicators.ts:94](https://github.com/qbead/bloch-sphere/blob/7e0f69cf2dad7ff45291f70228526b02e73614bb/src/components/angle-indicators.ts#L94)
+
+Update the angle indicators for the given Bloch vector
 
 #### Parameters
 
@@ -1546,7 +1565,7 @@ Updates local transform.
 Defined in: node\_modules/@types/three/src/core/Object3D.d.ts:645
 
 Updates the global transform of the object.
-And will update the object descendants if [.matrixWorldNeedsUpdate](QubitDisplay.md#matrixworldneedsupdate) is set to true or if the [force](QubitDisplay.md#force) parameter is set to `true`.
+And will update the object descendants if [.matrixWorldNeedsUpdate](QubitDisplay.md#matrixworldneedsupdate) is set to true or if the [force](QubitDisplay.md#updatematrixworld-1) parameter is set to `true`.
 
 #### Parameters
 

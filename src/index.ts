@@ -1,4 +1,4 @@
-export { BlochSphere } from './bloch-sphere'
+export { BlochSphere, type BlochSphereOptions } from './bloch-sphere'
 export { QubitDisplay } from './components/qubit-display'
 export { PathDisplay } from './components/path-display'
 export { RegionDisplay } from './components/region-display'

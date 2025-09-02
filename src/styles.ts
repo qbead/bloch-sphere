@@ -2,6 +2,9 @@ import { defaultColors } from './colors'
 const defaultText = defaultColors.text.getStyle()
 export default `
 <style>
+.bloch-sphere-widget-container {
+  position: relative;
+}
 .label,
 .axis-label,
 .angle-label {

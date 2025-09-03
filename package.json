@@ -2,7 +2,7 @@
   "name": "@qbead/bloch-sphere",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "description": "A 3D Bloch Sphere visualisation built with Three.js and TypeScript.",
   "exports": {

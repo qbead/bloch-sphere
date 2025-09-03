@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.2.0](https://github.com/qbead/bloch-sphere/compare/v0.1.0...v0.2.0) (2025-09-03)
+
+
+### Features
+
+* add camera api ([9f96cda](https://github.com/qbead/bloch-sphere/commit/9f96cda8c564f3141a5936082982c8214312f724))
+* add features to enable or disable user interactivity ([e4ab188](https://github.com/qbead/bloch-sphere/commit/e4ab1887bf9f529a9e3e76469cf55377bd63b2d2))
+* add support for initial camera state in constructor ([ff41d0d](https://github.com/qbead/bloch-sphere/commit/ff41d0d3c8e8615f05f1734f0f66165ead7bb1d7))
+
+
+### Bug Fixes
+
+* expose options type ([e37b1fc](https://github.com/qbead/bloch-sphere/commit/e37b1fcb2ed89e54a8c0c9502c7a7bda2ada81b0))
+* make three a peer dependency ([7e6d226](https://github.com/qbead/bloch-sphere/commit/7e6d226bd0b97e11368e681fb2f011b966df83c5))
+* re [#2](https://github.com/qbead/bloch-sphere/issues/2) add position relative to containers ([7009db1](https://github.com/qbead/bloch-sphere/commit/7009db11140d910d66286c8454abec518ee9e78e))
+* regression bug. camera was too close on animation ([138f55a](https://github.com/qbead/bloch-sphere/commit/138f55afbc9001cc67175f9b48da8956750b16f0))
+* remove redundant default distance property ([43ff117](https://github.com/qbead/bloch-sphere/commit/43ff117562f0e258056d13fdc5e27e4c11676885))
+* update default background color ([503b941](https://github.com/qbead/bloch-sphere/commit/503b94151015cd0c235140df15b53f88fe9ac9b8))
+
 ## 0.1.0 (2025-03-31)
 
 

@@ -130,3 +130,6 @@ dist
 .pnp.*
 
 docs
+.devcontainer
+.scratch/
+CLAUDE.md

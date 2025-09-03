@@ -75,6 +75,9 @@ const region = new RegionDisplay([
 region.color = 0x55b785
 blochSphere.add(region)
 
+// test the camera controls
+blochSphere.setCameraState({ theta: 1, phi: 2.5 }, 2000)
+
 // setInterval(() => {
 //   const state = BlochVector.random()
 //   q.set(state, 500)

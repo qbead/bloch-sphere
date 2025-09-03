@@ -27,6 +27,8 @@ export type BlochSphereOptions = {
   fontSize?: number
   /** show grid */
   showGrid?: boolean
+  /** initial camera state */
+  cameraState?: CameraState
 } & Partial<typeof BlockSphereSceneOptions>
 
 /**
@@ -97,6 +99,9 @@ export class BlochSphere {
     }
     if (options.showGrid !== undefined) {
       this.showGrid = options.showGrid
+    }
+    if (options.cameraState) {
+      this.setCameraState(options.cameraState)
     }
   }
 

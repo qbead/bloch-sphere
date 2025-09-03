@@ -20,6 +20,16 @@ export type CameraState = {
 }
 
 /**
+ * Interactivity options for OrbitControls
+ */
+export type InteractivityOptions = {
+  /** Enable/disable zoom via mouse wheel/pinch */
+  zoom?: boolean
+  /** Enable/disable camera rotation via mouse drag */
+  rotate?: boolean
+}
+
+/**
  * Options for the Bloch Sphere widget
  */
 export type BlochSphereOptions = {
@@ -29,6 +39,12 @@ export type BlochSphereOptions = {
   showGrid?: boolean
   /** initial camera state */
   cameraState?: CameraState
+  /** Enable/disable all user interactions (default: true) */
+  interactive?: boolean
+  /** Enable/disable zoom via mouse wheel/pinch (default: true) */
+  enableZoom?: boolean
+  /** Enable/disable camera rotation via mouse drag (default: true) */
+  enableRotate?: boolean
 } & Partial<typeof BlockSphereSceneOptions>
 
 /**
@@ -84,6 +100,12 @@ export class BlochSphere {
     this.camera.position.set(10, 10, 5)
     this.camera.up.set(0, 0, 1)
     this.controls = new OrbitControls(this.camera, this.renderer.domElement)
+
+    // Set default interactivity: zoom and rotate enabled, pan disabled
+    this.controls.enablePan = false
+    this.controls.enableZoom = true
+    this.controls.enableRotate = true
+
     this.scene = new BlochSphereScene(options)
     this.setOptions(options)
   }
@@ -98,6 +120,25 @@ export class BlochSphere {
     }
     if (options.cameraState) {
       this.setCameraState(options.cameraState)
+    }
+
+    // Handle interactivity options
+    if (options.interactive !== undefined) {
+      this.interactivity(options.interactive)
+    } else {
+      // Handle individual interactivity settings
+      const interactivityOptions: InteractivityOptions = {}
+      if (options.enableZoom !== undefined) {
+        interactivityOptions.zoom = options.enableZoom
+      }
+      if (options.enableRotate !== undefined) {
+        interactivityOptions.rotate = options.enableRotate
+      }
+
+      // Only call if we have settings to apply
+      if (Object.keys(interactivityOptions).length > 0) {
+        this.interactivity(interactivityOptions)
+      }
     }
   }
 
@@ -378,6 +419,47 @@ export class BlochSphere {
       zoom: zoomLevel,
     }
     return this._setCameraState(cameraState, duration, easing)
+  }
+
+  /**
+   * Control user interactivity with the camera
+   *
+   * @param options - Interactivity options or boolean to enable/disable all interactions
+   * @returns Current interactivity state if no arguments provided
+   */
+  interactivity(
+    options?: InteractivityOptions | boolean
+  ): InteractivityOptions {
+    if (options === undefined) {
+      // Return current state
+      return {
+        zoom: this.controls.enableZoom,
+        rotate: this.controls.enableRotate,
+      }
+    }
+
+    if (typeof options === 'boolean') {
+      // Enable/disable all interactions
+      this.controls.enabled = options
+      this.controls.enableZoom = options
+      this.controls.enableRotate = options
+    } else {
+      // Apply specific options, preserving unspecified settings
+      if (options.zoom !== undefined) {
+        this.controls.enableZoom = options.zoom
+      }
+      if (options.rotate !== undefined) {
+        this.controls.enableRotate = options.rotate
+      }
+      // Update overall enabled state based on whether any interaction is enabled
+      this.controls.enabled =
+        this.controls.enableZoom || this.controls.enableRotate
+    }
+
+    return {
+      zoom: this.controls.enableZoom,
+      rotate: this.controls.enableRotate,
+    }
   }
 
   /**

@@ -16,6 +16,7 @@ import GUI from 'lil-gui'
 const blochSphere = new BlochSphere({
   fontSize: 1.25,
   showGrid: true,
+  // enableZoom: false, enable disable zoom
 })
 // attach the BlochSphere to the DOM
 blochSphere.attach(document.body)

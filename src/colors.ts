@@ -1,7 +1,7 @@
 // default colors
 import { Color } from 'three'
 export const dark = new Color(0x110000)
-export const darkBlue = new Color(0x262c44)
+export const darkBlue = new Color(0x272c42)
 export const lightBlue = new Color(0x4e46dd)
 export const greyBlue = new Color(0x4c5a8b)
 export const babyBlue = new Color(0x4ba2e3)

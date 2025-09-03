@@ -6,7 +6,7 @@
 
 # Class: Operator
 
-Defined in: [src/math/operator.ts:12](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/math/operator.ts#L12)
+Defined in: [src/math/operator.ts:12](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/operator.ts#L12)
 
 Quantum operators are 2x2 matrices of complex numbers
 
@@ -21,7 +21,7 @@ Quantum operators are 2x2 matrices of complex numbers
 
 > **new Operator**(`elements`): `Operator`
 
-Defined in: [src/math/operator.ts:22](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/math/operator.ts#L22)
+Defined in: [src/math/operator.ts:22](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/operator.ts#L22)
 
 #### Parameters
 
@@ -37,7 +37,7 @@ Defined in: [src/math/operator.ts:22](https://github.com/qbead/bloch-sphere/blob
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="elements"></a> `elements` | [`Complex`](Complex.md)[][] | [src/math/operator.ts:13](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/math/operator.ts#L13) |
+| <a id="elements"></a> `elements` | [`Complex`](Complex.md)[][] | [src/math/operator.ts:13](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/operator.ts#L13) |
 
 ## Accessors
 
@@ -47,7 +47,7 @@ Defined in: [src/math/operator.ts:22](https://github.com/qbead/bloch-sphere/blob
 
 > **get** **a**(): [`Complex`](Complex.md)
 
-Defined in: [src/math/operator.ts:29](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/math/operator.ts#L29)
+Defined in: [src/math/operator.ts:29](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/operator.ts#L29)
 
 The first row, first column element of the operator
 
@@ -63,7 +63,7 @@ The first row, first column element of the operator
 
 > **get** **b**(): [`Complex`](Complex.md)
 
-Defined in: [src/math/operator.ts:36](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/math/operator.ts#L36)
+Defined in: [src/math/operator.ts:36](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/operator.ts#L36)
 
 The first row, second column element of the operator
 
@@ -79,7 +79,7 @@ The first row, second column element of the operator
 
 > **get** **c**(): [`Complex`](Complex.md)
 
-Defined in: [src/math/operator.ts:43](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/math/operator.ts#L43)
+Defined in: [src/math/operator.ts:43](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/operator.ts#L43)
 
 The second row, first column element of the operator
 
@@ -95,7 +95,7 @@ The second row, first column element of the operator
 
 > **get** **d**(): [`Complex`](Complex.md)
 
-Defined in: [src/math/operator.ts:50](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/math/operator.ts#L50)
+Defined in: [src/math/operator.ts:50](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/operator.ts#L50)
 
 The second row, second column element of the operator
 
@@ -109,7 +109,7 @@ The second row, second column element of the operator
 
 > **applyTo**(`rho`): [`Complex`](Complex.md)[][]
 
-Defined in: [src/math/operator.ts:89](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/math/operator.ts#L89)
+Defined in: [src/math/operator.ts:89](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/operator.ts#L89)
 
 Apply this operator to a density matrix
 
@@ -129,7 +129,7 @@ Apply this operator to a density matrix
 
 > **conjugateTranspose**(): `Operator`
 
-Defined in: [src/math/operator.ts:79](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/math/operator.ts#L79)
+Defined in: [src/math/operator.ts:79](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/operator.ts#L79)
 
 Get the conjugate transpose of the operator as a new operator
 
@@ -143,7 +143,7 @@ Get the conjugate transpose of the operator as a new operator
 
 > **determinant**(): [`Complex`](Complex.md)
 
-Defined in: [src/math/operator.ts:111](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/math/operator.ts#L111)
+Defined in: [src/math/operator.ts:111](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/operator.ts#L111)
 
 Get the determinant of the operator
 
@@ -157,7 +157,7 @@ Get the determinant of the operator
 
 > **plus**(`other`): `Operator`
 
-Defined in: [src/math/operator.ts:97](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/math/operator.ts#L97)
+Defined in: [src/math/operator.ts:97](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/operator.ts#L97)
 
 Add another operator to this operator
 
@@ -177,7 +177,7 @@ Add another operator to this operator
 
 > **quaternion**(): `Quaternion`
 
-Defined in: [src/math/operator.ts:118](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/math/operator.ts#L118)
+Defined in: [src/math/operator.ts:118](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/operator.ts#L118)
 
 Get this operator as a THREE.Quaternion
 
@@ -191,7 +191,7 @@ Get this operator as a THREE.Quaternion
 
 > **scale**(`scalar`): `Operator`
 
-Defined in: [src/math/operator.ts:57](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/math/operator.ts#L57)
+Defined in: [src/math/operator.ts:57](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/operator.ts#L57)
 
 Multiply the operator by a scalar
 
@@ -211,7 +211,7 @@ Multiply the operator by a scalar
 
 > **times**(`other`): `Operator`
 
-Defined in: [src/math/operator.ts:65](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/math/operator.ts#L65)
+Defined in: [src/math/operator.ts:65](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/operator.ts#L65)
 
 Multiply the operator by another operator
 
@@ -231,7 +231,7 @@ Multiply the operator by another operator
 
 > `static` **identity**(): `Operator`
 
-Defined in: [src/math/operator.ts:15](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/math/operator.ts#L15)
+Defined in: [src/math/operator.ts:15](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/operator.ts#L15)
 
 #### Returns
 

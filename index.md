@@ -38,6 +38,7 @@
 | ------ | ------ |
 | [AnimationCallback](type-aliases/AnimationCallback.md) | - |
 | [ArcProperties](type-aliases/ArcProperties.md) | Properties of a arc on a sphere |
+| [BlochSphereOptions](type-aliases/BlochSphereOptions.md) | Options for the Bloch Sphere widget |
 | [CancelAnimation](type-aliases/CancelAnimation.md) | - |
 | [IntoComplex](type-aliases/IntoComplex.md) | A type that can be converted to a Complex number. |
 

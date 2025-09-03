@@ -6,7 +6,7 @@
 
 # Class: RegionDisplay
 
-Defined in: [src/components/region-display.ts:23](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/region-display.ts#L23)
+Defined in: [src/components/region-display.ts:23](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/region-display.ts#L23)
 
 A display for a region on the Bloch sphere
 
@@ -34,7 +34,7 @@ blochSphere.add(region)
 
 > **new RegionDisplay**(`region`?): `RegionDisplay`
 
-Defined in: [src/components/region-display.ts:25](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/region-display.ts#L25)
+Defined in: [src/components/region-display.ts:25](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/region-display.ts#L25)
 
 #### Parameters
 
@@ -54,7 +54,7 @@ Defined in: [src/components/region-display.ts:25](https://github.com/qbead/bloch
 
 | Property | Modifier | Type | Default value | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`_color`](BaseComponent.md#_color) | [src/components/component.ts:7](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/component.ts#L7) |
+| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`_color`](BaseComponent.md#_color) | [src/components/component.ts:7](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/component.ts#L7) |
 | <a id="animations"></a> `animations` | `public` | `AnimationClip`[] | `[]` | Array with object's animation clips. | [`BaseComponent`](BaseComponent.md).[`animations`](BaseComponent.md#animations) | node\_modules/@types/three/src/core/Object3D.d.ts:266 |
 | <a id="castshadow"></a> `castShadow` | `public` | `boolean` | `false` | Whether the object gets rendered into shadow map. | [`BaseComponent`](BaseComponent.md).[`castShadow`](BaseComponent.md#castshadow) | node\_modules/@types/three/src/core/Object3D.d.ts:238 |
 | <a id="children"></a> `children` | `public` | `Object3D`\<`Object3DEventMap`\>[] | `[]` | Array with object's children. **See** THREE.Object3DGroup \| Group for info on manually grouping objects. | [`BaseComponent`](BaseComponent.md).[`children`](BaseComponent.md#children) | node\_modules/@types/three/src/core/Object3D.d.ts:145 |
@@ -99,7 +99,7 @@ Defined in: [src/components/region-display.ts:25](https://github.com/qbead/bloch
 
 > **get** **color**(): `ColorRepresentation`
 
-Defined in: [src/components/region-display.ts:41](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/region-display.ts#L41)
+Defined in: [src/components/region-display.ts:41](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/region-display.ts#L41)
 
 Get color of the component
 
@@ -111,7 +111,7 @@ Get color of the component
 
 > **set** **color**(`color`): `void`
 
-Defined in: [src/components/region-display.ts:46](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/region-display.ts#L46)
+Defined in: [src/components/region-display.ts:46](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/region-display.ts#L46)
 
 Get color of the component
 
@@ -1105,7 +1105,7 @@ Rotates the object around _z_ axis in local space.
 
 > **setRegion**(`points`): `void`
 
-Defined in: [src/components/region-display.ts:56](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/region-display.ts#L56)
+Defined in: [src/components/region-display.ts:56](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/region-display.ts#L56)
 
 Set the region of the display
 

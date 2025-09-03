@@ -6,7 +6,7 @@
 
 # Class: QubitDisplay
 
-Defined in: [src/components/qubit-display.ts:23](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/qubit-display.ts#L23)
+Defined in: [src/components/qubit-display.ts:23](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/qubit-display.ts#L23)
 
 A display for a qubit state on the Bloch sphere
 
@@ -31,7 +31,7 @@ blochSphere.add(qubit)
 
 > **new QubitDisplay**(`q`?): `QubitDisplay`
 
-Defined in: [src/components/qubit-display.ts:29](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/qubit-display.ts#L29)
+Defined in: [src/components/qubit-display.ts:29](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/qubit-display.ts#L29)
 
 #### Parameters
 
@@ -51,10 +51,10 @@ Defined in: [src/components/qubit-display.ts:29](https://github.com/qbead/bloch-
 
 | Property | Modifier | Type | Default value | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`_color`](BaseComponent.md#_color) | [src/components/component.ts:7](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/component.ts#L7) |
-| <a id="angleindicators"></a> `angleIndicators` | `public` | [`AngleIndicators`](AngleIndicators.md) | `undefined` | - | - | [src/components/qubit-display.ts:26](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/qubit-display.ts#L26) |
+| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`_color`](BaseComponent.md#_color) | [src/components/component.ts:7](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/component.ts#L7) |
+| <a id="angleindicators"></a> `angleIndicators` | `public` | [`AngleIndicators`](AngleIndicators.md) | `undefined` | - | - | [src/components/qubit-display.ts:26](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/qubit-display.ts#L26) |
 | <a id="animations"></a> `animations` | `public` | `AnimationClip`[] | `[]` | Array with object's animation clips. | [`BaseComponent`](BaseComponent.md).[`animations`](BaseComponent.md#animations) | node\_modules/@types/three/src/core/Object3D.d.ts:266 |
-| <a id="arrow"></a> `arrow` | `public` | [`QubitArrow`](QubitArrow.md) | `undefined` | - | - | [src/components/qubit-display.ts:24](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/qubit-display.ts#L24) |
+| <a id="arrow"></a> `arrow` | `public` | [`QubitArrow`](QubitArrow.md) | `undefined` | - | - | [src/components/qubit-display.ts:24](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/qubit-display.ts#L24) |
 | <a id="castshadow"></a> `castShadow` | `public` | `boolean` | `false` | Whether the object gets rendered into shadow map. | [`BaseComponent`](BaseComponent.md).[`castShadow`](BaseComponent.md#castshadow) | node\_modules/@types/three/src/core/Object3D.d.ts:238 |
 | <a id="children"></a> `children` | `public` | `Object3D`\<`Object3DEventMap`\>[] | `[]` | Array with object's children. **See** THREE.Object3DGroup \| Group for info on manually grouping objects. | [`BaseComponent`](BaseComponent.md).[`children`](BaseComponent.md#children) | node\_modules/@types/three/src/core/Object3D.d.ts:145 |
 | <a id="count"></a> `count?` | `public` | `number` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`count`](BaseComponent.md#count) | node\_modules/@types/three/src/renderers/common/Backend.d.ts:7 |
@@ -80,14 +80,14 @@ Defined in: [src/components/qubit-display.ts:29](https://github.com/qbead/bloch-
 | <a id="renderorder"></a> `renderOrder` | `public` | `number` | `0` | This value allows the default rendering order of [scene graph](https://en.wikipedia.org/wiki/Scene_graph) objects to be overridden although opaque and transparent objects remain sorted independently. **Remarks** When this property is set for an instance of Group \| Group, all descendants objects will be sorted and rendered together. Sorting is from lowest to highest renderOrder. | [`BaseComponent`](BaseComponent.md).[`renderOrder`](BaseComponent.md#renderorder) | node\_modules/@types/three/src/core/Object3D.d.ts:260 |
 | <a id="rotation"></a> `rotation` | `readonly` | `Euler` | `new THREE.Euler()` - that is `(0, 0, 0, Euler.DEFAULT_ORDER)`. | Object's local rotation ([Euler angles](https://en.wikipedia.org/wiki/Euler_angles)), in radians. | [`BaseComponent`](BaseComponent.md).[`rotation`](BaseComponent.md#rotation) | node\_modules/@types/three/src/core/Object3D.d.ts:163 |
 | <a id="scale"></a> `scale` | `readonly` | `Vector3` | `new THREE.Vector3( 1, 1, 1 )` | The object's local scale. | [`BaseComponent`](BaseComponent.md).[`scale`](BaseComponent.md#scale) | node\_modules/@types/three/src/core/Object3D.d.ts:175 |
-| <a id="state"></a> `state` | `public` | [`BlochVector`](BlochVector.md) | `undefined` | - | - | [src/components/qubit-display.ts:27](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/qubit-display.ts#L27) |
+| <a id="state"></a> `state` | `public` | [`BlochVector`](BlochVector.md) | `undefined` | - | - | [src/components/qubit-display.ts:27](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/qubit-display.ts#L27) |
 | <a id="static"></a> `static?` | `public` | `boolean` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`static`](BaseComponent.md#static) | node\_modules/@types/three/src/renderers/common/Backend.d.ts:11 |
 | <a id="type"></a> `type` | `readonly` | `string` | `Object3D` | A Read-only _string_ to check `this` object type. **Remarks** This can be used to find a specific type of Object3D in a scene. Sub-classes will update this value. | [`BaseComponent`](BaseComponent.md).[`type`](BaseComponent.md#type) | node\_modules/@types/three/src/core/Object3D.d.ts:130 |
 | <a id="up"></a> `up` | `public` | `Vector3` | Object3D.DEFAULT_UP - that is `(0, 1, 0)`. | This is used by the [lookAt](#lookat) method, for example, to determine the orientation of the result. | [`BaseComponent`](BaseComponent.md).[`up`](BaseComponent.md#up) | node\_modules/@types/three/src/core/Object3D.d.ts:151 |
 | <a id="userdata"></a> `userData` | `public` | `Record`\<`string`, `any`\> | `undefined` | An object that can be used to store custom data about the Object3D. **Remarks** It should not hold references to _functions_ as these **will not** be cloned. **Default** `{}` | [`BaseComponent`](BaseComponent.md).[`userData`](BaseComponent.md#userdata) | node\_modules/@types/three/src/core/Object3D.d.ts:273 |
 | <a id="uuid"></a> `uuid` | `public` | `string` | `undefined` | [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier) of this object instance. **Remarks** This gets automatically assigned and shouldn't be edited. | [`BaseComponent`](BaseComponent.md).[`uuid`](BaseComponent.md#uuid) | node\_modules/@types/three/src/core/Object3D.d.ts:115 |
 | <a id="visible"></a> `visible` | `public` | `boolean` | `true` | Object gets rendered if `true`. | [`BaseComponent`](BaseComponent.md).[`visible`](BaseComponent.md#visible) | node\_modules/@types/three/src/core/Object3D.d.ts:232 |
-| <a id="wedge"></a> `wedge` | `public` | [`QubitProjWedge`](QubitProjWedge.md) | `undefined` | - | - | [src/components/qubit-display.ts:25](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/qubit-display.ts#L25) |
+| <a id="wedge"></a> `wedge` | `public` | [`QubitProjWedge`](QubitProjWedge.md) | `undefined` | - | - | [src/components/qubit-display.ts:25](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/qubit-display.ts#L25) |
 | <a id="default_matrix_auto_update"></a> `DEFAULT_MATRIX_AUTO_UPDATE` | `static` | `boolean` | `true` | The default setting for [matrixAutoUpdate](#matrixautoupdate) for newly created Object3Ds. | [`BaseComponent`](BaseComponent.md).[`DEFAULT_MATRIX_AUTO_UPDATE`](BaseComponent.md#default_matrix_auto_update) | node\_modules/@types/three/src/core/Object3D.d.ts:373 |
 | <a id="default_matrix_world_auto_update"></a> `DEFAULT_MATRIX_WORLD_AUTO_UPDATE` | `static` | `boolean` | `true` | The default setting for [matrixWorldAutoUpdate](#matrixworldautoupdate) for newly created Object3Ds. | [`BaseComponent`](BaseComponent.md).[`DEFAULT_MATRIX_WORLD_AUTO_UPDATE`](BaseComponent.md#default_matrix_world_auto_update) | node\_modules/@types/three/src/core/Object3D.d.ts:379 |
 | <a id="default_up"></a> `DEFAULT_UP` | `static` | `Vector3` | `new THREE.Vector3( 0, 1, 0)` | The default [up](#up) direction for objects, also used as the default position for THREE.DirectionalLight \| DirectionalLight, THREE.HemisphereLight \| HemisphereLight and THREE.Spotlight \| Spotlight (which creates lights shining from the top down). | [`BaseComponent`](BaseComponent.md).[`DEFAULT_UP`](BaseComponent.md#default_up) | node\_modules/@types/three/src/core/Object3D.d.ts:367 |
@@ -100,7 +100,7 @@ Defined in: [src/components/qubit-display.ts:29](https://github.com/qbead/bloch-
 
 > **set** **color**(`color`): `void`
 
-Defined in: [src/components/qubit-display.ts:47](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/qubit-display.ts#L47)
+Defined in: [src/components/qubit-display.ts:47](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/qubit-display.ts#L47)
 
 Get color of the component
 
@@ -1094,7 +1094,7 @@ Rotates the object around _z_ axis in local space.
 
 > **set**(`q`, `duration`, `easing`): `any`
 
-Defined in: [src/components/qubit-display.ts:61](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/qubit-display.ts#L61)
+Defined in: [src/components/qubit-display.ts:61](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/qubit-display.ts#L61)
 
 Set the bloch vector state of the display
 

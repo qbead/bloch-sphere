@@ -6,7 +6,7 @@
 
 # Class: Label
 
-Defined in: [src/components/label.ts:20](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/label.ts#L20)
+Defined in: [src/components/label.ts:20](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/label.ts#L20)
 
 Label component for displaying text in 3D space
 
@@ -30,7 +30,7 @@ blochSphere.add(label);
 
 > **new Label**(`text`, `type`): `Label`
 
-Defined in: [src/components/label.ts:28](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/label.ts#L28)
+Defined in: [src/components/label.ts:28](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/label.ts#L28)
 
 Create a new label
 
@@ -53,7 +53,7 @@ Create a new label
 
 | Property | Modifier | Type | Default value | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`_color`](BaseComponent.md#_color) | [src/components/component.ts:7](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/component.ts#L7) |
+| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`_color`](BaseComponent.md#_color) | [src/components/component.ts:7](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/component.ts#L7) |
 | <a id="animations"></a> `animations` | `public` | `AnimationClip`[] | `[]` | Array with object's animation clips. | [`BaseComponent`](BaseComponent.md).[`animations`](BaseComponent.md#animations) | node\_modules/@types/three/src/core/Object3D.d.ts:266 |
 | <a id="castshadow"></a> `castShadow` | `public` | `boolean` | `false` | Whether the object gets rendered into shadow map. | [`BaseComponent`](BaseComponent.md).[`castShadow`](BaseComponent.md#castshadow) | node\_modules/@types/three/src/core/Object3D.d.ts:238 |
 | <a id="children"></a> `children` | `public` | `Object3D`\<`Object3DEventMap`\>[] | `[]` | Array with object's children. **See** THREE.Object3DGroup \| Group for info on manually grouping objects. | [`BaseComponent`](BaseComponent.md).[`children`](BaseComponent.md#children) | node\_modules/@types/three/src/core/Object3D.d.ts:145 |
@@ -98,7 +98,7 @@ Create a new label
 
 > **get** **color**(): `Color`
 
-Defined in: [src/components/label.ts:60](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/label.ts#L60)
+Defined in: [src/components/label.ts:60](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/label.ts#L60)
 
 Get color of the component
 
@@ -110,7 +110,7 @@ Get color of the component
 
 > **set** **color**(`color`): `void`
 
-Defined in: [src/components/label.ts:64](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/label.ts#L64)
+Defined in: [src/components/label.ts:64](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/label.ts#L64)
 
 Get color of the component
 
@@ -136,7 +136,7 @@ Get color of the component
 
 > **get** **fontSize**(): `number`
 
-Defined in: [src/components/label.ts:52](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/label.ts#L52)
+Defined in: [src/components/label.ts:52](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/label.ts#L52)
 
 ##### Returns
 
@@ -146,7 +146,7 @@ Defined in: [src/components/label.ts:52](https://github.com/qbead/bloch-sphere/b
 
 > **set** **fontSize**(`size`): `void`
 
-Defined in: [src/components/label.ts:56](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/label.ts#L56)
+Defined in: [src/components/label.ts:56](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/label.ts#L56)
 
 ##### Parameters
 
@@ -166,7 +166,7 @@ Defined in: [src/components/label.ts:56](https://github.com/qbead/bloch-sphere/b
 
 > **get** **text**(): `string`
 
-Defined in: [src/components/label.ts:41](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/label.ts#L41)
+Defined in: [src/components/label.ts:41](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/label.ts#L41)
 
 ##### Returns
 
@@ -176,7 +176,7 @@ Defined in: [src/components/label.ts:41](https://github.com/qbead/bloch-sphere/b
 
 > **set** **text**(`text`): `void`
 
-Defined in: [src/components/label.ts:45](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/label.ts#L45)
+Defined in: [src/components/label.ts:45](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/label.ts#L45)
 
 ##### Parameters
 
@@ -410,7 +410,7 @@ Event listeners and user-defined callbacks (.onAfterRender and .onBeforeRender) 
 
 > **destroy**(): `void`
 
-Defined in: [src/components/label.ts:75](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/label.ts#L75)
+Defined in: [src/components/label.ts:75](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/label.ts#L75)
 
 Cleanup tasks
 

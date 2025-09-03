@@ -8,7 +8,7 @@
 
 > **ArcProperties** = `object`
 
-Defined in: [src/math/geometry.ts:6](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/math/geometry.ts#L6)
+Defined in: [src/math/geometry.ts:6](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/geometry.ts#L6)
 
 Properties of a arc on a sphere
 
@@ -18,7 +18,7 @@ Properties of a arc on a sphere
 
 > **arcAngle**: `number`
 
-Defined in: [src/math/geometry.ts:26](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/math/geometry.ts#L26)
+Defined in: [src/math/geometry.ts:26](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/geometry.ts#L26)
 
 The angle of the arc
 
@@ -28,7 +28,7 @@ The angle of the arc
 
 > **arcOffset**: `number`
 
-Defined in: [src/math/geometry.ts:22](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/math/geometry.ts#L22)
+Defined in: [src/math/geometry.ts:22](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/geometry.ts#L22)
 
 The angle of the arc offset from the x-axis
 
@@ -38,7 +38,7 @@ The angle of the arc offset from the x-axis
 
 > **height**: `number`
 
-Defined in: [src/math/geometry.ts:14](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/math/geometry.ts#L14)
+Defined in: [src/math/geometry.ts:14](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/geometry.ts#L14)
 
 The distance from the center of the sphere to the plane containing the arc
 
@@ -48,7 +48,7 @@ The distance from the center of the sphere to the plane containing the arc
 
 > **norm**: `THREE.Vector3`
 
-Defined in: [src/math/geometry.ts:18](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/math/geometry.ts#L18)
+Defined in: [src/math/geometry.ts:18](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/geometry.ts#L18)
 
 The normal vector of the plane containing the arc
 
@@ -58,6 +58,6 @@ The normal vector of the plane containing the arc
 
 > **radius**: `number`
 
-Defined in: [src/math/geometry.ts:10](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/math/geometry.ts#L10)
+Defined in: [src/math/geometry.ts:10](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/geometry.ts#L10)
 
 The radius of the arc

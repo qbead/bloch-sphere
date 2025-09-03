@@ -6,7 +6,7 @@
 
 # Class: BlochSphereScene
 
-Defined in: [src/bloch-sphere-scene.ts:16](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/bloch-sphere-scene.ts#L16)
+Defined in: [src/bloch-sphere-scene.ts:16](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere-scene.ts#L16)
 
 A scene for the Bloch sphere which extends the THREE.Scene class
 
@@ -20,7 +20,7 @@ A scene for the Bloch sphere which extends the THREE.Scene class
 
 > **new BlochSphereScene**(`options`?): `BlochSphereScene`
 
-Defined in: [src/bloch-sphere-scene.ts:23](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/bloch-sphere-scene.ts#L23)
+Defined in: [src/bloch-sphere-scene.ts:23](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere-scene.ts#L23)
 
 #### Parameters
 
@@ -41,7 +41,7 @@ Defined in: [src/bloch-sphere-scene.ts:23](https://github.com/qbead/bloch-sphere
 | Property | Modifier | Type | Default value | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | <a id="animations"></a> `animations` | `public` | `AnimationClip`[] | `[]` | Array with object's animation clips. | `THREE.Scene.animations` | node\_modules/@types/three/src/core/Object3D.d.ts:266 |
-| <a id="axes"></a> `axes` | `public` | `Group` | `undefined` | - | - | [src/bloch-sphere-scene.ts:19](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/bloch-sphere-scene.ts#L19) |
+| <a id="axes"></a> `axes` | `public` | `Group` | `undefined` | - | - | [src/bloch-sphere-scene.ts:19](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere-scene.ts#L19) |
 | <a id="background"></a> `background` | `public` | `null` \| `Color` \| `Texture` \| `CubeTexture` | `null` | Defines the background of the scene. **Remarks** Valid inputs are: - A THREE.Color \| Color for defining a uniform colored background. - A THREE.Texture \| Texture for defining a (flat) textured background. - Texture cubes (THREE.CubeTexture \| CubeTexture) or equirectangular textures for defining a skybox.</li> | `THREE.Scene.background` | node\_modules/@types/three/src/scenes/Scene.d.ts:86 |
 | <a id="backgroundblurriness"></a> `backgroundBlurriness` | `public` | `number` | `0` | Sets the blurriness of the background. Only influences environment maps assigned to THREE.Scene.background \| Scene.background. **Remarks** Expects a `Float` between `0` and `1`. | `THREE.Scene.backgroundBlurriness` | node\_modules/@types/three/src/scenes/Scene.d.ts:63 |
 | <a id="backgroundintensity"></a> `backgroundIntensity` | `public` | `number` | `1` | Attenuates the color of the background. Only applies to background textures. **Remarks** Expects a `Float` | `THREE.Scene.backgroundIntensity` | node\_modules/@types/three/src/scenes/Scene.d.ts:70 |
@@ -59,11 +59,11 @@ Defined in: [src/bloch-sphere-scene.ts:23](https://github.com/qbead/bloch-sphere
 | <a id="fog"></a> `fog` | `public` | `null` \| `Fog` \| `FogExp2` | `null` | A Fog \| fog instance defining the type of fog that affects everything rendered in the scene. | `THREE.Scene.fog` | node\_modules/@types/three/src/scenes/Scene.d.ts:56 |
 | <a id="fognode"></a> `fogNode?` | `public` | `null` \| `ShaderNodeObject`\<`Node`\> | `undefined` | - | `THREE.Scene.fogNode` | node\_modules/@types/three/src/renderers/common/nodes/Nodes.d.ts:50 |
 | <a id="frustumculled"></a> `frustumCulled` | `public` | `boolean` | `true` | When this is set, it checks every frame if the object is in the frustum of the camera before rendering the object. If set to `false` the object gets rendered every frame even if it is not in the frustum of the camera. | `THREE.Scene.frustumCulled` | node\_modules/@types/three/src/core/Object3D.d.ts:251 |
-| <a id="grids"></a> `grids` | `public` | `Group` | `undefined` | - | - | [src/bloch-sphere-scene.ts:18](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/bloch-sphere-scene.ts#L18) |
+| <a id="grids"></a> `grids` | `public` | `Group` | `undefined` | - | - | [src/bloch-sphere-scene.ts:18](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere-scene.ts#L18) |
 | <a id="id"></a> `id` | `readonly` | `number` | `undefined` | Unique number for this Object3D instance. **Remarks** Note that ids are assigned in chronological order: 1, 2, 3, ..., incrementing by one for each new object. Expects a `Integer` | `THREE.Scene.id` | node\_modules/@types/three/src/core/Object3D.d.ts:109 |
 | <a id="isobject3d"></a> `isObject3D` | `readonly` | `true` | `true` | Flag to check if a given object is of type Object3D. **Remarks** This is a _constant_ value | `THREE.Scene.isObject3D` | node\_modules/@types/three/src/core/Object3D.d.ts:102 |
 | <a id="isscene"></a> `isScene` | `readonly` | `true` | `true` | Read-only flag to check if a given object is of type Scene. **Remarks** This is a _constant_ value | `THREE.Scene.isScene` | node\_modules/@types/three/src/scenes/Scene.d.ts:45 |
-| <a id="labels"></a> `labels` | `public` | `Record`\<`string`, [`Label`](Label.md)\> | `{}` | - | - | [src/bloch-sphere-scene.ts:20](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/bloch-sphere-scene.ts#L20) |
+| <a id="labels"></a> `labels` | `public` | `Record`\<`string`, [`Label`](Label.md)\> | `{}` | - | - | [src/bloch-sphere-scene.ts:20](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere-scene.ts#L20) |
 | <a id="layers"></a> `layers` | `public` | `Layers` | `new THREE.Layers()` | The layer membership of the object. **Remarks** The object is only visible if it has at least one layer in common with the THREE.Object3DCamera \| Camera in use. This property can also be used to filter out unwanted objects in ray-intersection tests when using THREE.Raycaster \| Raycaster. | `THREE.Scene.layers` | node\_modules/@types/three/src/core/Object3D.d.ts:226 |
 | <a id="matrix"></a> `matrix` | `public` | `Matrix4` | `new THREE.Matrix4()` | The local transform matrix. | `THREE.Scene.matrix` | node\_modules/@types/three/src/core/Object3D.d.ts:191 |
 | <a id="matrixautoupdate"></a> `matrixAutoUpdate` | `public` | `boolean` | DEFAULT_MATRIX_AUTO_UPDATE - that is `(true)`. | When this is set, it calculates the matrix of position, (rotation or quaternion) and scale every frame and also recalculates the matrixWorld property. | `THREE.Scene.matrixAutoUpdate` | node\_modules/@types/three/src/core/Object3D.d.ts:205 |
@@ -76,14 +76,14 @@ Defined in: [src/bloch-sphere-scene.ts:23](https://github.com/qbead/bloch-sphere
 | <a id="occlusiontest"></a> `occlusionTest?` | `public` | `boolean` | `undefined` | - | `THREE.Scene.occlusionTest` | node\_modules/@types/three/src/renderers/common/Backend.d.ts:9 |
 | <a id="overridematerial"></a> `overrideMaterial` | `public` | `null` \| `Material` | `null` | Forces everything in the Scene to be rendered with the defined material. | `THREE.Scene.overrideMaterial` | node\_modules/@types/three/src/scenes/Scene.d.ts:76 |
 | <a id="parent"></a> `parent` | `public` | `null` \| `Object3D`\<`Object3DEventMap`\> | `null` | Object's parent in the [scene graph](https://en.wikipedia.org/wiki/Scene_graph). **Remarks** An object can have at most one parent. | `THREE.Scene.parent` | node\_modules/@types/three/src/core/Object3D.d.ts:137 |
-| <a id="plotstage"></a> `plotStage` | `public` | `Group` | `undefined` | - | - | [src/bloch-sphere-scene.ts:21](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/bloch-sphere-scene.ts#L21) |
+| <a id="plotstage"></a> `plotStage` | `public` | `Group` | `undefined` | - | - | [src/bloch-sphere-scene.ts:21](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere-scene.ts#L21) |
 | <a id="position"></a> `position` | `readonly` | `Vector3` | `new THREE.Vector3()` - that is `(0, 0, 0)`. | Object's local position. | `THREE.Scene.position` | node\_modules/@types/three/src/core/Object3D.d.ts:157 |
 | <a id="quaternion"></a> `quaternion` | `readonly` | `Quaternion` | `new THREE.Quaternion()` - that is `(0, 0, 0, 1)`. | Object's local rotation as a THREE.Quaternion \| Quaternion. | `THREE.Scene.quaternion` | node\_modules/@types/three/src/core/Object3D.d.ts:169 |
 | <a id="receiveshadow"></a> `receiveShadow` | `public` | `boolean` | `false` | Whether the material receives shadows. | `THREE.Scene.receiveShadow` | node\_modules/@types/three/src/core/Object3D.d.ts:244 |
 | <a id="renderorder"></a> `renderOrder` | `public` | `number` | `0` | This value allows the default rendering order of [scene graph](https://en.wikipedia.org/wiki/Scene_graph) objects to be overridden although opaque and transparent objects remain sorted independently. **Remarks** When this property is set for an instance of Group \| Group, all descendants objects will be sorted and rendered together. Sorting is from lowest to highest renderOrder. | `THREE.Scene.renderOrder` | node\_modules/@types/three/src/core/Object3D.d.ts:260 |
 | <a id="rotation"></a> `rotation` | `readonly` | `Euler` | `new THREE.Euler()` - that is `(0, 0, 0, Euler.DEFAULT_ORDER)`. | Object's local rotation ([Euler angles](https://en.wikipedia.org/wiki/Euler_angles)), in radians. | `THREE.Scene.rotation` | node\_modules/@types/three/src/core/Object3D.d.ts:163 |
 | <a id="scale"></a> `scale` | `readonly` | `Vector3` | `new THREE.Vector3( 1, 1, 1 )` | The object's local scale. | `THREE.Scene.scale` | node\_modules/@types/three/src/core/Object3D.d.ts:175 |
-| <a id="sphere"></a> `sphere` | `public` | `Group` | `undefined` | - | - | [src/bloch-sphere-scene.ts:17](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/bloch-sphere-scene.ts#L17) |
+| <a id="sphere"></a> `sphere` | `public` | `Group` | `undefined` | - | - | [src/bloch-sphere-scene.ts:17](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere-scene.ts#L17) |
 | <a id="static"></a> `static?` | `public` | `boolean` | `undefined` | - | `THREE.Scene.static` | node\_modules/@types/three/src/renderers/common/Backend.d.ts:11 |
 | <a id="type"></a> `type` | `public` | `"Scene"` | `Scene` | - | `THREE.Scene.type` | node\_modules/@types/three/src/scenes/Scene.d.ts:50 |
 | <a id="up"></a> `up` | `public` | `Vector3` | Object3D.DEFAULT_UP - that is `(0, 1, 0)`. | This is used by the [lookAt](#lookat) method, for example, to determine the orientation of the result. | `THREE.Scene.up` | node\_modules/@types/three/src/core/Object3D.d.ts:151 |
@@ -102,7 +102,7 @@ Defined in: [src/bloch-sphere-scene.ts:23](https://github.com/qbead/bloch-sphere
 
 > **get** **backgroundColor**(): `Color`
 
-Defined in: [src/bloch-sphere-scene.ts:136](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/bloch-sphere-scene.ts#L136)
+Defined in: [src/bloch-sphere-scene.ts:136](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere-scene.ts#L136)
 
 ##### Returns
 
@@ -112,7 +112,7 @@ Defined in: [src/bloch-sphere-scene.ts:136](https://github.com/qbead/bloch-spher
 
 > **set** **backgroundColor**(`color`): `void`
 
-Defined in: [src/bloch-sphere-scene.ts:140](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/bloch-sphere-scene.ts#L140)
+Defined in: [src/bloch-sphere-scene.ts:140](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere-scene.ts#L140)
 
 ##### Parameters
 
@@ -293,7 +293,7 @@ Removes all child objects.
 
 > **clearPlot**(): `void`
 
-Defined in: [src/bloch-sphere-scene.ts:207](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/bloch-sphere-scene.ts#L207)
+Defined in: [src/bloch-sphere-scene.ts:207](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere-scene.ts#L207)
 
 #### Returns
 

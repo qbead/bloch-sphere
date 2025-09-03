@@ -8,7 +8,7 @@
 
 > **formatRadians**(`radians`, `precision`): `string`
 
-Defined in: [src/format.ts:23](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/format.ts#L23)
+Defined in: [src/format.ts:23](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/format.ts#L23)
 
 Format an angle given in radians as a string in radians
 with a given precision.

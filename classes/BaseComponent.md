@@ -6,7 +6,7 @@
 
 # Class: BaseComponent
 
-Defined in: [src/components/component.ts:6](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/component.ts#L6)
+Defined in: [src/components/component.ts:6](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/component.ts#L6)
 
 Abstract base class for all components
 
@@ -33,7 +33,7 @@ Abstract base class for all components
 
 > **new BaseComponent**(`name`?): `BaseComponent`
 
-Defined in: [src/components/component.ts:9](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/component.ts#L9)
+Defined in: [src/components/component.ts:9](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/component.ts#L9)
 
 #### Parameters
 
@@ -53,7 +53,7 @@ Defined in: [src/components/component.ts:9](https://github.com/qbead/bloch-spher
 
 | Property | Modifier | Type | Default value | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | - | [src/components/component.ts:7](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/component.ts#L7) |
+| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | - | [src/components/component.ts:7](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/component.ts#L7) |
 | <a id="animations"></a> `animations` | `public` | `AnimationClip`[] | `[]` | Array with object's animation clips. | `THREE.Object3D.animations` | node\_modules/@types/three/src/core/Object3D.d.ts:266 |
 | <a id="castshadow"></a> `castShadow` | `public` | `boolean` | `false` | Whether the object gets rendered into shadow map. | `THREE.Object3D.castShadow` | node\_modules/@types/three/src/core/Object3D.d.ts:238 |
 | <a id="children"></a> `children` | `public` | `Object3D`\<`Object3DEventMap`\>[] | `[]` | Array with object's children. **See** THREE.Object3DGroup \| Group for info on manually grouping objects. | `THREE.Object3D.children` | node\_modules/@types/three/src/core/Object3D.d.ts:145 |
@@ -98,7 +98,7 @@ Defined in: [src/components/component.ts:9](https://github.com/qbead/bloch-spher
 
 > **get** **color**(): `ColorRepresentation`
 
-Defined in: [src/components/component.ts:21](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/component.ts#L21)
+Defined in: [src/components/component.ts:21](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/component.ts#L21)
 
 Get color of the component
 
@@ -110,7 +110,7 @@ Get color of the component
 
 > **set** **color**(`color`): `void`
 
-Defined in: [src/components/component.ts:28](https://github.com/qbead/bloch-sphere/blob/9ff2dae0481f00679728b83f1e83d06a69a548d1/src/components/component.ts#L28)
+Defined in: [src/components/component.ts:28](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/component.ts#L28)
 
 Set color of the component
 

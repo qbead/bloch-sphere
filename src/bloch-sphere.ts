@@ -280,7 +280,7 @@ export class BlochSphere {
     // Camera should be positioned OPPOSITE to the Bloch vector direction
     // so that the Bloch vector points AT the camera
     const blochVector = BlochVector.fromAngles(state.theta, state.phi)
-    const cameraPosition = blochVector.clone()
+    const cameraPosition = blochVector.clone().normalize().multiplyScalar(15)
 
     // Set camera position and orientation
     this.camera.position.copy(cameraPosition)

@@ -77,15 +77,11 @@ export class BlochSphere {
   controls: OrbitControls
 
   private _cameraAnimation: CancelAnimation | null = null
-  private _defaultDistance = 10
 
   constructor(options?: BlochSphereOptions) {
     this.initRenderer()
     this.camera = new THREE.OrthographicCamera(-2, 2, 2, -2, 0.1, 50)
-    this.camera.position
-      .set(10, 10, 5)
-      .normalize()
-      .multiplyScalar(this._defaultDistance)
+    this.camera.position.set(10, 10, 5)
     this.camera.up.set(0, 0, 1)
     this.controls = new OrbitControls(this.camera, this.renderer.domElement)
     this.scene = new BlochSphereScene(options)
@@ -284,9 +280,7 @@ export class BlochSphere {
     // Camera should be positioned OPPOSITE to the Bloch vector direction
     // so that the Bloch vector points AT the camera
     const blochVector = BlochVector.fromAngles(state.theta, state.phi)
-    const cameraPosition = blochVector
-      .clone()
-      .multiplyScalar(this._defaultDistance)
+    const cameraPosition = blochVector.clone()
 
     // Set camera position and orientation
     this.camera.position.copy(cameraPosition)

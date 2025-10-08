@@ -12,3 +12,7 @@ https://qbead.gitbook.io/bloch-sphere
 # or whatever package manager
 npm i --save @qbead/bloch-sphere three
 ```
+
+## Demo
+
+https://bloch-sphere.qbead.org/

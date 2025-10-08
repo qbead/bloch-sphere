@@ -2,6 +2,10 @@
 
 A work in progress
 
+## API Documentation
+
+https://qbead.gitbook.io/bloch-sphere
+
 ## Getting Started
 
 ```sh

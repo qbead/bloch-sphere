@@ -7,7 +7,7 @@
   "description": "A 3D Bloch Sphere visualisation built with Three.js and TypeScript.",
   "exports": {
     ".": {
-      "types": "./src/index.d.ts",
+      "types": "./dist/index.d.ts",
       "bun": "./src/index.ts",
       "browser": "./dist/index.js",
       "require": "./dist/index.cjs",
@@ -38,7 +38,11 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "docs": "bun run build && typedoc --options typedoc.json src",
-    "prepublishOnly": "bun run build && bun run docs"
+    "prepublishOnly": "bun run build && bun run docs",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "test:coverage": "bun test --coverage",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/three": "^0.175.0",

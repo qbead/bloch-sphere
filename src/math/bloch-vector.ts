@@ -171,7 +171,7 @@ export class BlochVector extends Vector3 {
   /**
    * Get both angles of the Bloch vector as an array `[theta, phi]`
    */
-  angles() {
+  angles(): [number, number] {
     return [this.theta, this.phi]
   }
 

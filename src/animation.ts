@@ -79,6 +79,10 @@ export function animate(
 
   const step = () => {
     if (cancelled) {
+      // exit early
+      if (!loop) {
+        callback(1)
+      }
       resolve()
       return
     }

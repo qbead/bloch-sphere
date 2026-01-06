@@ -23,8 +23,22 @@
   "license": "MIT",
   "keywords": [
     "quantum",
+    "quantum-computing",
+    "bloch-sphere",
     "bloch",
-    "sphere"
+    "sphere",
+    "qubit",
+    "visualization",
+    "three.js",
+    "threejs",
+    "3d",
+    "quantum-gates",
+    "quantum-mechanics",
+    "complex-numbers",
+    "typescript",
+    "webgl",
+    "education",
+    "research"
   ],
   "homepage": "https://qbead.org",
   "bugs": {

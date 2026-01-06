@@ -51,6 +51,17 @@ export class Operator {
     return this.elements[1][1]
   }
 
+  copy(other: Operator) {
+    this.elements = other.elements.map((row) => row.map((e) => e.clone()))
+    return this
+  }
+
+  clone() {
+    return new Operator(
+      this.elements.map((row) => row.map((e) => e.clone()))
+    )
+  }
+
   /**
    * Multiply the operator by a scalar
    */

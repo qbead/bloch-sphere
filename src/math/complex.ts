@@ -55,6 +55,16 @@ export class Complex {
     )
   }
 
+  copy(other: Complex) {
+    this.real = other.real
+    this.imag = other.imag
+    return this
+  }
+
+  clone() {
+    return new Complex(this.real, this.imag)
+  }
+
   plus(other: IntoComplex) {
     const { real, imag } = Complex.from(other)
     return Complex.from(this.real + real, this.imag + imag)

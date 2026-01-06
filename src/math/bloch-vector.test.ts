@@ -158,34 +158,40 @@ describe('BlochVector', () => {
   })
 
   describe('Properties', () => {
-    test('theta for |0> is 0', () => {
+    test('angles for |0> are (0, 0)', () => {
       const v = BlochVector.ZERO
       expect(v.theta).toBeCloseTo(0, 10)
-    })
-
-    test('theta for |1> is π', () => {
-      const v = BlochVector.ONE
-      expect(v.theta).toBeCloseTo(Math.PI, 10)
-    })
-
-    test('theta for |+> is π/2', () => {
-      const v = BlochVector.PLUS
-      expect(v.theta).toBeCloseTo(Math.PI / 2, 10)
-    })
-
-    test('phi for |+> is 0', () => {
-      const v = BlochVector.PLUS
       expect(v.phi).toBeCloseTo(0, 10)
     })
 
-    test('phi for |i> is π/2', () => {
+    test('angles for |1> are (π, 0)', () => {
+      const v = BlochVector.ONE
+      expect(v.theta).toBeCloseTo(Math.PI, 10)
+      expect(v.phi).toBeCloseTo(0, 10)
+    })
+
+    test('angles for |+> are (π/2, 0)', () => {
+      const v = BlochVector.PLUS
+      expect(v.theta).toBeCloseTo(Math.PI / 2, 10)
+      expect(v.phi).toBeCloseTo(0, 10)
+    })
+
+    test('angles for |-> are (π/2, π)', () => {
+      const v = BlochVector.MINUS
+      expect(v.theta).toBeCloseTo(Math.PI / 2, 10)
+      expect(v.phi).toBeCloseTo(Math.PI, 10)
+    })
+
+    test('angles for |i> are (π/2, π/2)', () => {
       const v = BlochVector.I
+      expect(v.theta).toBeCloseTo(Math.PI / 2, 10)
       expect(v.phi).toBeCloseTo(Math.PI / 2, 10)
     })
 
-    test('phi for |-i> is -π/2', () => {
+    test('angles for |-i> are (π/2, 3π/2)', () => {
       const v = BlochVector.MINUS_I
-      expect(v.phi).toBeCloseTo(-Math.PI / 2, 10)
+      expect(v.theta).toBeCloseTo(Math.PI / 2, 10)
+      expect(v.phi).toBeCloseTo(3 * Math.PI / 2, 10)
     })
 
     test('amplitude for unit vector is 1', () => {

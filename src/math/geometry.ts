@@ -78,3 +78,35 @@ export function getArcBetween(v1: THREE.Vector3, v2: THREE.Vector3) {
     arcAngle,
   }
 }
+
+/**
+ * Computes the shortest distance between two angles, considering wrap-around
+ * @param a0 The first angle
+ * @param a1 The second angle
+ * @param modulo The modulo value (e.g., 2π for radians)
+ * @returns The shortest distance from a0 to a1
+ */
+export function shortestModDist(a0: number, a1: number, modulo: number) {
+  a0 = (a0 % modulo + modulo) % modulo
+  let delta = (a1 - a0) % modulo
+  if (delta > modulo / 2) {
+    delta -= modulo
+  } else if (delta < -modulo / 2) {
+    delta += modulo
+  }
+  return delta
+}
+
+/**
+ * Get axis of rotation from a quaternion
+ * @param q The quaternion
+ * @returns The axis of rotation
+ */
+export function axisFromQuaternion(q: THREE.Quaternion) {
+  const s = Math.sqrt(1 - q.w * q.w)
+  if (s < 0.001) {
+    return new THREE.Vector3(1, 0, 0)
+  } else {
+    return new THREE.Vector3(q.x / s, q.y / s, q.z / s)
+  }
+}

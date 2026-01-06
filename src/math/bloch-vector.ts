@@ -1,7 +1,8 @@
 import { Complex } from './complex'
 import { Vector3 } from 'three'
 import { Operator } from './operator'
-import { lerp } from './interpolation'
+import { lerpAngle } from './interpolation'
+import { normalizeAzimuthal } from './angles'
 
 /**
  * A class representing a Bloch vector
@@ -112,15 +113,15 @@ export class BlochVector extends Vector3 {
     return BlochVector.zero().setAngles([theta, phi])
   }
 
-  /** The angle between the BlochVector and the z-axis */
+  /** The polar angle. The angle between the BlochVector and the z-axis */
   get theta() {
     return Math.acos(this.z)
   }
 
-  /** The angle between the projection of the BlochVector on the xy-plane
+  /** The azimuthal xy-plane angle. The angle between the projection of the BlochVector on the xy-plane
       and the x-axis */
   get phi() {
-    return Math.atan2(this.y, this.x)
+    return normalizeAzimuthal(Math.atan2(this.y, this.x))
   }
 
   /** The amplitude of the Bloch vector */
@@ -176,7 +177,7 @@ export class BlochVector extends Vector3 {
   }
 
   /**
-   * Set the Bloch vector from angles `[theta, phi]`
+   * Set the Bloch vector from angles `[theta, phi]` (polar, azimuthal)
    *
    * @param angles - The angles to set the Bloch vector to
    */
@@ -203,8 +204,8 @@ export class BlochVector extends Vector3 {
    */
   slerpTo(other: BlochVector, t: number) {
     // using spherical interpolation
-    const theta = lerp(this.theta, other.theta, t)
-    const phi = lerp(this.phi, other.phi, t)
+    const theta = lerpAngle(this.theta, other.theta, t)
+    const phi = lerpAngle(this.phi, other.phi, t)
     return BlochVector.fromAngles(theta, phi)
   }
 }

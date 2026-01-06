@@ -37,7 +37,7 @@ export function getRotationArc(
   const height = v.dot(n)
   const radius = Math.sqrt(1 - height ** 2)
   // project the vector onto the plane defined by n
-  const c = v.projectOnPlane(n)
+  const c = v.clone().projectOnPlane(n)
   let c0 = new THREE.Vector3(1, 0, 0).projectOnPlane(n)
   // trick for if the normal vector is the same as the x-axis
   // TODO: check if this works for small perturbations around the x-axis

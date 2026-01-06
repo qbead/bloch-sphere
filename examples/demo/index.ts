@@ -8,7 +8,7 @@ import {
   RegionDisplay,
   gates,
   BlochVector,
-} from '../../src/index.ts'
+} from '@qbead/bloch-sphere'
 import * as THREE from 'three'
 import GUI from 'lil-gui'
 

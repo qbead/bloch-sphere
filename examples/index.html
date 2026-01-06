@@ -3,19 +3,146 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Qbead Bloch Sphere</title>
+    <title>Bloch Sphere Examples - Qbead</title>
     <style>
-      html,
       body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        line-height: 1.6;
+        color: oklch(71.27% .03 259.82);
+        background-color: oklch(20.86% .04 269.04);
+      }
+      h1 {
+        color: oklch(71.27% .03 259.82);
+        border-bottom: 2px solid oklch(76.88% .19 154.6);
+        padding-bottom: 0.5rem;
+      }
+      p {
+        color: oklch(71.27% .03 259.82);
+      }
+      a {
+        color: oklch(76.88% .19 154.6);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .example-list {
+        list-style: none;
         padding: 0;
+        margin: 2rem 0;
+      }
+      .example-list li {
+        margin: 1rem 0;
+      }
+      .example-list a {
+        display: block;
+        padding: 1.5rem;
+        border: 1px solid oklch(30% .04 269.04);
+        border-radius: 8px;
+        transition: all 0.2s ease;
+        background: oklch(25% .04 269.04);
+        color: inherit;
+        text-decoration: none;
+      }
+      .example-list a:hover {
+        background-color: oklch(28% .04 269.04);
+        border-color: oklch(76.88% .19 154.6);
+        box-shadow: 0 2px 8px oklch(76.88% .19 154.6 / 0.2);
+        text-decoration: none;
+      }
+      .example-list .title {
+        font-weight: 600;
+        font-size: 1.2rem;
+        color: oklch(76.88% .19 154.6);
+        margin-bottom: 0.5rem;
+      }
+      .example-list .description {
         margin: 0;
-        width: 100vw;
-        height: 100vh;
+        color: oklch(71.27% .03 259.82);
+        font-size: 0.95rem;
+      }
+      .back-link {
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid oklch(30% .04 269.04);
+        text-align: center;
+      }
+      .intro {
+        background: oklch(25% .04 269.04);
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+        border: 1px solid oklch(30% .04 269.04);
       }
     </style>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <h1>Bloch Sphere Examples</h1>
+
+    <div class="intro">
+      <p>
+        Interactive examples demonstrating the features of
+        <a href="https://github.com/qbead/bloch-sphere" target="_blank">@qbead/bloch-sphere</a>,
+        a TypeScript library for visualizing quantum states on the Bloch sphere.
+      </p>
+    </div>
+
+    <ul class="example-list">
+      <li>
+        <a href="/demo/">
+          <div class="title">Interactive Demo</div>
+          <p class="description">
+            Comprehensive demonstration featuring quantum gates (H, X, Y, Z), multiple visualization types
+            (paths, points, operators), and interactive GUI controls. This is the primary demo used on the
+            GitHub Pages site.
+          </p>
+        </a>
+      </li>
+      <!-- Future examples will be added here:
+      <li>
+        <a href="/basic-visualization/">
+          <div class="title">Basic Visualization</div>
+          <p class="description">Minimal example showing how to set up a Bloch sphere and display a quantum state.</p>
+        </a>
+      </li>
+      <li>
+        <a href="/quantum-gates/">
+          <div class="title">Applying Quantum Gates</div>
+          <p class="description">Demonstrates applying Pauli and Hadamard gates to quantum states.</p>
+        </a>
+      </li>
+      <li>
+        <a href="/complex-numbers/">
+          <div class="title">Working with Complex Numbers</div>
+          <p class="description">Understanding the mathematical foundation with complex number operations.</p>
+        </a>
+      </li>
+      <li>
+        <a href="/custom-operators/">
+          <div class="title">Creating Custom Operators</div>
+          <p class="description">Define custom quantum operators and verify their properties.</p>
+        </a>
+      </li>
+      <li>
+        <a href="/rotation-gates/">
+          <div class="title">Rotation Gates</div>
+          <p class="description">Apply rotation transformations around different axes (RX, RY, RZ).</p>
+        </a>
+      </li>
+      <li>
+        <a href="/state-paths/">
+          <div class="title">Visualizing State Paths</div>
+          <p class="description">Animate and display transformation sequences on the Bloch sphere.</p>
+        </a>
+      </li>
+      -->
+    </ul>
+
+    <div class="back-link">
+      <a href="https://github.com/qbead/bloch-sphere">← View on GitHub</a>
+    </div>
   </body>
 </html>

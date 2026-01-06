@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@qbead/bloch-sphere": "file:../",
     "lil-gui": "^0.20.0",
     "three": "^0.175.0"
   },

@@ -61,6 +61,7 @@ let gate = gates.hadamard()
 operatorDisplay.label.text = 'H'
 operatorDisplay.label.fontSize = 2
 operatorDisplay.set(gate)
+
 pathDisplay.set(gate, state)
 
 const resultQubit = new QubitDisplay()
@@ -83,9 +84,6 @@ blochSphere.setCameraState({ theta: 1, phi: 2.5 }, 2000)
 //   const state = BlochVector.random()
 //   q.set(state, 500)
 // }, 1000)
-
-// helper to wait for a duration
-const delay = (ms?: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 // Set up a GUI to control the state of the qubit
 const gui = new GUI()
@@ -122,8 +120,7 @@ async function update(animate?: boolean) {
   resultQubit.visible = false
   pathDisplay.visible = false
 
-  qubitArrow.set(state, 300)
-  await delay(300)
+  await qubitArrow.set(state, 300)
   // then show other elements
   resultQubit.set(state.applyOperator(gate))
   pathDisplay.set(gate, state)

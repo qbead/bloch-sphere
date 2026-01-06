@@ -25,8 +25,9 @@ const states: BlochVector[] = []
 const steps = 12
 
 for (let i = 0; i <= steps; i++) {
+  const theta = (i / steps) * Math.PI // from 0 to π
   const phi = (i / steps) * 2 * Math.PI
-  const state = BlochVector.fromAngles(Math.PI / 2, phi) // theta = π/2 for equator
+  const state = BlochVector.fromAngles(theta, phi)
   states.push(state)
 }
 
@@ -42,6 +43,7 @@ sphere.add(animatedQubit)
 
 // Animate through the states
 async function animate() {
+  animatedQubit.set(states[0])
   for (const state of states.slice(1)) {
     await animatedQubit.set(state, 500)
   }

@@ -4,6 +4,7 @@ import { Operator } from '../math/operator'
 import { animate, type CancellablePromise } from '../animation'
 import { Label } from './label'
 import { defaultColors } from '../colors'
+import { axisFromQuaternion } from '../math/geometry'
 
 /**
  * A display for a quantum operator
@@ -118,16 +119,10 @@ export class OperatorDisplay extends BaseComponent {
    * @param op The operator to display
    */
   set(op: Operator) {
-    this.operator = op
+    this.operator.copy(op)
     const q = this.operator.quaternion()
-    // the quaternion components are the axis of rotation
-    // so we want to point this group in that direction
-    const n = new THREE.Vector3(q.x, q.y, q.z)
-    const rot = new THREE.Quaternion().setFromUnitVectors(
-      new THREE.Vector3(0, 0, 1),
-      n
-    )
-    this.setRotationFromQuaternion(rot)
+    const axis = axisFromQuaternion(q)
+    this.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), axis)
   }
 
   /**

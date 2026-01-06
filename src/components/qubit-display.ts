@@ -3,7 +3,7 @@ import { QubitArrow } from './qubit-arrow'
 import { AngleIndicators } from './angle-indicators'
 import { QubitProjWedge } from './qubit-proj-wedge'
 import { BlochVector } from '../math/bloch-vector'
-import { animate } from '../animation'
+import { animate, type CancellablePromise } from '../animation'
 import { lerp } from '../math/interpolation'
 import type { ColorRepresentation, Color } from 'three'
 
@@ -25,7 +25,7 @@ export class QubitDisplay extends BaseComponent {
   wedge: QubitProjWedge
   angleIndicators: AngleIndicators
   state: BlochVector
-  private _anim: any = null
+  private _anim: CancellablePromise<void> | null = null
   constructor(q?: BlochVector) {
     super('qubit-display')
 
@@ -62,7 +62,7 @@ export class QubitDisplay extends BaseComponent {
     if (duration > 0) {
       let start = this.state.angles()
       let end = q.angles()
-      this._anim?.()
+      this._anim?.cancel()
       this._anim = animate(
         (k) => {
           this.state.setAngles([

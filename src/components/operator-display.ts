@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { BaseComponent } from './component'
 import { Operator } from '../math/operator'
-import { animate } from '../animation'
+import { animate, type CancellablePromise } from '../animation'
 import { Label } from './label'
 import { defaultColors } from '../colors'
 
@@ -19,7 +19,7 @@ export class OperatorDisplay extends BaseComponent {
   operator: Operator
   innerGroup: THREE.Group
   label: Label
-  private anim: any
+  private anim: CancellablePromise<void>
 
   constructor(op?: Operator) {
     super('operator-display')
@@ -134,6 +134,6 @@ export class OperatorDisplay extends BaseComponent {
    * Perform cleanup tasks
    */
   dispose() {
-    this.anim()
+    this.anim.cancel()
   }
 }

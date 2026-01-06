@@ -4,7 +4,7 @@ import { CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer.js'
 import { OrbitControls } from 'three/examples/jsm/Addons.js'
 import { BlochSphereScene, BlockSphereSceneOptions } from './bloch-sphere-scene'
 import { BlochVector } from './math/bloch-vector'
-import { animate, type CancelAnimation } from './animation'
+import { animate, type CancellablePromise } from './animation'
 import { lerp } from './math/interpolation'
 
 /**
@@ -92,7 +92,7 @@ export class BlochSphere {
   camera: THREE.OrthographicCamera
   controls: OrbitControls
 
-  private _cameraAnimation: CancelAnimation | null = null
+  private _cameraAnimation: CancellablePromise<void> | null = null
 
   constructor(options?: BlochSphereOptions) {
     this.initRenderer()
@@ -269,7 +269,7 @@ export class BlochSphere {
   ): Promise<void> | void {
     // Cancel any existing animation
     if (this._cameraAnimation) {
-      this._cameraAnimation()
+      this._cameraAnimation.cancel()
       this._cameraAnimation = null
     }
 
@@ -288,26 +288,25 @@ export class BlochSphere {
     }
 
     if (duration > 0) {
-      return new Promise<void>((resolve) => {
-        this._cameraAnimation = animate(
-          (progress) => {
-            const interpolatedState = {
-              theta: lerp(currentState.theta, targetState.theta, progress),
-              phi: lerp(currentState.phi, targetState.phi, progress),
-              zoom: lerp(currentState.zoom, targetState.zoom, progress),
-            }
-            this._applyCameraState(interpolatedState)
-          },
-          duration,
-          easing
-        )
+      this._cameraAnimation = animate(
+        (progress) => {
+          const interpolatedState = {
+            theta: lerp(currentState.theta, targetState.theta, progress),
+            phi: lerp(currentState.phi, targetState.phi, progress),
+            zoom: lerp(currentState.zoom, targetState.zoom, progress),
+          }
+          this._applyCameraState(interpolatedState)
+        },
+        duration,
+        easing
+      )
 
-        // Set up completion callback
-        setTimeout(() => {
-          this._cameraAnimation = null
-          resolve()
-        }, duration)
+      // Clean up reference when animation completes
+      this._cameraAnimation.then(() => {
+        this._cameraAnimation = null
       })
+
+      return this._cameraAnimation
     } else {
       this._applyCameraState(targetState)
     }
@@ -468,7 +467,7 @@ export class BlochSphere {
   dispose() {
     // Cancel any pending camera animation
     if (this._cameraAnimation) {
-      this._cameraAnimation()
+      this._cameraAnimation.cancel()
       this._cameraAnimation = null
     }
 

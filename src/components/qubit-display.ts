@@ -62,7 +62,7 @@ export class QubitDisplay extends BaseComponent {
     if (duration > 0) {
       let start = this.state.angles()
       let end = q.angles()
-      this._anim?.call()
+      this._anim?.()
       this._anim = animate(
         (k) => {
           this.state.setAngles([

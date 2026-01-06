@@ -7,8 +7,12 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         demo: resolve(__dirname, 'demo/index.html'),
-        // Future examples add here:
-        // 'basic-visualization': resolve(__dirname, 'basic-visualization/index.html'),
+        'basic-visualization': resolve(__dirname, 'basic-visualization/index.html'),
+        'quantum-gates': resolve(__dirname, 'quantum-gates/index.html'),
+        'rotation-gates': resolve(__dirname, 'rotation-gates/index.html'),
+        'state-paths': resolve(__dirname, 'state-paths/index.html'),
+        'points-and-regions': resolve(__dirname, 'points-and-regions/index.html'),
+        'operator-visualization': resolve(__dirname, 'operator-visualization/index.html'),
       },
     },
   },

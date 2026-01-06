@@ -135,6 +135,10 @@ describe('Operator', () => {
       expect(result.a.imag).toBeCloseTo(op.a.imag, 10)
       expect(result.b.real).toBeCloseTo(op.b.real, 10)
       expect(result.b.imag).toBeCloseTo(op.b.imag, 10)
+      expect(result.c.real).toBeCloseTo(op.c.real, 10)
+      expect(result.c.imag).toBeCloseTo(op.c.imag, 10)
+      expect(result.d.real).toBeCloseTo(op.d.real, 10)
+      expect(result.d.imag).toBeCloseTo(op.d.imag, 10)
     })
 
     test('matrix multiplication is correct', () => {
@@ -149,9 +153,13 @@ describe('Operator', () => {
       ])
       const result = op1.times(op2)
       expect(result.a.real).toBe(19)
+      expect(result.a.imag).toBe(0)
       expect(result.b.real).toBe(22)
+      expect(result.b.imag).toBe(0)
       expect(result.c.real).toBe(43)
+      expect(result.c.imag).toBe(0)
       expect(result.d.real).toBe(50)
+      expect(result.d.imag).toBe(0)
     })
 
     test('Pauli X squared is identity', () => {
@@ -162,9 +170,13 @@ describe('Operator', () => {
       ])
       const X2 = X.times(X)
       expect(X2.a.real).toBeCloseTo(1, 10)
+      expect(X2.a.imag).toBeCloseTo(0, 10)
       expect(X2.b.real).toBeCloseTo(0, 10)
+      expect(X2.b.imag).toBeCloseTo(0, 10)
       expect(X2.c.real).toBeCloseTo(0, 10)
+      expect(X2.c.imag).toBeCloseTo(0, 10)
       expect(X2.d.real).toBeCloseTo(1, 10)
+      expect(X2.d.imag).toBeCloseTo(0, 10)
     })
   })
 
@@ -180,9 +192,13 @@ describe('Operator', () => {
       ])
       const result = op1.plus(op2)
       expect(result.a.real).toBe(6)
+      expect(result.a.imag).toBe(0)
       expect(result.b.real).toBe(8)
+      expect(result.b.imag).toBe(0)
       expect(result.c.real).toBe(10)
+      expect(result.c.imag).toBe(0)
       expect(result.d.real).toBe(12)
+      expect(result.d.imag).toBe(0)
     })
 
     test('addition is commutative', () => {
@@ -198,6 +214,12 @@ describe('Operator', () => {
       const result2 = op2.plus(op1)
       expect(result1.a.real).toBe(result2.a.real)
       expect(result1.a.imag).toBe(result2.a.imag)
+      expect(result1.b.real).toBe(result2.b.real)
+      expect(result1.b.imag).toBe(result2.b.imag)
+      expect(result1.c.real).toBe(result2.c.real)
+      expect(result1.c.imag).toBe(result2.c.imag)
+      expect(result1.d.real).toBe(result2.d.real)
+      expect(result1.d.imag).toBe(result2.d.imag)
     })
   })
 
@@ -206,9 +228,13 @@ describe('Operator', () => {
       const id = Operator.identity()
       const ct = id.conjugateTranspose()
       expect(ct.a.real).toBe(1)
+      expect(Math.abs(ct.a.imag)).toBe(0)
       expect(ct.b.real).toBe(0)
+      expect(Math.abs(ct.b.imag)).toBe(0)
       expect(ct.c.real).toBe(0)
+      expect(Math.abs(ct.c.imag)).toBe(0)
       expect(ct.d.real).toBe(1)
+      expect(Math.abs(ct.d.imag)).toBe(0)
     })
 
     test('conjugate transpose transposes and conjugates', () => {
@@ -251,9 +277,13 @@ describe('Operator', () => {
       ])
       const Xdag = X.conjugateTranspose()
       expect(Xdag.a.real).toBeCloseTo(X.a.real, 10)
+      expect(Xdag.a.imag).toBeCloseTo(X.a.imag, 10)
       expect(Xdag.b.real).toBeCloseTo(X.b.real, 10)
+      expect(Xdag.b.imag).toBeCloseTo(X.b.imag, 10)
       expect(Xdag.c.real).toBeCloseTo(X.c.real, 10)
+      expect(Xdag.c.imag).toBeCloseTo(X.c.imag, 10)
       expect(Xdag.d.real).toBeCloseTo(X.d.real, 10)
+      expect(Xdag.d.imag).toBeCloseTo(X.d.imag, 10)
     })
   })
 

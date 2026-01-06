@@ -62,10 +62,10 @@ export class OperatorPathDisplay extends BaseComponent {
     this.add(innerGroup)
 
     this.operator = Operator.identity()
+    this.vector = BlochVector.ONE
     if (op) {
       this.setOperator(op)
     }
-    this.vector = BlochVector.ONE
     if (v) {
       this.setVector(v)
     }
@@ -75,8 +75,8 @@ export class OperatorPathDisplay extends BaseComponent {
    * Set the operator and vector
    */
   set(op: Operator, v: BlochVector) {
-    this.operator = op
-    this.vector = v
+    this.operator.copy(op)
+    this.vector.copy(v)
     const q = this.operator.quaternion()
     // the quaternion components are the axis of rotation
     // so we want to point this group in that direction

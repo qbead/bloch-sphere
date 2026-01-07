@@ -1,10 +1,11 @@
+import { OperatorDisplay } from '@qbead/bloch-sphere'
 import {
   BlochSphere,
   BlochVector,
   QubitDisplay,
   OperatorPathDisplay,
   gates,
-} from '@qbead/bloch-sphere'
+} from '../../src/index'
 
 // ========================================
 // Setup
@@ -27,24 +28,28 @@ const initialState = BlochVector.ZERO
 const rxGate = gates.rx(Math.PI / 3) // Rotate π/3 around X-axis
 const ryGate = gates.ry(Math.PI / 4) // Rotate π/4 around Y-axis
 
-// Combine the rotations: apply RX first, then RY
-const combinedGate = ryGate.times(rxGate)
-
-// Show the intermediate state after first rotation
-const stateAfterRX = initialState.applyOperator(rxGate)
-
-// Show the final state after both rotations
-const finalState = initialState.applyOperator(combinedGate)
 
 // Display initial state
 const initialQubit = new QubitDisplay(initialState)
 initialQubit.color = 0xdcdee8 // beige
 sphere.add(initialQubit)
 
+// Show the intermediate state after first rotation
+const stateAfterRX = initialState.applyOperator(rxGate)
+
 // Display intermediate state after RX
 const intermediateQubit = new QubitDisplay(stateAfterRX)
 intermediateQubit.color = 0xf03e2d // red (X-axis color)
 sphere.add(intermediateQubit)
+
+// Combine the rotations: apply RX first, then RY
+const combinedGate = ryGate.times(rxGate)
+
+const combinedGateDisplay = new OperatorDisplay(combinedGate)
+sphere.add(combinedGateDisplay)
+
+// Show the final state after both rotations
+const finalState = initialState.applyOperator(combinedGate)
 
 // Display final state after combined rotation
 const finalQubit = new QubitDisplay(finalState)

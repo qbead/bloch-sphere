@@ -127,15 +127,14 @@ export class Operator {
    * Get this operator as a THREE.Quaternion
    */
   quaternion() {
-    const w = this.a.plus(this.d).real
-    const x = this.c.plus(this.b)
-    const y = this.c.minus(this.b)
-    const z = this.a.minus(this.d)
+    const halfI = Complex.I.times(0.5)
+    const phase = this.determinant().pow(-0.5)
+    const q0 = this.a.plus(this.d).times(phase.times(0.5)).real
+    const q1 = this.b.plus(this.c).times(phase.times(halfI)).real
+    const q2 = this.c.minus(this.b).times(phase.times(0.5)).real
+    const q3 = this.a.minus(this.d).times(phase.times(halfI)).real
 
-    if (x.real == 0 && y.real == 0 && z.real == 0) {
-      return new Quaternion(x.imag, y.imag, z.imag, w).normalize()
-    } else {
-      return new Quaternion(x.real, y.real, z.real, w).normalize()
-    }
+    const q = new Quaternion(q1, q2, q3, q0)
+    return q.normalize()
   }
 }

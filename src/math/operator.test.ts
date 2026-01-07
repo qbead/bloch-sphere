@@ -404,4 +404,148 @@ describe('Operator', () => {
       expect(norm).toBeCloseTo(1, 10)
     })
   })
+
+  describe('Rotation gates', () => {
+    test('rx gate rotates ZERO state around x-axis correctly', () => {
+      const { rx } = require('./gates')
+      const { BlochVector } = require('./bloch-vector')
+
+      const angle = Math.PI / 3
+      const rxGate = rx(angle)
+      const initialState = BlochVector.ZERO
+      const stateAfterRX = initialState.applyOperator(rxGate)
+
+      // RX rotates counterclockwise around the x-axis (when looking from +x)
+      // Starting from ZERO (0, 0, 1), rotating by angle around x-axis
+      // should result in (0, -sin(angle), cos(angle))
+      expect(stateAfterRX.x).toBeCloseTo(0, 10)
+      expect(stateAfterRX.y).toBeCloseTo(-Math.sin(angle), 10)
+      expect(stateAfterRX.z).toBeCloseTo(Math.cos(angle), 10)
+
+      // Verify the angles: theta = angle, phi = 3*PI/2 (or -PI/2)
+      expect(stateAfterRX.theta).toBeCloseTo(angle, 10)
+      expect(stateAfterRX.phi).toBeCloseTo(3 * Math.PI / 2, 10)
+    })
+
+    test('rx(PI) flips ZERO to ONE', () => {
+      const { rx } = require('./gates')
+      const { BlochVector } = require('./bloch-vector')
+
+      const rxGate = rx(Math.PI)
+      const result = BlochVector.ZERO.applyOperator(rxGate)
+
+      expect(result.x).toBeCloseTo(0, 10)
+      expect(result.y).toBeCloseTo(0, 10)
+      expect(result.z).toBeCloseTo(-1, 10)
+    })
+
+    test('ry gate rotates ZERO state around y-axis correctly', () => {
+      const { ry } = require('./gates')
+      const { BlochVector } = require('./bloch-vector')
+
+      const angle = Math.PI / 3
+      const ryGate = ry(angle)
+      const initialState = BlochVector.ZERO
+      const stateAfterRY = initialState.applyOperator(ryGate)
+
+      // RY rotates counterclockwise around the y-axis (when looking from +y)
+      // Starting from ZERO (0, 0, 1), rotating by angle around y-axis
+      // should result in (sin(angle), 0, cos(angle))
+      expect(stateAfterRY.x).toBeCloseTo(Math.sin(angle), 10)
+      expect(stateAfterRY.y).toBeCloseTo(0, 10)
+      expect(stateAfterRY.z).toBeCloseTo(Math.cos(angle), 10)
+
+      // Verify the angles: theta = angle, phi = 0
+      expect(stateAfterRY.theta).toBeCloseTo(angle, 10)
+      expect(stateAfterRY.phi).toBeCloseTo(0, 10)
+    })
+
+    test('rz gate rotates PLUS state around z-axis correctly', () => {
+      const { rz } = require('./gates')
+      const { BlochVector } = require('./bloch-vector')
+
+      const angle = Math.PI / 3
+      const rzGate = rz(angle)
+      const initialState = BlochVector.PLUS
+      const stateAfterRZ = initialState.applyOperator(rzGate)
+
+      // RZ rotates counterclockwise around the z-axis (when looking from +z)
+      // Starting from PLUS (1, 0, 0), rotating by angle around z-axis
+      // should result in (cos(angle), sin(angle), 0)
+      expect(stateAfterRZ.x).toBeCloseTo(Math.cos(angle), 10)
+      expect(stateAfterRZ.y).toBeCloseTo(Math.sin(angle), 10)
+      expect(stateAfterRZ.z).toBeCloseTo(0, 10)
+
+      // Verify the angles: theta = PI/2, phi = angle
+      expect(stateAfterRZ.theta).toBeCloseTo(Math.PI / 2, 10)
+      expect(stateAfterRZ.phi).toBeCloseTo(angle, 10)
+    })
+
+    test('rz gate leaves ZERO state unchanged', () => {
+      const { rz } = require('./gates')
+      const { BlochVector } = require('./bloch-vector')
+
+      const rzGate = rz(Math.PI / 3)
+      const result = BlochVector.ZERO.applyOperator(rzGate)
+
+      expect(result.x).toBeCloseTo(0, 10)
+      expect(result.y).toBeCloseTo(0, 10)
+      expect(result.z).toBeCloseTo(1, 10)
+    })
+
+    test('rz(PI/2) rotates PLUS to I', () => {
+      const { rz } = require('./gates')
+      const { BlochVector } = require('./bloch-vector')
+
+      const rzGate = rz(Math.PI / 2)
+      const result = BlochVector.PLUS.applyOperator(rzGate)
+
+      expect(result.x).toBeCloseTo(0, 10)
+      expect(result.y).toBeCloseTo(1, 10)
+      expect(result.z).toBeCloseTo(0, 10)
+    })
+
+    test('rz(PI) rotates PLUS to MINUS', () => {
+      const { rz } = require('./gates')
+      const { BlochVector } = require('./bloch-vector')
+
+      const rzGate = rz(Math.PI)
+      const result = BlochVector.PLUS.applyOperator(rzGate)
+
+      expect(result.x).toBeCloseTo(-1, 10)
+      expect(result.y).toBeCloseTo(0, 10)
+      expect(result.z).toBeCloseTo(0, 10)
+    })
+
+    test('rotation gates are unitary (preserve state norm)', () => {
+      const { rx, ry, rz } = require('./gates')
+      const { BlochVector } = require('./bloch-vector')
+
+      const angle = Math.PI / 7
+      const initialState = BlochVector.random()
+      const initialNorm = initialState.length()
+
+      const afterRX = initialState.applyOperator(rx(angle))
+      const afterRY = initialState.applyOperator(ry(angle))
+      const afterRZ = initialState.applyOperator(rz(angle))
+
+      expect(afterRX.length()).toBeCloseTo(initialNorm, 10)
+      expect(afterRY.length()).toBeCloseTo(initialNorm, 10)
+      expect(afterRZ.length()).toBeCloseTo(initialNorm, 10)
+    })
+
+    test('rx(2*PI) is identity (up to global phase)', () => {
+      const { rx } = require('./gates')
+      const { BlochVector } = require('./bloch-vector')
+
+      const rxGate = rx(2 * Math.PI)
+      const initial = BlochVector.random()
+
+      // After full rotation, random state should map back to itself
+      const result = initial.applyOperator(rxGate)
+      expect(result.x).toBeCloseTo(initial.x, 10)
+      expect(result.y).toBeCloseTo(initial.y, 10)
+      expect(result.z).toBeCloseTo(initial.z, 10)
+    })
+  })
 })

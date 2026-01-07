@@ -5,6 +5,7 @@ import { animate, type CancellablePromise } from '../animation'
 import { Label } from './label'
 import { defaultColors } from '../colors'
 import { axisFromQuaternion } from '../math/geometry'
+import { formatDegrees } from '../format'
 
 /**
  * A display for a quantum operator
@@ -121,8 +122,13 @@ export class OperatorDisplay extends BaseComponent {
   set(op: Operator) {
     this.operator.copy(op)
     const q = this.operator.quaternion()
-    const axis = axisFromQuaternion(q)
-    this.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), axis)
+    const info = axisFromQuaternion(q)
+    if (info.angle == 0) {
+      this.label.text = 'Identity'
+      return
+    }
+    this.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), info.axis)
+    this.label.text = `α = ${formatDegrees(info.angle)}`
   }
 
   /**

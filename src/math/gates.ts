@@ -66,7 +66,6 @@ export function phase(phi: number) {
   ])
 }
 
-// TODO check these
 /**
  * Rotation around the X axis
  * Applies a rotation of `theta` radians around the X axis
@@ -75,10 +74,10 @@ export function rx(theta: number) {
   return new Operator([
     [
       Complex.from(Math.cos(theta / 2), 0),
-      Complex.I.times(Math.sin(theta / 2)),
+      Complex.I.times(-Math.sin(theta / 2)),
     ],
     [
-      Complex.I.times(Math.sin(theta / 2)),
+      Complex.I.times(-Math.sin(theta / 2)),
       Complex.from(Math.cos(theta / 2), 0),
     ],
   ])
@@ -108,12 +107,12 @@ export function ry(theta: number) {
 export function rz(theta: number) {
   return new Operator([
     [
-      Complex.from(Math.cos(theta / 2), 0),
-      Complex.I.times(Math.sin(theta / 2)),
+      Complex.fromPolar(1, -theta / 2),
+      Complex.ZERO,
     ],
     [
-      Complex.I.times(Math.sin(theta / 2)),
-      Complex.from(Math.cos(theta / 2), 0),
+      Complex.ZERO,
+      Complex.fromPolar(1, theta / 2),
     ],
   ])
 }

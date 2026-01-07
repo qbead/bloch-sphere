@@ -97,16 +97,20 @@ export function shortestModDist(a0: number, a1: number, modulo: number) {
   return delta
 }
 
+export type RotationInfo = {
+  axis: THREE.Vector3
+  angle: number
+}
+
 /**
- * Get axis of rotation from a quaternion
+ * Get axis of rotation and angle from a quaternion
  * @param q The quaternion
  * @returns The axis of rotation
  */
-export function axisFromQuaternion(q: THREE.Quaternion) {
-  const s = Math.sqrt(1 - q.w * q.w)
-  if (s < 0.001) {
-    return new THREE.Vector3(1, 0, 0)
-  } else {
-    return new THREE.Vector3(q.x / s, q.y / s, q.z / s)
+export function axisFromQuaternion(q: THREE.Quaternion): RotationInfo {
+  const v = new THREE.Vector3(q.x, q.y, q.z)
+  if (v.length() < 1e-6) {
+    return { axis: new THREE.Vector3(0, 0, 0), angle: 0 }
   }
+  return { axis: v.normalize(), angle: 2 * Math.atan2(v.length(), q.w) }
 }

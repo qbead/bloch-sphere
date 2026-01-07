@@ -104,6 +104,21 @@ export class Complex {
     return Complex.from(this.real, -this.imag)
   }
 
+  reciprocal() {
+    const denominator = this.real * this.real + this.imag * this.imag
+    return Complex.from(this.real / denominator, -this.imag / denominator)
+  }
+
+  pow(exponent: number) {
+    const r = this.magnitude ** exponent
+    const theta = this.phase * exponent
+    return Complex.fromPolar(r, theta)
+  }
+
+  sqrt() {
+    return this.pow(0.5)
+  }
+
   toString() {
     return `${this.real} + ${this.imag}i`
   }

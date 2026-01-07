@@ -5,7 +5,7 @@ import {
   QubitDisplay,
   OperatorPathDisplay,
   gates,
-} from '../../src/index'
+} from '@qbead/bloch-sphere'
 
 // ========================================
 // Setup

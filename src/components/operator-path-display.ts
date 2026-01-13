@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import { BaseComponent } from './component'
 import { Operator } from '../math/operator'
 import { BlochVector } from '../math/bloch-vector'
-import { getRotationArc } from '../math/geometry'
+import { axisFromQuaternion, getRotationArc } from '../math/geometry'
 import { defaultColors } from '../colors'
 
 /**
@@ -80,14 +80,13 @@ export class OperatorPathDisplay extends BaseComponent {
     const q = this.operator.quaternion()
     // the quaternion components are the axis of rotation
     // so we want to point this group in that direction
-    const n = new THREE.Vector3(q.x, q.y, q.z).normalize()
+    const { axis, angle } = axisFromQuaternion(q)
     const rot = new THREE.Quaternion().setFromUnitVectors(
       new THREE.Vector3(0, 0, 1),
-      n
+      axis
     )
     this.setRotationFromQuaternion(rot)
-    let angle = 2 * Math.acos(q.w)
-    const greatArc = getRotationArc(v, n, angle)
+    const greatArc = getRotationArc(v, axis, angle)
     const { radius, height, arcOffset, arcAngle } = greatArc
     this.path.geometry = new THREE.RingGeometry(
       radius,

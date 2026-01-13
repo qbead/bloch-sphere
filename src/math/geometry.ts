@@ -31,26 +31,43 @@ export type ArcProperties = {
  */
 export function getRotationArc(
   v: THREE.Vector3,
-  n: THREE.Vector3,
+  axis: THREE.Vector3,
   angle: number
 ): ArcProperties {
-  const height = v.dot(n)
-  const radius = Math.sqrt(1 - height ** 2)
-  // project the vector onto the plane defined by n
-  const c = v.clone().projectOnPlane(n)
-  let c0 = new THREE.Vector3(1, 0, 0).projectOnPlane(n)
-  // trick for if the normal vector is the same as the x-axis
-  // TODO: check if this works for small perturbations around the x-axis
-  if (c0.length() === 0) {
-    c0 = new THREE.Vector3(0, 0, 1).projectOnPlane(n)
-    angle = -angle
+  const norm = axis.clone().normalize()
+  // Rotate v into the local frame where axis === +Z
+  const toLocal = new THREE.Quaternion().setFromUnitVectors(
+    norm,
+    new THREE.Vector3(0, 0, 1)
+  )
+
+  const vLocal = v.clone().applyQuaternion(toLocal)
+
+  // In local space:
+  //  - Z is the normal
+  //  - XY plane is the ring plane
+  const height = vLocal.z
+  const radius = Math.sqrt(vLocal.x * vLocal.x + vLocal.y * vLocal.y)
+
+  // Degenerate: no arc
+  if (radius === 0) {
+    return {
+      radius: 0,
+      height,
+      norm,
+      arcOffset: 0,
+      arcAngle: angle,
+    }
   }
-  const a0 = c.angleTo(c0) * (c0.cross(c).dot(n) < 0 ? -1 : 1)
+
+  // RingGeometry: 0 angle is +X, rotation around +Z
+  const arcOffset = Math.atan2(vLocal.y, vLocal.x)
+
   return {
     radius,
     height,
-    norm: n.clone(),
-    arcOffset: a0,
+    norm,
+    arcOffset,
     arcAngle: angle,
   }
 }
@@ -112,5 +129,6 @@ export function axisFromQuaternion(q: THREE.Quaternion): RotationInfo {
   if (v.length() < 1e-6) {
     return { axis: new THREE.Vector3(0, 0, 0), angle: 0 }
   }
-  return { axis: v.normalize(), angle: 2 * Math.atan2(v.length(), q.w) }
+  const angle = 2 * Math.atan2(v.length(), q.w)
+  return { axis: v.normalize(), angle }
 }

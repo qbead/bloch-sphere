@@ -8,7 +8,7 @@
 
 > **formatVector**(`v`, `precision`): `string`
 
-Defined in: [src/format.ts:6](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/format.ts#L6)
+Defined in: [src/format.ts:6](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/format.ts#L6)
 
 Format a vector as a string with a given precision.
 

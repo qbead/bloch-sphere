@@ -4,12 +4,16 @@
 
 [@qbead/bloch-sphere](../index.md) / CancelAnimation
 
-# Type Alias: CancelAnimation()
+# Type Alias: ~~CancelAnimation()~~
 
 > **CancelAnimation** = () => `void`
 
-Defined in: [src/animation.ts:5](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/animation.ts#L5)
+Defined in: [src/animation.ts:6](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/animation.ts#L6)
 
 ## Returns
 
 `void`
+
+## Deprecated
+
+Use CancellablePromise instead

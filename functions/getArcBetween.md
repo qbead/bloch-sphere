@@ -8,7 +8,7 @@
 
 > **getArcBetween**(`v1`, `v2`): `object`
 
-Defined in: [src/math/geometry.ts:64](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/geometry.ts#L64)
+Defined in: [src/math/geometry.ts:81](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/geometry.ts#L81)
 
 Gets the properties of an great arc between two vectors
 
@@ -27,6 +27,6 @@ The properties of the great arc
 
 | Name | Type | Defined in |
 | ------ | ------ | ------ |
-| `arcAngle` | `number` | [src/math/geometry.ts:78](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/geometry.ts#L78) |
-| `arcOffset` | `number` | [src/math/geometry.ts:77](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/geometry.ts#L77) |
-| `norm` | `Vector3` | [src/math/geometry.ts:76](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/geometry.ts#L76) |
+| `arcAngle` | `number` | [src/math/geometry.ts:95](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/geometry.ts#L95) |
+| `arcOffset` | `number` | [src/math/geometry.ts:94](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/geometry.ts#L94) |
+| `norm` | `Vector3` | [src/math/geometry.ts:93](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/geometry.ts#L93) |

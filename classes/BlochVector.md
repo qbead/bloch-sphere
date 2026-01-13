@@ -6,7 +6,7 @@
 
 # Class: BlochVector
 
-Defined in: [src/math/bloch-vector.ts:24](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L24)
+Defined in: [src/math/bloch-vector.ts:25](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L25)
 
 A class representing a Bloch vector
 
@@ -71,7 +71,7 @@ Defined in: node\_modules/@types/three/src/math/Vector3.d.ts:32
 
 > **get** **amplitude**(): `number`
 
-Defined in: [src/math/bloch-vector.ts:127](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L127)
+Defined in: [src/math/bloch-vector.ts:128](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L128)
 
 The amplitude of the Bloch vector
 
@@ -87,9 +87,9 @@ The amplitude of the Bloch vector
 
 > **get** **phi**(): `number`
 
-Defined in: [src/math/bloch-vector.ts:122](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L122)
+Defined in: [src/math/bloch-vector.ts:123](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L123)
 
-The angle between the projection of the BlochVector on the xy-plane
+The azimuthal xy-plane angle. The angle between the projection of the BlochVector on the xy-plane
 and the x-axis
 
 ##### Returns
@@ -104,7 +104,7 @@ and the x-axis
 
 > **get** **rho**(): [`Complex`](Complex.md)[][]
 
-Defined in: [src/math/bloch-vector.ts:132](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L132)
+Defined in: [src/math/bloch-vector.ts:133](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L133)
 
 The density matrix representation of the Bloch vector
 
@@ -120,9 +120,9 @@ The density matrix representation of the Bloch vector
 
 > **get** **theta**(): `number`
 
-Defined in: [src/math/bloch-vector.ts:116](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L116)
+Defined in: [src/math/bloch-vector.ts:117](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L117)
 
-The angle between the BlochVector and the z-axis
+The polar angle. The angle between the BlochVector and the z-axis
 
 ##### Returns
 
@@ -136,7 +136,7 @@ The angle between the BlochVector and the z-axis
 
 > **get** `static` **I**(): `BlochVector`
 
-Defined in: [src/math/bloch-vector.ts:53](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L53)
+Defined in: [src/math/bloch-vector.ts:54](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L54)
 
 A bloch vector representing the imaginary state (|i>) or (|0> + i|1>)/sqrt(2)
 
@@ -152,7 +152,7 @@ A bloch vector representing the imaginary state (|i>) or (|0> + i|1>)/sqrt(2)
 
 > **get** `static` **MINUS**(): `BlochVector`
 
-Defined in: [src/math/bloch-vector.ts:47](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L47)
+Defined in: [src/math/bloch-vector.ts:48](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L48)
 
 A bloch vector representing the minus state (|->) or (|0> - |1>)/sqrt(2)
 
@@ -168,7 +168,7 @@ A bloch vector representing the minus state (|->) or (|0> - |1>)/sqrt(2)
 
 > **get** `static` **MINUS\_I**(): `BlochVector`
 
-Defined in: [src/math/bloch-vector.ts:59](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L59)
+Defined in: [src/math/bloch-vector.ts:60](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L60)
 
 A bloch vector representing the minus imaginary state (|-i>) or (|0> - i|1>)/sqrt(2)
 
@@ -184,7 +184,7 @@ A bloch vector representing the minus imaginary state (|-i>) or (|0> - i|1>)/sqr
 
 > **get** `static` **ONE**(): `BlochVector`
 
-Defined in: [src/math/bloch-vector.ts:34](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L34)
+Defined in: [src/math/bloch-vector.ts:35](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L35)
 
 A bloch vector representing the one state
 
@@ -200,7 +200,7 @@ A bloch vector representing the one state
 
 > **get** `static` **PLUS**(): `BlochVector`
 
-Defined in: [src/math/bloch-vector.ts:41](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L41)
+Defined in: [src/math/bloch-vector.ts:42](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L42)
 
 A bloch vector representing the plus state (|+>) or (|0> + |1>)/sqrt(2)
 
@@ -216,7 +216,7 @@ A bloch vector representing the plus state (|+>) or (|0> + |1>)/sqrt(2)
 
 > **get** `static` **ZERO**(): `BlochVector`
 
-Defined in: [src/math/bloch-vector.ts:28](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L28)
+Defined in: [src/math/bloch-vector.ts:29](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L29)
 
 A bloch vector representing the zero state
 
@@ -340,15 +340,15 @@ Sets this vector to a + b.
 
 ### angles()
 
-> **angles**(): `number`[]
+> **angles**(): \[`number`, `number`\]
 
-Defined in: [src/math/bloch-vector.ts:174](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L174)
+Defined in: [src/math/bloch-vector.ts:175](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L175)
 
 Get both angles of the Bloch vector as an array `[theta, phi]`
 
 #### Returns
 
-`number`[]
+\[`number`, `number`\]
 
 ***
 
@@ -489,7 +489,7 @@ Defined in: node\_modules/@types/three/src/math/Vector3.d.ts:130
 
 > **applyOperator**(`op`): `BlochVector`
 
-Defined in: [src/math/bloch-vector.ts:167](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L167)
+Defined in: [src/math/bloch-vector.ts:168](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L168)
 
 Apply an operator to the Bloch vector returning a new Bloch vector
 
@@ -709,7 +709,7 @@ Sets this vector to cross product of a and b.
 
 > **densityMatrix**(): [`Complex`](Complex.md)[][]
 
-Defined in: [src/math/bloch-vector.ts:137](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L137)
+Defined in: [src/math/bloch-vector.ts:138](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L138)
 
 The density matrix representation of the Bloch vector
 
@@ -1410,9 +1410,9 @@ Sets value of this vector.
 
 > **setAngles**(`angles`): `BlochVector`
 
-Defined in: [src/math/bloch-vector.ts:183](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L183)
+Defined in: [src/math/bloch-vector.ts:184](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L184)
 
-Set the Bloch vector from angles `[theta, phi]`
+Set the Bloch vector from angles `[theta, phi]` (polar, azimuthal)
 
 #### Parameters
 
@@ -1804,7 +1804,7 @@ Sets z value of this vector.
 
 > **slerpTo**(`other`, `t`): `BlochVector`
 
-Defined in: [src/math/bloch-vector.ts:204](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L204)
+Defined in: [src/math/bloch-vector.ts:205](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L205)
 
 Spherical linear interpolation of this Bloch vector to another Bloch vector
 
@@ -1977,7 +1977,7 @@ The provided array-like.
 
 > **toString**(): `string`
 
-Defined in: [src/math/bloch-vector.ts:193](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L193)
+Defined in: [src/math/bloch-vector.ts:194](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L194)
 
 Returns a string representation of an object.
 
@@ -2037,7 +2037,7 @@ Defined in: node\_modules/@types/three/src/math/Vector3.d.ts:138
 
 > `static` **from**(`x`, `y`, `z`): `BlochVector`
 
-Defined in: [src/math/bloch-vector.ts:87](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L87)
+Defined in: [src/math/bloch-vector.ts:88](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L88)
 
 Utility function to create a bloch vector in many ways
 
@@ -2062,7 +2062,7 @@ Utility function to create a bloch vector in many ways
 
 > `static` **from**(`y`): `BlochVector`
 
-Defined in: [src/math/bloch-vector.ts:88](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L88)
+Defined in: [src/math/bloch-vector.ts:89](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L89)
 
 Utility function to create a bloch vector in many ways
 
@@ -2085,7 +2085,7 @@ Utility function to create a bloch vector in many ways
 
 > `static` **from**(`array`): `BlochVector`
 
-Defined in: [src/math/bloch-vector.ts:89](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L89)
+Defined in: [src/math/bloch-vector.ts:90](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L90)
 
 Utility function to create a bloch vector in many ways
 
@@ -2108,7 +2108,7 @@ Utility function to create a bloch vector in many ways
 
 > `static` **from**(`q`): `BlochVector`
 
-Defined in: [src/math/bloch-vector.ts:90](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L90)
+Defined in: [src/math/bloch-vector.ts:91](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L91)
 
 Utility function to create a bloch vector in many ways
 
@@ -2133,7 +2133,7 @@ Utility function to create a bloch vector in many ways
 
 > `static` **fromAngles**(`theta`, `phi`): `BlochVector`
 
-Defined in: [src/math/bloch-vector.ts:111](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L111)
+Defined in: [src/math/bloch-vector.ts:112](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L112)
 
 Create a Bloch vector from angles (theta, phi)
 
@@ -2154,7 +2154,7 @@ Create a Bloch vector from angles (theta, phi)
 
 > `static` **fromDensityMatrix**(`rho`): `BlochVector`
 
-Defined in: [src/math/bloch-vector.ts:154](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L154)
+Defined in: [src/math/bloch-vector.ts:155](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L155)
 
 Create a Bloch vector from a density matrix
 
@@ -2174,7 +2174,7 @@ Create a Bloch vector from a density matrix
 
 > `static` **random**(): `BlochVector`
 
-Defined in: [src/math/bloch-vector.ts:66](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L66)
+Defined in: [src/math/bloch-vector.ts:67](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L67)
 
 Generate a random Bloch vector with magnitude 1
 
@@ -2188,7 +2188,7 @@ Generate a random Bloch vector with magnitude 1
 
 > `static` **zero**(): `BlochVector`
 
-Defined in: [src/math/bloch-vector.ts:75](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/bloch-vector.ts#L75)
+Defined in: [src/math/bloch-vector.ts:76](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/bloch-vector.ts#L76)
 
 Create a zero state Bloch vector
 

@@ -32,6 +32,12 @@
 | [RegionDisplay](classes/RegionDisplay.md) | A display for a region on the Bloch sphere |
 | [Wedge](classes/Wedge.md) | Creates a wedge, that is the outline of a quarter of a circle. |
 
+## Interfaces
+
+| Interface | Description |
+| ------ | ------ |
+| [CancellablePromise](interfaces/CancellablePromise.md) | - |
+
 ## Type Aliases
 
 | Type Alias | Description |
@@ -39,17 +45,21 @@
 | [AnimationCallback](type-aliases/AnimationCallback.md) | - |
 | [ArcProperties](type-aliases/ArcProperties.md) | Properties of a arc on a sphere |
 | [BlochSphereOptions](type-aliases/BlochSphereOptions.md) | Options for the Bloch Sphere widget |
-| [CancelAnimation](type-aliases/CancelAnimation.md) | - |
+| [~~CancelAnimation~~](type-aliases/CancelAnimation.md) | - |
 | [IntoComplex](type-aliases/IntoComplex.md) | A type that can be converted to a Complex number. |
+| [RotationInfo](type-aliases/RotationInfo.md) | - |
 
 ## Functions
 
 | Function | Description |
 | ------ | ------ |
 | [animate](functions/animate.md) | Animation helper function |
+| [axisFromQuaternion](functions/axisFromQuaternion.md) | Get axis of rotation and angle from a quaternion |
 | [formatDegrees](functions/formatDegrees.md) | Format an angle given in radians as a string in degrees with a given precision. |
 | [formatRadians](functions/formatRadians.md) | Format an angle given in radians as a string in radians with a given precision. |
 | [formatVector](functions/formatVector.md) | Format a vector as a string with a given precision. |
 | [getArcBetween](functions/getArcBetween.md) | Gets the properties of an great arc between two vectors |
 | [getRotationArc](functions/getRotationArc.md) | Gets properties of an arc starting from v and rotating about n by angle |
 | [lerp](functions/lerp.md) | Standard linear interpolation function |
+| [lerpAngle](functions/lerpAngle.md) | Linear interpolation function that wraps around 2π |
+| [shortestModDist](functions/shortestModDist.md) | Computes the shortest distance between two angles, considering wrap-around |

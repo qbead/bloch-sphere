@@ -6,7 +6,7 @@
 
 # Class: AngleIndicators
 
-Defined in: [src/components/angle-indicators.ts:22](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/angle-indicators.ts#L22)
+Defined in: [src/components/angle-indicators.ts:22](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/angle-indicators.ts#L22)
 
 Display angle indicators for a Bloch vector
 
@@ -29,7 +29,7 @@ blochSphere.add(angleIndicators)
 
 > **new AngleIndicators**(`scale`): `AngleIndicators`
 
-Defined in: [src/components/angle-indicators.ts:40](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/angle-indicators.ts#L40)
+Defined in: [src/components/angle-indicators.ts:40](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/angle-indicators.ts#L40)
 
 Creates a new AngleIndicators component
 
@@ -51,7 +51,7 @@ Creates a new AngleIndicators component
 
 | Property | Modifier | Type | Default value | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`_color`](BaseComponent.md#_color) | [src/components/component.ts:7](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/component.ts#L7) |
+| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`_color`](BaseComponent.md#_color) | [src/components/component.ts:7](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/component.ts#L7) |
 | <a id="animations"></a> `animations` | `public` | `AnimationClip`[] | `[]` | Array with object's animation clips. | [`BaseComponent`](BaseComponent.md).[`animations`](BaseComponent.md#animations) | node\_modules/@types/three/src/core/Object3D.d.ts:266 |
 | <a id="castshadow"></a> `castShadow` | `public` | `boolean` | `false` | Whether the object gets rendered into shadow map. | [`BaseComponent`](BaseComponent.md).[`castShadow`](BaseComponent.md#castshadow) | node\_modules/@types/three/src/core/Object3D.d.ts:238 |
 | <a id="children"></a> `children` | `public` | `Object3D`\<`Object3DEventMap`\>[] | `[]` | Array with object's children. **See** THREE.Object3DGroup \| Group for info on manually grouping objects. | [`BaseComponent`](BaseComponent.md).[`children`](BaseComponent.md#children) | node\_modules/@types/three/src/core/Object3D.d.ts:145 |
@@ -80,7 +80,7 @@ Creates a new AngleIndicators component
 | <a id="scale"></a> `scale` | `readonly` | `Vector3` | `new THREE.Vector3( 1, 1, 1 )` | The object's local scale. | [`BaseComponent`](BaseComponent.md).[`scale`](BaseComponent.md#scale) | node\_modules/@types/three/src/core/Object3D.d.ts:175 |
 | <a id="static"></a> `static?` | `public` | `boolean` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`static`](BaseComponent.md#static) | node\_modules/@types/three/src/renderers/common/Backend.d.ts:11 |
 | <a id="type"></a> `type` | `readonly` | `string` | `Object3D` | A Read-only _string_ to check `this` object type. **Remarks** This can be used to find a specific type of Object3D in a scene. Sub-classes will update this value. | [`BaseComponent`](BaseComponent.md).[`type`](BaseComponent.md#type) | node\_modules/@types/three/src/core/Object3D.d.ts:130 |
-| <a id="units"></a> `units` | `public` | `AngleUnits` | `'deg'` | - | - | [src/components/angle-indicators.ts:23](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/angle-indicators.ts#L23) |
+| <a id="units"></a> `units` | `public` | `AngleUnits` | `'deg'` | - | - | [src/components/angle-indicators.ts:23](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/angle-indicators.ts#L23) |
 | <a id="up"></a> `up` | `public` | `Vector3` | Object3D.DEFAULT_UP - that is `(0, 1, 0)`. | This is used by the [lookAt](#lookat) method, for example, to determine the orientation of the result. | [`BaseComponent`](BaseComponent.md).[`up`](BaseComponent.md#up) | node\_modules/@types/three/src/core/Object3D.d.ts:151 |
 | <a id="userdata"></a> `userData` | `public` | `Record`\<`string`, `any`\> | `undefined` | An object that can be used to store custom data about the Object3D. **Remarks** It should not hold references to _functions_ as these **will not** be cloned. **Default** `{}` | [`BaseComponent`](BaseComponent.md).[`userData`](BaseComponent.md#userdata) | node\_modules/@types/three/src/core/Object3D.d.ts:273 |
 | <a id="uuid"></a> `uuid` | `public` | `string` | `undefined` | [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier) of this object instance. **Remarks** This gets automatically assigned and shouldn't be edited. | [`BaseComponent`](BaseComponent.md).[`uuid`](BaseComponent.md#uuid) | node\_modules/@types/three/src/core/Object3D.d.ts:115 |
@@ -97,7 +97,7 @@ Creates a new AngleIndicators component
 
 > **set** **color**(`color`): `void`
 
-Defined in: [src/components/angle-indicators.ts:145](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/angle-indicators.ts#L145)
+Defined in: [src/components/angle-indicators.ts:145](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/angle-indicators.ts#L145)
 
 Get color of the component
 
@@ -123,7 +123,7 @@ Get color of the component
 
 > **get** **labelRadius**(): `number`
 
-Defined in: [src/components/angle-indicators.ts:136](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/angle-indicators.ts#L136)
+Defined in: [src/components/angle-indicators.ts:136](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/angle-indicators.ts#L136)
 
 The distance of the labels from the center of the sphere
 
@@ -135,7 +135,7 @@ The distance of the labels from the center of the sphere
 
 > **set** **labelRadius**(`radius`): `void`
 
-Defined in: [src/components/angle-indicators.ts:140](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/angle-indicators.ts#L140)
+Defined in: [src/components/angle-indicators.ts:140](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/angle-indicators.ts#L140)
 
 ##### Parameters
 
@@ -155,7 +155,7 @@ Defined in: [src/components/angle-indicators.ts:140](https://github.com/qbead/bl
 
 > **get** **opacity**(): `number`
 
-Defined in: [src/components/angle-indicators.ts:121](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/angle-indicators.ts#L121)
+Defined in: [src/components/angle-indicators.ts:121](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/angle-indicators.ts#L121)
 
 ##### Returns
 
@@ -165,7 +165,7 @@ Defined in: [src/components/angle-indicators.ts:121](https://github.com/qbead/bl
 
 > **set** **opacity**(`opacity`): `void`
 
-Defined in: [src/components/angle-indicators.ts:126](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/angle-indicators.ts#L126)
+Defined in: [src/components/angle-indicators.ts:126](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/angle-indicators.ts#L126)
 
 ##### Parameters
 
@@ -185,7 +185,7 @@ Defined in: [src/components/angle-indicators.ts:126](https://github.com/qbead/bl
 
 > **get** **phiColor**(): `ColorRepresentation`
 
-Defined in: [src/components/angle-indicators.ts:151](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/angle-indicators.ts#L151)
+Defined in: [src/components/angle-indicators.ts:151](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/angle-indicators.ts#L151)
 
 ##### Returns
 
@@ -195,7 +195,7 @@ Defined in: [src/components/angle-indicators.ts:151](https://github.com/qbead/bl
 
 > **set** **phiColor**(`color`): `void`
 
-Defined in: [src/components/angle-indicators.ts:155](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/angle-indicators.ts#L155)
+Defined in: [src/components/angle-indicators.ts:155](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/angle-indicators.ts#L155)
 
 ##### Parameters
 
@@ -215,7 +215,7 @@ Defined in: [src/components/angle-indicators.ts:155](https://github.com/qbead/bl
 
 > **get** **thetaColor**(): `ColorRepresentation`
 
-Defined in: [src/components/angle-indicators.ts:162](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/angle-indicators.ts#L162)
+Defined in: [src/components/angle-indicators.ts:162](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/angle-indicators.ts#L162)
 
 ##### Returns
 
@@ -225,7 +225,7 @@ Defined in: [src/components/angle-indicators.ts:162](https://github.com/qbead/bl
 
 > **set** **thetaColor**(`color`): `void`
 
-Defined in: [src/components/angle-indicators.ts:166](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/angle-indicators.ts#L166)
+Defined in: [src/components/angle-indicators.ts:166](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/angle-indicators.ts#L166)
 
 ##### Parameters
 
@@ -1524,7 +1524,7 @@ Note: Modifying the scene graph inside the callback is discouraged.
 
 > **update**(`v`): `void`
 
-Defined in: [src/components/angle-indicators.ts:94](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/angle-indicators.ts#L94)
+Defined in: [src/components/angle-indicators.ts:94](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/angle-indicators.ts#L94)
 
 Update the angle indicators for the given Bloch vector
 

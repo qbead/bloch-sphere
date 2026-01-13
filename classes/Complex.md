@@ -6,7 +6,7 @@
 
 # Class: Complex
 
-Defined in: [src/math/complex.ts:9](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/complex.ts#L9)
+Defined in: [src/math/complex.ts:9](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L9)
 
 A class representing a complex number.
 
@@ -16,7 +16,7 @@ A class representing a complex number.
 
 > **new Complex**(`real`, `imag`): `Complex`
 
-Defined in: [src/math/complex.ts:25](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/complex.ts#L25)
+Defined in: [src/math/complex.ts:25](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L25)
 
 #### Parameters
 
@@ -33,8 +33,8 @@ Defined in: [src/math/complex.ts:25](https://github.com/qbead/bloch-sphere/blob/
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="imag"></a> `imag` | `number` | [src/math/complex.ts:11](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/complex.ts#L11) |
-| <a id="real"></a> `real` | `number` | [src/math/complex.ts:10](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/complex.ts#L10) |
+| <a id="imag"></a> `imag` | `number` | [src/math/complex.ts:11](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L11) |
+| <a id="real"></a> `real` | `number` | [src/math/complex.ts:10](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L10) |
 
 ## Accessors
 
@@ -44,7 +44,7 @@ Defined in: [src/math/complex.ts:25](https://github.com/qbead/bloch-sphere/blob/
 
 > **get** **magnitude**(): `number`
 
-Defined in: [src/math/complex.ts:85](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/complex.ts#L85)
+Defined in: [src/math/complex.ts:95](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L95)
 
 ##### Returns
 
@@ -58,7 +58,7 @@ Defined in: [src/math/complex.ts:85](https://github.com/qbead/bloch-sphere/blob/
 
 > **get** **phase**(): `number`
 
-Defined in: [src/math/complex.ts:89](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/complex.ts#L89)
+Defined in: [src/math/complex.ts:99](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L99)
 
 ##### Returns
 
@@ -72,7 +72,7 @@ Defined in: [src/math/complex.ts:89](https://github.com/qbead/bloch-sphere/blob/
 
 > **get** `static` **I**(): `Complex`
 
-Defined in: [src/math/complex.ts:21](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/complex.ts#L21)
+Defined in: [src/math/complex.ts:21](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L21)
 
 ##### Returns
 
@@ -86,7 +86,7 @@ Defined in: [src/math/complex.ts:21](https://github.com/qbead/bloch-sphere/blob/
 
 > **get** `static` **ONE**(): `Complex`
 
-Defined in: [src/math/complex.ts:17](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/complex.ts#L17)
+Defined in: [src/math/complex.ts:17](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L17)
 
 ##### Returns
 
@@ -100,7 +100,7 @@ Defined in: [src/math/complex.ts:17](https://github.com/qbead/bloch-sphere/blob/
 
 > **get** `static` **ZERO**(): `Complex`
 
-Defined in: [src/math/complex.ts:13](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/complex.ts#L13)
+Defined in: [src/math/complex.ts:13](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L13)
 
 ##### Returns
 
@@ -108,11 +108,41 @@ Defined in: [src/math/complex.ts:13](https://github.com/qbead/bloch-sphere/blob/
 
 ## Methods
 
+### clone()
+
+> **clone**(): `Complex`
+
+Defined in: [src/math/complex.ts:64](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L64)
+
+#### Returns
+
+`Complex`
+
+***
+
 ### conjugate()
 
 > **conjugate**(): `Complex`
 
-Defined in: [src/math/complex.ts:93](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/complex.ts#L93)
+Defined in: [src/math/complex.ts:103](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L103)
+
+#### Returns
+
+`Complex`
+
+***
+
+### copy()
+
+> **copy**(`other`): `Complex`
+
+Defined in: [src/math/complex.ts:58](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L58)
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `other` | `Complex` |
 
 #### Returns
 
@@ -124,7 +154,7 @@ Defined in: [src/math/complex.ts:93](https://github.com/qbead/bloch-sphere/blob/
 
 > **dividedBy**(`other`): `Complex`
 
-Defined in: [src/math/complex.ts:76](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/complex.ts#L76)
+Defined in: [src/math/complex.ts:86](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L86)
 
 #### Parameters
 
@@ -142,7 +172,7 @@ Defined in: [src/math/complex.ts:76](https://github.com/qbead/bloch-sphere/blob/
 
 > **minus**(`other`): `Complex`
 
-Defined in: [src/math/complex.ts:63](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/complex.ts#L63)
+Defined in: [src/math/complex.ts:73](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L73)
 
 #### Parameters
 
@@ -160,7 +190,7 @@ Defined in: [src/math/complex.ts:63](https://github.com/qbead/bloch-sphere/blob/
 
 > **plus**(`other`): `Complex`
 
-Defined in: [src/math/complex.ts:58](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/complex.ts#L58)
+Defined in: [src/math/complex.ts:68](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L68)
 
 #### Parameters
 
@@ -174,11 +204,53 @@ Defined in: [src/math/complex.ts:58](https://github.com/qbead/bloch-sphere/blob/
 
 ***
 
+### pow()
+
+> **pow**(`exponent`): `Complex`
+
+Defined in: [src/math/complex.ts:112](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L112)
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `exponent` | `number` |
+
+#### Returns
+
+`Complex`
+
+***
+
+### reciprocal()
+
+> **reciprocal**(): `Complex`
+
+Defined in: [src/math/complex.ts:107](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L107)
+
+#### Returns
+
+`Complex`
+
+***
+
+### sqrt()
+
+> **sqrt**(): `Complex`
+
+Defined in: [src/math/complex.ts:118](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L118)
+
+#### Returns
+
+`Complex`
+
+***
+
 ### times()
 
 > **times**(`other`): `Complex`
 
-Defined in: [src/math/complex.ts:68](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/complex.ts#L68)
+Defined in: [src/math/complex.ts:78](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L78)
 
 #### Parameters
 
@@ -196,7 +268,7 @@ Defined in: [src/math/complex.ts:68](https://github.com/qbead/bloch-sphere/blob/
 
 > **toString**(): `string`
 
-Defined in: [src/math/complex.ts:97](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/complex.ts#L97)
+Defined in: [src/math/complex.ts:122](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L122)
 
 #### Returns
 
@@ -210,7 +282,7 @@ Defined in: [src/math/complex.ts:97](https://github.com/qbead/bloch-sphere/blob/
 
 > `static` **from**(`value`): `Complex`
 
-Defined in: [src/math/complex.ts:30](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/complex.ts#L30)
+Defined in: [src/math/complex.ts:30](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L30)
 
 ##### Parameters
 
@@ -226,7 +298,7 @@ Defined in: [src/math/complex.ts:30](https://github.com/qbead/bloch-sphere/blob/
 
 > `static` **from**(`real`, `imag`?): `Complex`
 
-Defined in: [src/math/complex.ts:31](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/complex.ts#L31)
+Defined in: [src/math/complex.ts:31](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L31)
 
 ##### Parameters
 
@@ -245,7 +317,7 @@ Defined in: [src/math/complex.ts:31](https://github.com/qbead/bloch-sphere/blob/
 
 > `static` **fromPolar**(`magnitude`, `phase`): `Complex`
 
-Defined in: [src/math/complex.ts:51](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/complex.ts#L51)
+Defined in: [src/math/complex.ts:51](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L51)
 
 #### Parameters
 
@@ -264,7 +336,7 @@ Defined in: [src/math/complex.ts:51](https://github.com/qbead/bloch-sphere/blob/
 
 > `static` **random**(): `Complex`
 
-Defined in: [src/math/complex.ts:42](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/complex.ts#L42)
+Defined in: [src/math/complex.ts:42](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L42)
 
 #### Returns
 
@@ -276,7 +348,7 @@ Defined in: [src/math/complex.ts:42](https://github.com/qbead/bloch-sphere/blob/
 
 > `static` **unitRandom**(): `Complex`
 
-Defined in: [src/math/complex.ts:46](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/math/complex.ts#L46)
+Defined in: [src/math/complex.ts:46](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/math/complex.ts#L46)
 
 #### Returns
 

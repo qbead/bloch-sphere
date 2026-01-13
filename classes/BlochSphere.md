@@ -6,7 +6,7 @@
 
 # Class: BlochSphere
 
-Defined in: [src/bloch-sphere.ts:87](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L87)
+Defined in: [src/bloch-sphere.ts:87](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L87)
 
 A Bloch Sphere Widget
 
@@ -51,7 +51,7 @@ blochSphere.add(qubit)
 
 > **new BlochSphere**(`options`?): `BlochSphere`
 
-Defined in: [src/bloch-sphere.ts:97](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L97)
+Defined in: [src/bloch-sphere.ts:97](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L97)
 
 #### Parameters
 
@@ -67,12 +67,12 @@ Defined in: [src/bloch-sphere.ts:97](https://github.com/qbead/bloch-sphere/blob/
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="camera"></a> `camera` | `OrthographicCamera` | [src/bloch-sphere.ts:92](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L92) |
-| <a id="controls"></a> `controls` | `OrbitControls` | [src/bloch-sphere.ts:93](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L93) |
-| <a id="cssrenderer"></a> `cssRenderer` | `CSS2DRenderer` | [src/bloch-sphere.ts:89](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L89) |
-| <a id="el"></a> `el` | `HTMLElement` | [src/bloch-sphere.ts:90](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L90) |
-| <a id="renderer"></a> `renderer` | `WebGLRenderer` | [src/bloch-sphere.ts:88](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L88) |
-| <a id="scene"></a> `scene` | [`BlochSphereScene`](BlochSphereScene.md) | [src/bloch-sphere.ts:91](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L91) |
+| <a id="camera"></a> `camera` | `OrthographicCamera` | [src/bloch-sphere.ts:92](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L92) |
+| <a id="controls"></a> `controls` | `OrbitControls` | [src/bloch-sphere.ts:93](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L93) |
+| <a id="cssrenderer"></a> `cssRenderer` | `CSS2DRenderer` | [src/bloch-sphere.ts:89](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L89) |
+| <a id="el"></a> `el` | `HTMLElement` | [src/bloch-sphere.ts:90](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L90) |
+| <a id="renderer"></a> `renderer` | `WebGLRenderer` | [src/bloch-sphere.ts:88](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L88) |
+| <a id="scene"></a> `scene` | [`BlochSphereScene`](BlochSphereScene.md) | [src/bloch-sphere.ts:91](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L91) |
 
 ## Accessors
 
@@ -82,7 +82,7 @@ Defined in: [src/bloch-sphere.ts:97](https://github.com/qbead/bloch-sphere/blob/
 
 > **get** **showGrid**(): `boolean`
 
-Defined in: [src/bloch-sphere.ts:165](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L165)
+Defined in: [src/bloch-sphere.ts:165](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L165)
 
 ##### Returns
 
@@ -92,7 +92,7 @@ Defined in: [src/bloch-sphere.ts:165](https://github.com/qbead/bloch-sphere/blob
 
 > **set** **showGrid**(`value`): `void`
 
-Defined in: [src/bloch-sphere.ts:169](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L169)
+Defined in: [src/bloch-sphere.ts:169](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L169)
 
 ##### Parameters
 
@@ -110,7 +110,7 @@ Defined in: [src/bloch-sphere.ts:169](https://github.com/qbead/bloch-sphere/blob
 
 > **add**(`item`): `void`
 
-Defined in: [src/bloch-sphere.ts:173](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L173)
+Defined in: [src/bloch-sphere.ts:173](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L173)
 
 #### Parameters
 
@@ -128,7 +128,7 @@ Defined in: [src/bloch-sphere.ts:173](https://github.com/qbead/bloch-sphere/blob
 
 > **attach**(`parent`?): `void`
 
-Defined in: [src/bloch-sphere.ts:202](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L202)
+Defined in: [src/bloch-sphere.ts:202](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L202)
 
 Attaches the widget to a parent element
 
@@ -150,7 +150,7 @@ Must be called to make the widget visible.
 
 > **clearPlot**(): `void`
 
-Defined in: [src/bloch-sphere.ts:186](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L186)
+Defined in: [src/bloch-sphere.ts:186](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L186)
 
 Removes all objects from the plot
 
@@ -166,7 +166,7 @@ This will not remove the grid or the sphere.
 
 > **dispose**(): `void`
 
-Defined in: [src/bloch-sphere.ts:468](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L468)
+Defined in: [src/bloch-sphere.ts:467](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L467)
 
 Performs cleanup and disposes everything contained in the widget
 
@@ -180,7 +180,7 @@ Performs cleanup and disposes everything contained in the widget
 
 > **getCameraAngles**(): \[`number`, `number`\]
 
-Defined in: [src/bloch-sphere.ts:346](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L346)
+Defined in: [src/bloch-sphere.ts:345](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L345)
 
 Get current camera angles as [theta, phi]
 
@@ -194,7 +194,7 @@ Get current camera angles as [theta, phi]
 
 > **getCameraBlochVector**(): [`BlochVector`](BlochVector.md)
 
-Defined in: [src/bloch-sphere.ts:354](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L354)
+Defined in: [src/bloch-sphere.ts:353](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L353)
 
 Get the Bloch vector pointing from origin to camera
 
@@ -208,7 +208,7 @@ Get the Bloch vector pointing from origin to camera
 
 > **getCameraZoom**(): `number`
 
-Defined in: [src/bloch-sphere.ts:339](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L339)
+Defined in: [src/bloch-sphere.ts:338](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L338)
 
 Get current camera zoom level
 
@@ -222,7 +222,7 @@ Get current camera zoom level
 
 > **interactivity**(`options`?): `InteractivityOptions`
 
-Defined in: [src/bloch-sphere.ts:430](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L430)
+Defined in: [src/bloch-sphere.ts:429](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L429)
 
 Control user interactivity with the camera
 
@@ -244,7 +244,7 @@ Current interactivity state if no arguments provided
 
 > **remove**(`item`): `void`
 
-Defined in: [src/bloch-sphere.ts:177](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L177)
+Defined in: [src/bloch-sphere.ts:177](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L177)
 
 #### Parameters
 
@@ -262,7 +262,7 @@ Defined in: [src/bloch-sphere.ts:177](https://github.com/qbead/bloch-sphere/blob
 
 > **render**(): `void`
 
-Defined in: [src/bloch-sphere.ts:231](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L231)
+Defined in: [src/bloch-sphere.ts:231](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L231)
 
 Renders the scene
 
@@ -279,7 +279,7 @@ loop is stopped.
 
 > **resize**(`width`?, `height`?): `void`
 
-Defined in: [src/bloch-sphere.ts:214](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L214)
+Defined in: [src/bloch-sphere.ts:214](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L214)
 
 Resizes the widget to fit the parent element
 
@@ -302,7 +302,7 @@ Optionally, you can specify the width and height to resize to.
 
 > **scale**(`size`): `void`
 
-Defined in: [src/bloch-sphere.ts:193](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L193)
+Defined in: [src/bloch-sphere.ts:193](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L193)
 
 Rescales the sphere
 
@@ -322,7 +322,7 @@ Rescales the sphere
 
 > **setCameraAngles**(`theta`, `phi`, `duration`?, `easing`?): `void` \| `Promise`\<`void`\>
 
-Defined in: [src/bloch-sphere.ts:392](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L392)
+Defined in: [src/bloch-sphere.ts:391](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L391)
 
 Set camera position using spherical coordinates
 
@@ -345,7 +345,7 @@ Set camera position using spherical coordinates
 
 > **setCameraState**(`cameraState`, `duration`?, `easing`?): `void` \| `Promise`\<`void`\>
 
-Defined in: [src/bloch-sphere.ts:364](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L364)
+Defined in: [src/bloch-sphere.ts:363](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L363)
 
 Set camera state (unified method)
 
@@ -367,7 +367,7 @@ Set camera state (unified method)
 
 > **setCameraToBlochVector**(`blochVector`, `duration`?, `easing`?): `void` \| `Promise`\<`void`\>
 
-Defined in: [src/bloch-sphere.ts:375](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L375)
+Defined in: [src/bloch-sphere.ts:374](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L374)
 
 Position camera such that the given Bloch vector points directly at camera
 
@@ -389,7 +389,7 @@ Position camera such that the given Bloch vector points directly at camera
 
 > **setCameraZoom**(`zoomLevel`, `duration`?, `easing`?): `void` \| `Promise`\<`void`\>
 
-Defined in: [src/bloch-sphere.ts:410](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L410)
+Defined in: [src/bloch-sphere.ts:409](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L409)
 
 Set camera zoom level
 
@@ -411,7 +411,7 @@ Set camera zoom level
 
 > **setOptions**(`options`?): `void`
 
-Defined in: [src/bloch-sphere.ts:113](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L113)
+Defined in: [src/bloch-sphere.ts:113](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L113)
 
 #### Parameters
 
@@ -429,7 +429,7 @@ Defined in: [src/bloch-sphere.ts:113](https://github.com/qbead/bloch-sphere/blob
 
 > **start**(): `void`
 
-Defined in: [src/bloch-sphere.ts:244](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L244)
+Defined in: [src/bloch-sphere.ts:244](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L244)
 
 Starts the animation loop
 
@@ -447,7 +447,7 @@ This will call the render method automatically.
 
 > **stop**(): `void`
 
-Defined in: [src/bloch-sphere.ts:255](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/bloch-sphere.ts#L255)
+Defined in: [src/bloch-sphere.ts:255](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/bloch-sphere.ts#L255)
 
 Stops the animation loop
 

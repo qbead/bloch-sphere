@@ -6,7 +6,7 @@
 
 # Class: QubitProjWedge
 
-Defined in: [src/components/qubit-proj-wedge.ts:7](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/qubit-proj-wedge.ts#L7)
+Defined in: [src/components/qubit-proj-wedge.ts:7](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/qubit-proj-wedge.ts#L7)
 
 A wedge which is a quarter of a circle
 
@@ -20,7 +20,7 @@ A wedge which is a quarter of a circle
 
 > **new QubitProjWedge**(): `QubitProjWedge`
 
-Defined in: [src/components/qubit-proj-wedge.ts:8](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/qubit-proj-wedge.ts#L8)
+Defined in: [src/components/qubit-proj-wedge.ts:8](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/qubit-proj-wedge.ts#L8)
 
 #### Returns
 
@@ -34,7 +34,7 @@ Defined in: [src/components/qubit-proj-wedge.ts:8](https://github.com/qbead/bloc
 
 | Property | Modifier | Type | Default value | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`Wedge`](Wedge.md).[`_color`](Wedge.md#_color) | [src/components/component.ts:7](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/component.ts#L7) |
+| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`Wedge`](Wedge.md).[`_color`](Wedge.md#_color) | [src/components/component.ts:7](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/component.ts#L7) |
 | <a id="animations"></a> `animations` | `public` | `AnimationClip`[] | `[]` | Array with object's animation clips. | [`Wedge`](Wedge.md).[`animations`](Wedge.md#animations) | node\_modules/@types/three/src/core/Object3D.d.ts:266 |
 | <a id="castshadow"></a> `castShadow` | `public` | `boolean` | `false` | Whether the object gets rendered into shadow map. | [`Wedge`](Wedge.md).[`castShadow`](Wedge.md#castshadow) | node\_modules/@types/three/src/core/Object3D.d.ts:238 |
 | <a id="children"></a> `children` | `public` | `Object3D`\<`Object3DEventMap`\>[] | `[]` | Array with object's children. **See** THREE.Object3DGroup \| Group for info on manually grouping objects. | [`Wedge`](Wedge.md).[`children`](Wedge.md#children) | node\_modules/@types/three/src/core/Object3D.d.ts:145 |
@@ -79,7 +79,7 @@ Defined in: [src/components/qubit-proj-wedge.ts:8](https://github.com/qbead/bloc
 
 > **get** **color**(): `ColorRepresentation`
 
-Defined in: [src/components/component.ts:21](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/component.ts#L21)
+Defined in: [src/components/component.ts:21](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/component.ts#L21)
 
 Get color of the component
 
@@ -91,7 +91,7 @@ Get color of the component
 
 > **set** **color**(`color`): `void`
 
-Defined in: [src/components/component.ts:28](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/component.ts#L28)
+Defined in: [src/components/component.ts:28](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/component.ts#L28)
 
 Set color of the component
 
@@ -361,7 +361,7 @@ Fire an event type.
 
 > **follow**(`v`): `void`
 
-Defined in: [src/components/qubit-proj-wedge.ts:12](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/qubit-proj-wedge.ts#L12)
+Defined in: [src/components/qubit-proj-wedge.ts:12](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/qubit-proj-wedge.ts#L12)
 
 #### Parameters
 

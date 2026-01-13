@@ -6,7 +6,7 @@
 
 # Class: QubitArrow
 
-Defined in: [src/components/qubit-arrow.ts:21](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/qubit-arrow.ts#L21)
+Defined in: [src/components/qubit-arrow.ts:21](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/qubit-arrow.ts#L21)
 
 A display for just a qubit arrow
 
@@ -34,7 +34,7 @@ blochSphere.add(arrow)
 
 > **new QubitArrow**(): `QubitArrow`
 
-Defined in: [src/components/qubit-arrow.ts:25](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/qubit-arrow.ts#L25)
+Defined in: [src/components/qubit-arrow.ts:25](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/qubit-arrow.ts#L25)
 
 #### Returns
 
@@ -48,7 +48,7 @@ Defined in: [src/components/qubit-arrow.ts:25](https://github.com/qbead/bloch-sp
 
 | Property | Modifier | Type | Default value | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`_color`](BaseComponent.md#_color) | [src/components/component.ts:7](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/component.ts#L7) |
+| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`_color`](BaseComponent.md#_color) | [src/components/component.ts:7](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/component.ts#L7) |
 | <a id="animations"></a> `animations` | `public` | `AnimationClip`[] | `[]` | Array with object's animation clips. | [`BaseComponent`](BaseComponent.md).[`animations`](BaseComponent.md#animations) | node\_modules/@types/three/src/core/Object3D.d.ts:266 |
 | <a id="castshadow"></a> `castShadow` | `public` | `boolean` | `false` | Whether the object gets rendered into shadow map. | [`BaseComponent`](BaseComponent.md).[`castShadow`](BaseComponent.md#castshadow) | node\_modules/@types/three/src/core/Object3D.d.ts:238 |
 | <a id="children"></a> `children` | `public` | `Object3D`\<`Object3DEventMap`\>[] | `[]` | Array with object's children. **See** THREE.Object3DGroup \| Group for info on manually grouping objects. | [`BaseComponent`](BaseComponent.md).[`children`](BaseComponent.md#children) | node\_modules/@types/three/src/core/Object3D.d.ts:145 |
@@ -58,7 +58,7 @@ Defined in: [src/components/qubit-arrow.ts:25](https://github.com/qbead/bloch-sp
 | <a id="frustumculled"></a> `frustumCulled` | `public` | `boolean` | `true` | When this is set, it checks every frame if the object is in the frustum of the camera before rendering the object. If set to `false` the object gets rendered every frame even if it is not in the frustum of the camera. | [`BaseComponent`](BaseComponent.md).[`frustumCulled`](BaseComponent.md#frustumculled) | node\_modules/@types/three/src/core/Object3D.d.ts:251 |
 | <a id="id"></a> `id` | `readonly` | `number` | `undefined` | Unique number for this Object3D instance. **Remarks** Note that ids are assigned in chronological order: 1, 2, 3, ..., incrementing by one for each new object. Expects a `Integer` | [`BaseComponent`](BaseComponent.md).[`id`](BaseComponent.md#id) | node\_modules/@types/three/src/core/Object3D.d.ts:109 |
 | <a id="isobject3d"></a> `isObject3D` | `readonly` | `true` | `true` | Flag to check if a given object is of type Object3D. **Remarks** This is a _constant_ value | [`BaseComponent`](BaseComponent.md).[`isObject3D`](BaseComponent.md#isobject3d) | node\_modules/@types/three/src/core/Object3D.d.ts:102 |
-| <a id="label"></a> `label` | `public` | [`Label`](Label.md) | `undefined` | - | - | [src/components/qubit-arrow.ts:23](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/qubit-arrow.ts#L23) |
+| <a id="label"></a> `label` | `public` | [`Label`](Label.md) | `undefined` | - | - | [src/components/qubit-arrow.ts:23](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/qubit-arrow.ts#L23) |
 | <a id="layers"></a> `layers` | `public` | `Layers` | `new THREE.Layers()` | The layer membership of the object. **Remarks** The object is only visible if it has at least one layer in common with the THREE.Object3DCamera \| Camera in use. This property can also be used to filter out unwanted objects in ray-intersection tests when using THREE.Raycaster \| Raycaster. | [`BaseComponent`](BaseComponent.md).[`layers`](BaseComponent.md#layers) | node\_modules/@types/three/src/core/Object3D.d.ts:226 |
 | <a id="matrix"></a> `matrix` | `public` | `Matrix4` | `new THREE.Matrix4()` | The local transform matrix. | [`BaseComponent`](BaseComponent.md).[`matrix`](BaseComponent.md#matrix) | node\_modules/@types/three/src/core/Object3D.d.ts:191 |
 | <a id="matrixautoupdate"></a> `matrixAutoUpdate` | `public` | `boolean` | DEFAULT_MATRIX_AUTO_UPDATE - that is `(true)`. | When this is set, it calculates the matrix of position, (rotation or quaternion) and scale every frame and also recalculates the matrixWorld property. | [`BaseComponent`](BaseComponent.md).[`matrixAutoUpdate`](BaseComponent.md#matrixautoupdate) | node\_modules/@types/three/src/core/Object3D.d.ts:205 |
@@ -94,7 +94,7 @@ Defined in: [src/components/qubit-arrow.ts:25](https://github.com/qbead/bloch-sp
 
 > **set** **color**(`color`): `void`
 
-Defined in: [src/components/qubit-arrow.ts:46](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/qubit-arrow.ts#L46)
+Defined in: [src/components/qubit-arrow.ts:46](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/qubit-arrow.ts#L46)
 
 Get color of the component
 
@@ -364,7 +364,7 @@ Fire an event type.
 
 > **follow**(`v`): `void`
 
-Defined in: [src/components/qubit-arrow.ts:51](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/qubit-arrow.ts#L51)
+Defined in: [src/components/qubit-arrow.ts:51](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/qubit-arrow.ts#L51)
 
 #### Parameters
 

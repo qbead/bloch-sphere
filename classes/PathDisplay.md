@@ -6,7 +6,7 @@
 
 # Class: PathDisplay
 
-Defined in: [src/components/path-display.ts:84](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/path-display.ts#L84)
+Defined in: [src/components/path-display.ts:84](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/path-display.ts#L84)
 
 A display for a path on the Bloch sphere
 
@@ -34,7 +34,7 @@ blochSphere.add(path)
 
 > **new PathDisplay**(`path`?): `PathDisplay`
 
-Defined in: [src/components/path-display.ts:85](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/path-display.ts#L85)
+Defined in: [src/components/path-display.ts:85](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/path-display.ts#L85)
 
 #### Parameters
 
@@ -54,7 +54,7 @@ Defined in: [src/components/path-display.ts:85](https://github.com/qbead/bloch-s
 
 | Property | Modifier | Type | Default value | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`_color`](BaseComponent.md#_color) | [src/components/component.ts:7](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/component.ts#L7) |
+| <a id="_color"></a> `_color` | `protected` | `Color` | `undefined` | - | [`BaseComponent`](BaseComponent.md).[`_color`](BaseComponent.md#_color) | [src/components/component.ts:7](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/component.ts#L7) |
 | <a id="animations"></a> `animations` | `public` | `AnimationClip`[] | `[]` | Array with object's animation clips. | [`BaseComponent`](BaseComponent.md).[`animations`](BaseComponent.md#animations) | node\_modules/@types/three/src/core/Object3D.d.ts:266 |
 | <a id="castshadow"></a> `castShadow` | `public` | `boolean` | `false` | Whether the object gets rendered into shadow map. | [`BaseComponent`](BaseComponent.md).[`castShadow`](BaseComponent.md#castshadow) | node\_modules/@types/three/src/core/Object3D.d.ts:238 |
 | <a id="children"></a> `children` | `public` | `Object3D`\<`Object3DEventMap`\>[] | `[]` | Array with object's children. **See** THREE.Object3DGroup \| Group for info on manually grouping objects. | [`BaseComponent`](BaseComponent.md).[`children`](BaseComponent.md#children) | node\_modules/@types/three/src/core/Object3D.d.ts:145 |
@@ -99,7 +99,7 @@ Defined in: [src/components/path-display.ts:85](https://github.com/qbead/bloch-s
 
 > **get** **color**(): `ColorRepresentation`
 
-Defined in: [src/components/component.ts:21](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/component.ts#L21)
+Defined in: [src/components/component.ts:21](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/component.ts#L21)
 
 Get color of the component
 
@@ -111,7 +111,7 @@ Get color of the component
 
 > **set** **color**(`color`): `void`
 
-Defined in: [src/components/component.ts:28](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/component.ts#L28)
+Defined in: [src/components/component.ts:28](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/component.ts#L28)
 
 Set color of the component
 
@@ -1105,7 +1105,7 @@ Rotates the object around _z_ axis in local space.
 
 > **set**(`vertices`): `void`
 
-Defined in: [src/components/path-display.ts:94](https://github.com/qbead/bloch-sphere/blob/81a59121ea27596e77408b4ed592f344f3dd0304/src/components/path-display.ts#L94)
+Defined in: [src/components/path-display.ts:94](https://github.com/qbead/bloch-sphere/blob/41247d60e67bd802cc21854379a06362e5d0957c/src/components/path-display.ts#L94)
 
 #### Parameters
 

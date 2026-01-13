@@ -3,7 +3,10 @@
 A 3D Bloch sphere visualization library built with Three.js.
 
 [![npm version](https://img.shields.io/npm/v/@qbead/bloch-sphere)](https://www.npmjs.com/package/@qbead/bloch-sphere)
+[![Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://bloch-sphere.qbead.org/)
+[![API Docs](https://img.shields.io/badge/docs-api-blue)](https://qbead.gitbook.io/bloch-sphere)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 
 ## Features
 

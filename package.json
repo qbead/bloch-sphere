@@ -1,18 +1,22 @@
 {
   "name": "@qbead/bloch-sphere",
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "version": "0.2.0",
   "type": "module",
   "description": "A 3D Bloch Sphere visualisation built with Three.js and TypeScript.",
   "exports": {
     ".": {
-      "types": "./src/index.d.ts",
       "bun": "./src/index.ts",
-      "browser": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     }
   },
   "files": [
@@ -49,8 +53,8 @@
     "url": "git+https://github.com/qbead/bloch-sphere.git"
   },
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
+    "build": "pkgroll",
+    "dev": "pkgroll --watch",
     "docs": "bun run build && typedoc --options typedoc.json src",
     "prepublishOnly": "bun run build && bun run docs",
     "test": "bun test",
@@ -59,14 +63,14 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@types/three": "^0.175.0",
     "bun-types": "latest",
-    "tsup": "8.3.0",
+    "pkgroll": "^2.5.2",
     "typedoc": "0.28.1",
     "typedoc-plugin-markdown": "^4.6.0",
     "typescript": "^5.8.2"
   },
   "peerDependencies": {
+    "@types/three": "^0.175.0",
     "three": "^0.175.0"
   },
   "dependencies": {

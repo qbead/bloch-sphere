@@ -2,6 +2,11 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@qbead/bloch-sphere': resolve(__dirname, '../src/index.ts'),
+    },
+  },
   build: {
     rollupOptions: {
       input: {

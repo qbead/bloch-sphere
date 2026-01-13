@@ -12,6 +12,7 @@ export default defineConfig({
   bundle: true,
   skipNodeModulesBundle: true,
   entryPoints: ['src/index.ts'],
-  watch: env === 'development',
+  ignoreWatch: ['**/node_modules/**', '**/dist/**', '**/examples/**', '**/.git/**'],
+  watch: env === 'development' ? ['src/**.ts'] : false,
   target: 'es2022',
 })

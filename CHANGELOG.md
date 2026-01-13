@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.3.0](https://github.com/qbead/bloch-sphere/compare/v0.2.0...v0.3.0) (2026-01-13)
+
+
+### Features
+
+* .clone and .copy methods for operator and complex ([423f258](https://github.com/qbead/bloch-sphere/commit/423f258fa588d4b59ac45cda3e5da17e186c26c0))
+* animation refactor uses promises ([d38799f](https://github.com/qbead/bloch-sphere/commit/d38799f52cf989900251d9fa517936f0f2d77657))
+
+
+### Bug Fixes
+
+* [#4](https://github.com/qbead/bloch-sphere/issues/4) getRotationArc not generalized correctly ([a241437](https://github.com/qbead/bloch-sphere/commit/a2414375ed0c959d3375661a0348d03cf2735dff))
+* angle normalization and consistency in interpolation ([d587e66](https://github.com/qbead/bloch-sphere/commit/d587e66d227267b87e347efb6cc9e50ee138b549))
+* copy vector/operator instead of owning supplied by .set ([317a7c6](https://github.com/qbead/bloch-sphere/commit/317a7c6a3f40447b3fcec97568f81cecf91f6984))
+* getRotationArc modified supplied vector ([b461ea5](https://github.com/qbead/bloch-sphere/commit/b461ea5ef94d64ad75c13a2f65ac11e9a72ed73a))
+* handle edge cases for arbitrary rotation display ([bad29c2](https://github.com/qbead/bloch-sphere/commit/bad29c21952a109a2ea2f5d26e1e9e462bbd74b0))
+* operator display incorrectly oriented for some operators ([ab5ccac](https://github.com/qbead/bloch-sphere/commit/ab5ccac5522ab7a3b2c1a19a09c22e05ecb9ac11))
+* set animation to end state on cancel ([1e8218b](https://github.com/qbead/bloch-sphere/commit/1e8218b41af24b2459ffae1c6af47733a3af3e79))
+
 ## [0.2.0](https://github.com/qbead/bloch-sphere/compare/v0.1.0...v0.2.0) (2025-09-03)
 
 
